@@ -1,0 +1,23 @@
+/* 
+    home-css-start
+*/
+
+
+.as-home-1 {
+    background-color: #dcdcdc;
+
+
+    
+    @media #{$over,$xxxl,$xxl} {
+        &::-webkit-scrollbar-thumb {
+            background: var(--sr-clr-pr-2);
+        }
+
+    }
+
+}
+
+
+/* 
+    home-css-end
+*/

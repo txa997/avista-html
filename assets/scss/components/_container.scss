@@ -1,0 +1,19 @@
+/* 
+    custom-container-start
+*/
+
+
+@media (min-width: 1800px) {
+    .container{
+        &.as-container-1 {
+            max-width: 1759px;
+        }
+    }
+}
+
+
+
+
+/* 
+    custom-container-end
+*/
