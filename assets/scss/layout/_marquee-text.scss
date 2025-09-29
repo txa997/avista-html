@@ -1,0 +1,47 @@
+/* 
+    marquee-text-1-start
+*/
+.as-marquee-text-1 {
+    &-area {
+        padding: 40px 0;
+    }
+    &-wrap {
+        &-1 {
+            background: #000;
+            transform: rotate(4deg);
+            overflow: hidden;
+            padding: 10px 0;
+            transform-origin: 25% 50%;
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+        &-2 {
+            background: var(--as-clr-pr-1);
+            transform: rotate(-4deg);
+            overflow: hidden;
+            padding: 15px 0;
+            transform-origin: 25% 50%;
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+    }
+    &-content {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        .text-elm {
+            color: #fff;
+            font-size: 36px;
+            flex: 0 0 auto;
+        }
+
+        img {
+            flex: 0 0 auto;
+        }
+    }
+}
+
+/* 
+    marquee-text-1-end
+*/

@@ -5,6 +5,11 @@
 /* 
     wow-plus-start
 */
+@keyframes wa-rotated {
+  to {
+    transform: rotate(360deg);
+  }
+}
 @keyframes fadeInUp2 {
   0% {
     opacity: 0;
