@@ -231,7 +231,76 @@ function afterPreloader() {
 */
 function afterPageLoad() {
 
+	/* 
+		hero-1-img-animation
+	*/
+	if ($("#wa_liquid_img").length) {
 
+		const waWrapper = document.getElementById("wa_liquid_img");
+		const waImg = waWrapper.querySelector("img");
+		const waImageURL = waImg.getAttribute("src");
+		waImg.remove();
+
+		const { width: waWidth, height: waHeight } = waWrapper.getBoundingClientRect();
+
+		const waApp = new PIXI.Application({
+			width: waWidth,
+			height: waHeight,
+			transparent: true,
+			autoDensity: true,
+			resolution: window.devicePixelRatio,
+		});
+		waApp.view.style.pointerEvents = "none";
+
+		waWrapper.appendChild(waApp.view);
+
+		const waDisplacementURL = "assets/img/hero/h1-bg-noise-1.gif";
+
+		waApp.loader
+			.add("waHero", waImageURL)
+			.add("waDisplacement", waDisplacementURL)
+			.load((waLoader, waResources) => {
+				const waContainer = new PIXI.Container();
+				waApp.stage.addChild(waContainer);
+
+				const waHero = new PIXI.Sprite(waResources.waHero.texture);
+				waContainer.addChild(waHero);
+
+				const waTextureRatio = waHero.texture.width / waHero.texture.height;
+				const waContainerRatio = waWidth / waHeight;
+
+				if (waContainerRatio > waTextureRatio) {
+					waHero.width = waWidth;
+					waHero.height = waWidth / waTextureRatio;
+				} else {
+					waHero.height = waHeight;
+					waHero.width = waHeight * waTextureRatio;
+				}
+
+				waHero.x = (waWidth - waHero.width) / 2;
+				waHero.y = (waHeight - waHero.height) / 2;
+
+				const waDispSprite = new PIXI.Sprite(waResources.waDisplacement.texture);
+				waDispSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+				const waDispFilter = new PIXI.filters.DisplacementFilter(waDispSprite);
+				waDispSprite.scale.set(2);
+				waApp.stage.addChild(waDispSprite);
+				waContainer.filters = [waDispFilter];
+
+				function waPlayDistortionIn() {
+					gsap.fromTo(waDispFilter.scale,
+						{ x: -500, y: -500 },
+						{ x: 0, y: 0, duration: 2,  ease: "ease1", }
+					);
+				}
+				waPlayDistortionIn();
+
+				waApp.ticker.add(() => {
+					waDispSprite.x += 1;
+					waDispSprite.y += 1;
+				});
+			});
+	}
 
 	/* 
 		add-active-class
@@ -390,6 +459,28 @@ if ($(".hover_1_split").length) {
         });
     });
 }
+
+
+/* 
+	header-1-toggle
+*/
+    $(".as-header-1-menu-toggle-btn").on("click", function () {
+        $(this).toggleClass("active"); 
+
+        $(".as-header-1-menu").toggleClass("show"); 
+    });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* 
