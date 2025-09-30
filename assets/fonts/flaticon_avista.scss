@@ -1,0 +1,93 @@
+$flaticon_avista-font: "flaticon_avista";
+
+@font-face {
+    font-family: $flaticon_avista-font;
+    src: url("./flaticon_avista.woff2?c7a9a911610dbae7d73afccff70dec70") format("woff2"),
+url("./flaticon_avista.woff?c7a9a911610dbae7d73afccff70dec70") format("woff"),
+url("./flaticon_avista.eot?c7a9a911610dbae7d73afccff70dec70#iefix") format("embedded-opentype"),
+url("./flaticon_avista.ttf?c7a9a911610dbae7d73afccff70dec70") format("truetype"),
+url("./flaticon_avista.svg?c7a9a911610dbae7d73afccff70dec70#flaticon_avista") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_avista !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_avista-map: (
+    "rating": "\f101",
+    "close": "\f102",
+    "menu": "\f103",
+    "fullscreen": "\f104",
+    "magnifying-glass": "\f105",
+    "next": "\f106",
+    "play": "\f107",
+    "right-up": "\f108",
+    "volume-up": "\f109",
+    "up-right-arrow": "\f10a",
+    "pattern": "\f10b",
+    "down-chevron": "\f10c",
+    "notification": "\f10d",
+    "shape": "\f10e",
+    "security": "\f10f",
+    "flower": "\f110",
+    "star": "\f111",
+);
+
+.flaticon-rating:before {
+    content: map-get($flaticon_avista-map, "rating");
+}
+.flaticon-close:before {
+    content: map-get($flaticon_avista-map, "close");
+}
+.flaticon-menu:before {
+    content: map-get($flaticon_avista-map, "menu");
+}
+.flaticon-fullscreen:before {
+    content: map-get($flaticon_avista-map, "fullscreen");
+}
+.flaticon-magnifying-glass:before {
+    content: map-get($flaticon_avista-map, "magnifying-glass");
+}
+.flaticon-next:before {
+    content: map-get($flaticon_avista-map, "next");
+}
+.flaticon-play:before {
+    content: map-get($flaticon_avista-map, "play");
+}
+.flaticon-right-up:before {
+    content: map-get($flaticon_avista-map, "right-up");
+}
+.flaticon-volume-up:before {
+    content: map-get($flaticon_avista-map, "volume-up");
+}
+.flaticon-up-right-arrow:before {
+    content: map-get($flaticon_avista-map, "up-right-arrow");
+}
+.flaticon-pattern:before {
+    content: map-get($flaticon_avista-map, "pattern");
+}
+.flaticon-down-chevron:before {
+    content: map-get($flaticon_avista-map, "down-chevron");
+}
+.flaticon-notification:before {
+    content: map-get($flaticon_avista-map, "notification");
+}
+.flaticon-shape:before {
+    content: map-get($flaticon_avista-map, "shape");
+}
+.flaticon-security:before {
+    content: map-get($flaticon_avista-map, "security");
+}
+.flaticon-flower:before {
+    content: map-get($flaticon_avista-map, "flower");
+}
+.flaticon-star:before {
+    content: map-get($flaticon_avista-map, "star");
+}

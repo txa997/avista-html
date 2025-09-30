@@ -1,0 +1,83 @@
+/*!
+*    ______ _       _   _
+*    |  ____| |     | | (_)
+*    | |__  | | __ _| |_ _  ___ ___  _ __
+*    |  __| | |/ _` | __| |/ __/ _ \| '_ \
+*    | |    | | (_| | |_| | (_| (_) | | | |
+*    |_|    |_|\__,_|\__|_|\___\___/|_| |_|
+*
+*         https://www.flaticon.com
+*/
+
+@font-face {
+    font-family: "flaticon_avista";
+    src: url("./flaticon_avista.woff2?c7a9a911610dbae7d73afccff70dec70") format("woff2"),
+url("./flaticon_avista.woff?c7a9a911610dbae7d73afccff70dec70") format("woff"),
+url("./flaticon_avista.eot?c7a9a911610dbae7d73afccff70dec70#iefix") format("embedded-opentype"),
+url("./flaticon_avista.ttf?c7a9a911610dbae7d73afccff70dec70") format("truetype"),
+url("./flaticon_avista.svg?c7a9a911610dbae7d73afccff70dec70#flaticon_avista") format("svg")
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_avista !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-rating:before {
+    content: "\f101";
+}
+.flaticon-close:before {
+    content: "\f102";
+}
+.flaticon-menu:before {
+    content: "\f103";
+}
+.flaticon-fullscreen:before {
+    content: "\f104";
+}
+.flaticon-magnifying-glass:before {
+    content: "\f105";
+}
+.flaticon-next:before {
+    content: "\f106";
+}
+.flaticon-play:before {
+    content: "\f107";
+}
+.flaticon-right-up:before {
+    content: "\f108";
+}
+.flaticon-volume-up:before {
+    content: "\f109";
+}
+.flaticon-up-right-arrow:before {
+    content: "\f10a";
+}
+.flaticon-pattern:before {
+    content: "\f10b";
+}
+.flaticon-down-chevron:before {
+    content: "\f10c";
+}
+.flaticon-notification:before {
+    content: "\f10d";
+}
+.flaticon-shape:before {
+    content: "\f10e";
+}
+.flaticon-security:before {
+    content: "\f10f";
+}
+.flaticon-flower:before {
+    content: "\f110";
+}
+.flaticon-star:before {
+    content: "\f111";
+}
+
