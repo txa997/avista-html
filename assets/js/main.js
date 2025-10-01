@@ -524,22 +524,19 @@ if (window.matchMedia("(min-width: 992px)").matches) {
 		scrollTrigger: {
 			trigger: ".p1_pin_elm_trigger",
 			start: "top 0%", 
-			end: () => {
-				const rightHeight = document.querySelector(".p1_pin_elm_trigger_height").offsetHeight;
-				return "+=" + rightHeight;  
-			},
+			end: "900px",
 			pin: ".p1_pin_elm", 
 			pinSpacing: false,
-			markers: true
+			markers: false
 		}
 	});
 	
 
 	var p1ani = gsap.timeline({
 		scrollTrigger: {
-			trigger: ".p1_ani_elm_trigger",
-			start: "top 10%",
-			end: "bottom bottom",
+			trigger: ".p1_pin_elm_trigger",
+			start: "top 0%",
+			end: "900px",
 			toggleActions: "play none none reverse",
 			scrub: true,
 			markers: false,
@@ -712,6 +709,12 @@ $('.wa_marquee_right_nopause').marquee({
 	pauseOnHover: false,
 })
 
+/* 
+	faqs-active-class
+*/
+$(document).on('click', '.wa_accordion_item', function(){
+	$(this).addClass('active').siblings().removeClass('active')
+})
 
 
 // placeholder-typing

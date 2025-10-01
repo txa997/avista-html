@@ -6,8 +6,8 @@
         background-color: var(--as-clr-h-1);
         padding-bottom: 0px;
 
-        .p1_pin_elm_trigger_height {
-            height: 1500px;
+        &:is(.p1_pin_elm_trigger) {
+            height: 1600px;
         }
     }
 

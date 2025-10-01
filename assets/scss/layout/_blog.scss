@@ -1,0 +1,120 @@
+/* 
+    blog-1-start
+*/
+.as-blog-1 {
+    &-sec-title {
+        max-width: 1430px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 30px;
+
+        .left {
+            max-width: 630px;
+        }
+        .right {
+            max-width: 540px;
+        }
+        .sec-disc {
+            margin-bottom: 24px;
+        }
+    }
+    
+    &-wrap {
+        max-width: 1650px;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: start;
+    }
+    
+    &-left {
+        background-color: #000;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        padding: 45px 45px;
+        height: 665px;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+
+        .title {
+            color: #fff;
+            font-size: 48px;
+            max-width: 500px;
+
+            span {
+                color: var(--as-clr-pr-1);
+            }
+        }
+        .logo-elm {margin-left: auto;}
+
+        &-bg-img {
+            text-align: right;
+            width: 73%;
+            position: absolute;
+            bottom: -20px;
+            right: -130px;
+            z-index: -1;
+        }
+
+        &-svg {
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            width: 100%;
+            z-index: -2;
+        }
+    }
+
+    &-item {
+        border-radius: 20px;
+        background: #fff;
+        padding: 8px;
+        padding-right: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        align-items: center;
+
+        .item-img {
+            height: 305px;
+            border-radius: 16px;
+        }
+
+        .categories {
+            display: inline-block;
+            background: var(--as-clr-pr-1);
+            color: #fff;
+            padding: 4px 29px;
+            border-radius: 6px;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        .disc {
+            margin-bottom: 19px;
+        }
+        
+
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+}
+
+
+
+
+/* 
+    blog-1-end
+*/
