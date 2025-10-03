@@ -30,7 +30,7 @@
             <div class="pg-preloader">
                 <div class="pg-preloader-wrap">
                     <div class="pg-preloader-logo">
-                        <img src="assets/img/icon/preloader-icon.png" alt="">
+                        <img src="assets//img/logo/fevicon-1.png" alt="">
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
 
                         <!-- menu -->
                         <nav class="as-main-navigation as-header-1-menu  d-none d-xl-block">
-                            <ul id="main-nav" class="nav navbar-nav ">
+                            <ul id="main-nav" class="nav navbar-nav menu_1_split">
                         
                                 <li class="dropdown">
                                     <a href="#">
@@ -139,8 +139,10 @@
             <!-- header-end -->
 
             <!-- hero-start -->
-            <section class="as-hero-1-area  wa-fix wa-p-relative" >
+            <section class="as-hero-1-area  wa-fix wa-p-relative wa_tilt" >
                 <div class="as-hero-1-bg-color"></div>
+                <!-- Noise Canvas Overlay -->
+                <canvas id="wa_cursor_noise"></canvas>
 
                 <a href="index.html" aria-label="name" class="as-hero-1-favicon">
                     <img src="assets/img/hero/h1-favicon-shape.png" alt="" class="bg-shape">
@@ -163,7 +165,7 @@
 
                             <!-- marquee-text -->
                             <div class="as-hero-1-marquee">
-                                <div class="as-hero-1-marquee-wrap">
+                                <div class="as-hero-1-marquee-wrap wa_marquee_down_top">
                                     <p class="as-p-1 text-elm">Web Design <span>*</span></p>
                                     <p class="as-p-1 text-elm">Web Development <span>*</span></p>
                                     <p class="as-p-1 text-elm">SEO <span>*</span></p>
@@ -179,7 +181,7 @@
 
                             <!-- copyright-text -->
                             <div class="as-hero-1-copyright-bg" >
-                                <h4 class="as-hero-1-copyright as-h-1">©2025-Avista</h4>
+                                <h4 class="as-hero-1-copyright as-h-1 wa_split_up" data-split-delay=".7s">©2025-Avista</h4>
                                 <div class="as-hero-1-copyright-bg-shape" data-background="assets/img/hero/h1-bg-noise-1.gif">
                                 </div>
                             </div>
@@ -190,17 +192,17 @@
                         <div class="as-hero-1-right">
 
                             <div class="as-hero-1-content">
-                                <p class="as-p-1 hero-disc">We craft smart digital business
+                                <p class="as-p-1 hero-disc wa_title_split_2" data-delay="1.5">We craft smart digital business
                                     experiences that accelerate growth and boost conversions.</p>
-                                <h1 class="as-h-1 hero-title">High-quality <br> Work</h1>
+                                <h1 class="as-h-1 hero-title wa_title_spilt_1">High-quality <br> Work</h1>
 
                                 <div class="as-hero-1-content-inner">
 
                                     <!-- box-content -->
-                                    <div class="as-hero-1-content-box">
+                                    <div class="as-hero-1-content-box wow zoomIn" data-wow-delay=".5s">
                                         <h5 class="as-h-1 box-title">Need team assistance? Book a personalized call</h5>
                                         <!-- pr-btn -->
-                                        <a href="#" aria-label="name" class="as-pr-btn-1">
+                                        <a href="#" aria-label="name" class="as-pr-btn-1 wa_btn_split_1 wa_magnetic_btn_1">
                                             <span class="text">Schedule a call</span>
                                             <span class="icon">
                                                 <img src="assets/img/icon/dot-arrow.png" alt="">
@@ -209,10 +211,12 @@
                                         <p class="as-p-1 box-address">or email us at <a href="#">info@avista.com</a></p>
                                     </div>
 
-                                    <h4 class="as-h-1 guaranteed">Guaranteed <img src="assets/img/icon/security.png" alt=""></h4>
+                                    <h4 class="as-h-1 guaranteed wa_title_spilt_1" data-delay="1">Guaranteed <img src="assets/img/icon/security.png" alt=""></h4>
                                 </div>
                             </div>
                         </div>
+
+                        
 
                         <!-- hero-img -->
                         <div class="as-hero-1-img">
@@ -239,10 +243,10 @@
                                 </span>
                                 About US
                             </h6>
-                            <h2 class="as-sec-title-1">Our process is simple,
+                            <h2 class="as-sec-title-1 wa_title_spilt_1">Our process is simple,
                                 purposeful, and adaptable.</h2>
                             <div class="hr-line"></div>
-                            <p class="as-p-1 sec-disc">Avista Digital Agency is a creative and strategy-driven firm dedicated to helping brands thrive
+                            <p class="as-p-1 sec-disc wow fadeInUp2">Avista Digital Agency is a creative and strategy-driven firm dedicated to helping brands thrive
                                 in the digital world. We specialize in web design, branding, digital marketing, and performance
                                 driven solutions that connect businesses with their audiences. With a focus on innovation
                                 Avista empowers companies to grow faster.</p>
@@ -250,31 +254,31 @@
                                 <div class="as-author-1">
                                     <img src="assets/img/about/a1-shape-1.png" alt="" class="bg-shape-1">
                                     <img src="assets/img/about/a1-shape-2.png" alt="" class="bg-shape-2">
-                                    <div class="as-author-1-img wa-fix wa-img-cover">
+                                    <div class="as-author-1-img wa-fix wa-img-cover wow fadeInRight2" >
                                         <img src="assets/img/testimonial/author-1.jpg" alt="">
                                     </div>
-                                    <div class="as-author-1-img wa-fix wa-img-cover">
+                                    <div class="as-author-1-img wa-fix wa-img-cover wow fadeInRight2" data-wow-delay=".1s">
                                         <img src="assets/img/testimonial/author-2.jpg" alt="">
                                     </div>
-                                    <div class="as-author-1-img wa-fix wa-img-cover">
+                                    <div class="as-author-1-img wa-fix wa-img-cover wow fadeInRight2" data-wow-delay=".2s">
                                         <img src="assets/img/testimonial/author-3.jpg" alt="">
                                     </div>
-                                    <div class="as-author-1-img wa-fix wa-img-cover">
+                                    <div class="as-author-1-img wa-fix wa-img-cover wow fadeInRight2" data-wow-delay=".3s">
                                         <img src="assets/img/testimonial/author-4.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="right">
                                     <div class="as-rating-1">
                                         <div class="icon">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star wow fadeIn" data-wow-delay=".1s"></i>
+                                            <i class="fa-solid fa-star wow fadeIn" data-wow-delay=".2s"></i>
+                                            <i class="fa-solid fa-star wow fadeIn" data-wow-delay=".3s"></i>
+                                            <i class="fa-solid fa-star wow fadeIn" data-wow-delay=".4s"></i>
+                                            <i class="fa-solid fa-star wow fadeIn" data-wow-delay=".5s"></i>
                                         </div>
-                                        <p class="as-h-1 text">4.9 Rating</p>
+                                        <p class="as-h-1 text wow fadeInRight2">4.9 Rating</p>
                                     </div>
-                                    <p class="as-p-1 disc">Depends on 1.5 k positive feedback by our clients</p>
+                                    <p class="as-p-1 disc wow fadeInUp2" data-wow-delay=".3s">Depends on 1.5 k positive feedback by our clients</p>
                                 </div>
                             </div>
                         </div>
@@ -284,8 +288,8 @@
                             <h3 class="as-h-1 middle-title">Our Values</h3>
                             <!-- faqs-accordion -->
                             <div class="as-about-1-features">
-                                <div class="as-about-1-features-single">
-                                    <h3 class="item-title as-h-1">
+                                <div class="as-about-1-features-single wow fadeInUp2" data-wow-delay=".1s">
+                                    <h3 class="item-title as-h-1 wa_magnetic_btn_1">
                                         <a href="services-details.html" aria-label="name">
                                             Customer-Centric Mind
                                         </a>
@@ -294,8 +298,8 @@
                                         We put our clients at the heart of everything we do. By understanding their needs, goals, and challenges, we create personalized strategies and solutions that deliver real value.
                                     </p>
                                 </div>
-                                <div class="as-about-1-features-single">
-                                    <h3 class="item-title as-h-1">
+                                <div class="as-about-1-features-single wow fadeInUp2" data-wow-delay=".2s">
+                                    <h3 class="item-title as-h-1 wa_magnetic_btn_1">
                                         <a href="services-details.html" aria-label="name">
                                             Results-Driven
                                         </a>
@@ -304,8 +308,8 @@
                                         Every solution is designed to create measurable business impact.
                                     </p>
                                 </div>
-                                <div class="as-about-1-features-single">
-                                    <h3 class="item-title as-h-1">
+                                <div class="as-about-1-features-single wow fadeInUp2" data-wow-delay=".3s">
+                                    <h3 class="item-title as-h-1 wa_magnetic_btn_1">
                                         <a href="services-details.html" aria-label="name">
                                             Collaboration
                                         </a>
@@ -339,16 +343,16 @@
                             </span>
                             Team Members
                         </h6>
-                        <h2 class="as-sec-title-1">Experts Who Care About Your Growth</h2>
+                        <h2 class="as-sec-title-1 wa_title_spilt_1">Experts Who Care About Your Growth</h2>
                     </div>
 
                     <div class="as-team-1-wrap">
 
                         <!-- single-member -->
                         <div class="as-team-1-member-ani">
-                            <div class="as-team-1-member">
+                            <div class="as-team-1-member wa_magnetic_1_trigger">
                                 <div class="member-img wa-fix wa-img-cover wa-p-relative">
-                                    <img src="assets/img/team/t1-img-1.jpg" alt="">
+                                    <img class="wa_magnetic_1_elm" src="assets/img/team/t1-img-1.jpg" alt="">
                                     <div class="content-wrap">
                                         <h5 class="as-h-1 member-name">
                                             <a href="team-details.html" aria-label="name">Sharah Alena</a>
@@ -372,9 +376,9 @@
 
                         <!-- single-member -->
                         <div class="as-team-1-member-ani">
-                            <div class="as-team-1-member">
+                            <div class="as-team-1-member wa_magnetic_1_trigger">
                                 <div class="member-img wa-fix wa-img-cover wa-p-relative">
-                                    <img src="assets/img/team/t1-img-2.jpg" alt="">
+                                    <img class="wa_magnetic_1_elm" src="assets/img/team/t1-img-2.jpg" alt="">
                                     <div class="content-wrap">
                                         <h5 class="as-h-1 member-name">
                                             <a href="team-details.html" aria-label="name">Sharah Alena</a>
@@ -398,9 +402,9 @@
 
                         <!-- single-member -->
                         <div class="as-team-1-member-ani">
-                            <div class="as-team-1-member">
+                            <div class="as-team-1-member wa_magnetic_1_trigger">
                                 <div class="member-img wa-fix wa-img-cover wa-p-relative">
-                                    <img src="assets/img/team/t1-img-3.jpg" alt="">
+                                    <img class="wa_magnetic_1_elm" src="assets/img/team/t1-img-3.jpg" alt="">
                                     <div class="content-wrap">
                                         <h5 class="as-h-1 member-name">
                                             <a href="team-details.html" aria-label="name">Sharah Alena</a>
@@ -424,9 +428,9 @@
 
                         <!-- single-member -->
                         <div class="as-team-1-member-ani">
-                            <div class="as-team-1-member">
+                            <div class="as-team-1-member wa_magnetic_1_trigger">
                                 <div class="member-img wa-fix wa-img-cover wa-p-relative">
-                                    <img src="assets/img/team/t1-img-4.jpg" alt="">
+                                    <img class="wa_magnetic_1_elm" src="assets/img/team/t1-img-4.jpg" alt="">
                                     <div class="content-wrap">
                                         <h5 class="as-h-1 member-name">
                                             <a href="team-details.html" aria-label="name">Sharah Alena</a>
@@ -982,7 +986,7 @@
                 <!-- bottom-content -->
                 <div class="as-cta-1-bg">
                     <div class="container as-container-1">
-                        <div class="as-cta-1-wrap wa-p-relative">
+                        <div class="as-cta-1-wrap wa-p-relative cta1_trigger">
 
                             <!-- social -->
                             <div class="as-cta-1-social">
@@ -2242,6 +2246,7 @@
         <script src="assets/js/appear.js"></script>
         <script src="assets/js/ScrollTrigger.min.js"></script>
         <script src="assets/js/pixi.min.js"></script>
+        <script src="assets/js/cursor.js"></script>
         <script src="assets/js/main.js"></script>
         
     </body>

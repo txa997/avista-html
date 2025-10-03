@@ -109,25 +109,29 @@
             }
         }
 
-        &:hover {
-            border-color: #fff;
-            .member-img {
+        &:is(.is_active) {
+            &:hover {
                 border-color: #fff;
-                border-radius: 10px 10px 4px 4px;
-                &::after {
+                .member-img {
+                    border-color: #fff;
+                    border-radius: 10px 10px 4px 4px;
+                    &::after {
+                        opacity: 1;
+                        bottom: -53%;
+                    }
+                }
+                .content-wrap {
+                    transform: translateY(0);
                     opacity: 1;
-                    bottom: -53%;
+                }
+                .member-social {
+                    opacity: 1;
+                    transform: translateY(0);
                 }
             }
-            .content-wrap {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            .member-social {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
+
+
 
 
     }

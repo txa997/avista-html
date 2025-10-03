@@ -12,12 +12,16 @@
         position: absolute;
         left: 0;
         bottom: -18px;
+        animation: h3partnerLeaf 3s linear infinite;    
+        animation-delay: 2s;
     }
+
 
     .bg-shape-2 {
         position: absolute;
         right: 0;
         bottom: -19px;
+        animation: h3partnerLeaf 3s linear infinite;
     }
     &-img {
         width: 52px;
@@ -50,7 +54,11 @@
 }
 
 
-
+.wa_magnetic_1_trigger {
+    img {
+        transform: scale(1.05);
+    }
+}
 /* 
     elements-end
 */

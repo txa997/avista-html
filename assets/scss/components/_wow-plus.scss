@@ -31,7 +31,7 @@
   -webkit-animation-name: fadeInUp2;
   animation-name: fadeInUp2;
   animation-duration: 800ms;
-  animation-timing-function: var(--sr-cube-1);
+  animation-timing-function: var(--as-cube-1);
 }
 
 @keyframes fadeInRight2 {
@@ -55,7 +55,7 @@
   -webkit-animation-name: fadeInRight2;
   animation-name: fadeInRight2;
   animation-duration: 800ms;
-  animation-timing-function: var(--sr-cube-1);
+  animation-timing-function: var(--as-cube-1);
 }
 
 @keyframes fadeInLeft2 {
@@ -79,7 +79,7 @@
   -webkit-animation-name: fadeInLeft2;
   animation-name: fadeInLeft2;
   animation-duration: 800ms;
-  animation-timing-function: var(--sr-cube-1);
+  animation-timing-function: var(--as-cube-1);
 }
 
 
@@ -134,7 +134,7 @@
   -webkit-animation-name: jackInTheBox2;
   animation-name: jackInTheBox2;
   animation-duration: 800ms;
-  animation-timing-function: var(--sr-cube-1);
+  animation-timing-function: var(--as-cube-1);
 }
 
 
@@ -180,10 +180,63 @@
   -webkit-animation-name: bounce2;
   animation-name: bounce2;
   animation-duration: 800ms;
-  animation-timing-function: var(--sr-cube-1);
+  animation-timing-function: var(--as-cube-1);
 }
 
+@-webkit-keyframes shakeY2 {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+}
+@keyframes shakeY2 {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+}
+.animate__shakeY2 {
+  -webkit-animation-name: shakeY2;
+  animation-name: shakeY2;
+  animation-duration: 800ms;
+  animation-timing-function: var(--as-cube-1);
+}
 /* 
     wow-plus-end
 */

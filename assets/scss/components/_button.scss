@@ -38,6 +38,7 @@
     padding: 3px;
     padding-left: 20px;
     color: #fff;
+    transition: all .5s var(--as-cube-1);
 
     .icon {
         width: 38px;
@@ -48,6 +49,17 @@
         align-items: center;
         background: #fff;
         border-radius: 6px;
+        transition: all .5s var(--as-cube-1);
+    }
+
+    .text {
+        transition: all .5s var(--as-cube-1);
+        overflow: hidden;
+    }
+
+    &:hover {
+        color: #fff;
+        background: var(--as-clr-pr-1);
     }
     
 }

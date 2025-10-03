@@ -16,7 +16,7 @@
 	transition: opacity 0.3s, color 0.4s;
 
 	&::before{
-		background: var(--pg-clr-pr-1);
+		background: var(--as-clr-pr-1);
 	}
 
     &:before {
@@ -126,11 +126,13 @@
 
     &:is(.-pointer) {
         &::before {
-            -webkit-transform: scale(0);
-            -moz-transform: scale(0);
-            -ms-transform: scale(0);
-            -o-transform: scale(0);
-            transform: scale(0);
+            -webkit-transform: scale(.7);
+            -moz-transform: scale(.7);
+            -ms-transform: scale(.7);
+            -o-transform: scale(.7);
+            transform: scale(.7);
+            opacity: .3;
+            mix-blend-mode: multiply;
         }
         
     }

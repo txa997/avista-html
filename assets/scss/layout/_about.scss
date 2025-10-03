@@ -67,11 +67,32 @@
                 font-size: 24px;
                 text-align: left;
                 margin-bottom: 12px;
+                transition: all .4s var(--as-cube-1);
+
+                &:hover {
+                    color: var(--as-clr-pr-1);
+                }
             }
             .item-disc {
                 color: #646464;
             }
         }
+    }
+}
+
+
+@keyframes h3partnerLeaf {
+    0% {
+        transform-origin: 50% 100%;
+        transform: skewX(-5deg);
+    }
+    50% {
+        transform-origin: 50% 100%;
+        transform: skewX(5deg);
+    }
+    100% {
+        transform-origin: 50% 100%;
+        transform: skewX(-5deg);
     }
 }
 
