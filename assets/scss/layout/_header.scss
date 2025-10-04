@@ -33,6 +33,10 @@
         .as-pr-btn-1 {
             padding: 7px 15px;
             background: var(--as-clr-pr-1);
+
+            &:hover {
+                background: #000;
+            }
         }
     }
 

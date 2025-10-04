@@ -2242,6 +2242,9 @@ input:focus::placeholder, textarea:focus::placeholder {
   padding: 7px 15px;
   background: var(--as-clr-pr-1);
 }
+.as-header-1-action-link .as-pr-btn-1:hover {
+  background: #000;
+}
 .as-header-1-menu {
   margin-left: -30px;
   transition: all 0.5s var(--as-cube-1);
