@@ -479,7 +479,7 @@ function afterPageLoad() {
 
 				function waPlayDistortionIn() {
 					gsap.fromTo(waDispFilter.scale,
-						{ x: -500, y: -500 },
+						{ x: -220, y: -220 },
 						{ x: 0, y: 0, duration: 2,  ease: "ease1", }
 					);
 				}
