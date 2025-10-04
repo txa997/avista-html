@@ -3020,6 +3020,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .as-team-1-member-ani {
   position: relative;
+  will-change: transform;
 }
 .as-team-1-member-ani:nth-child(2) {
   z-index: -1;
@@ -3519,16 +3520,19 @@ input:focus::placeholder, textarea:focus::placeholder {
   bottom: 0;
   left: 0;
   z-index: 1;
+  will-change: transform;
 }
 .as-partner-1-cloud .cloud-2 {
   position: absolute;
   right: 0;
   top: 0;
+  will-change: transform;
 }
 .as-partner-1-cloud .rocket {
   position: absolute;
   left: 33%;
   bottom: 42%;
+  will-change: transform;
 }
 .as-partner-1-boost {
   text-align: center;
@@ -4909,6 +4913,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   overflow: hidden;
   max-width: 510px;
   flex: 0 0 auto;
+  will-change: transform;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .as-process-1-card {
