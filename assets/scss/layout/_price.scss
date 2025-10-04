@@ -18,6 +18,10 @@
         display: grid;
         grid-template-columns: 1fr 1.41fr;
         gap: 25px;
+
+        @media #{$md,$xs} {
+            grid-template-columns: 1fr ;
+        }
     }
     
     &-left {
@@ -28,14 +32,16 @@
         height: 565px;
         overflow: hidden;
         box-shadow: 0 0 1px rgb(0 0 0 / 40%);
-        position: sticky;
-        top: 100px;
+
+        @media #{$over,$xxxl,$xxl,$xl,$lg} {
+            position: sticky;
+            top: 100px;
+        }
     }
 
     &-ss {
         display: flex;
         flex-direction: column;
-        border-radius: 8px;
         overflow: hidden;
 
         &-single {
@@ -51,15 +57,27 @@
         border: 8px solid #fff;
         padding: 40px 40px;
         transition: all .5s var(--as-cube-1);
-        position: sticky;
-        top: 100px;
+
         box-shadow: 0 0 1px rgb(0 0 0 / 40%);
+
+        @media #{$over,$xxxl,$xxl,$xl,$lg} {
+            position: sticky;
+            top: 100px;
+        }
+
+        @media #{$lg,$md,$xs} {
+            padding: 40px 20px;
+        }
 
         .plan-name {
             font-size: 36px;
             color: #28100f;
             margin-bottom: 5px;
             transition: all .5s var(--as-cube-1);
+
+            @media #{$lg,$md,$xs} {
+                font-size: 28px;
+            }
         }
 
         .plan-disc {

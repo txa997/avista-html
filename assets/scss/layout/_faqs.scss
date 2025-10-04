@@ -153,6 +153,8 @@
             left: 0;
             bottom: -80px;
             z-index: -1;
+            animation: h3partnerLeaf 3s linear infinite;    
+            animation-delay: 2s;
         }
 
         .bg-shape-2 {
@@ -160,6 +162,7 @@
             right: 0;
             bottom: -80px;
             z-index: -1;
+            animation: h3partnerLeaf 3s linear infinite;    
         }
 
         .bg-shape-3 {

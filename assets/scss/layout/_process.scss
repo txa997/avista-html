@@ -6,8 +6,16 @@
         background-color: var(--as-clr-h-1);
         padding-bottom: 0px;
 
+        @media #{$md,$xs} {
+            padding-bottom: 150px;
+        }
+
         &:is(.p1_pin_elm_trigger) {
             height: 1600px;
+
+            @media #{$md,$xs} {
+                height: auto;
+            }
         }
     }
 
@@ -40,6 +48,10 @@
     &-wrap {
         display: grid;
         grid-template-columns: 1fr 1.57fr;
+
+        @media #{$md,$xs} {
+            grid-template-columns: 1fr ;
+        }
     }
 
     &-right {
@@ -47,6 +59,11 @@
         margin-right: -100px;
         display: flex;
         gap: 25px;
+
+        @media #{$md,$xs} {
+            flex-direction: column;
+            margin-right: 0px;
+        }
     }
 
     &-card {
@@ -60,6 +77,10 @@
         max-width: 510px;
         flex: 0 0 auto;
         // box-shadow: -5px 0 2px var(--as-clr-h-1);
+
+        @media #{$md,$xs} {
+            height: auto;
+        }
 
         &::before {
             content: "";
@@ -81,6 +102,11 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 55px;
+
+            @media #{$xs} {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
         }
 
         .step {
@@ -100,6 +126,16 @@
             font-size: 44px;
             color: #fff;
             margin-bottom: 50px;
+
+            @media #{$xl} {
+                font-size: 38px;
+            }
+            @media #{$lg} {
+                font-size: 34px;
+            }
+            @media #{$md,$xs} {
+                font-size: 26px;
+            }
         }
 
         .disc {
@@ -134,6 +170,33 @@
         bottom: -8%;
         left: 0;
         z-index: -1;
+
+        @media #{$xxxl} {
+            font-size: 450px;
+        }
+        @media #{$xxl} {
+            font-size: 410px;
+        }
+        @media #{$xl} {
+            font-size: 360px;
+            bottom: -5%;
+        }
+        @media #{$lg} {
+            font-size: 320px;
+            bottom: -5%;
+        }
+        @media #{$md} {
+            font-size: 240px;
+            bottom: -2%;
+        }
+        @media #{$xs} {
+            font-size: 120px;
+            bottom: -2%;
+        }
+        @media #{$sm} {
+            font-size: 150px;
+            bottom: -2%;
+        }
     }
 
 

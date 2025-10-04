@@ -23,6 +23,10 @@
         padding-right: 8px;
         padding-left: 30px;
         gap: 20px;
+
+        @media #{$md,$xs} {
+            padding: 5px 10px;
+        }
     }
 
     &-action-link {
@@ -91,6 +95,10 @@
                     transform: rotate(-45deg) translateY(-4px) translateX(3px);
                 }
             }
+        }
+
+        @media #{$md,$xs} {
+            display: none;
         }
     }
 }

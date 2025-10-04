@@ -20,6 +20,13 @@
         background: #fff;
         padding: 10px;
 
+        @media #{$lg,$md} {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+
         &-inner {
             display: flex;
             flex-direction: column;
@@ -34,6 +41,10 @@
         flex-direction: column;
         gap: 55px;
 
+        @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+            padding: 40px 20px;
+        }
+
         .img-elm {
             width: 37%;
             position: absolute;
@@ -44,6 +55,10 @@
         .title {
             color: #fff;
             font-size: 38px;
+
+            @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+                font-size: 30px;
+            }
         }
 
         .disc {
@@ -78,6 +93,10 @@
         .rating-number {
             font-size: 72px;
             line-height: 1;
+
+            @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+                font-size: 50px;
+            }
 
             .odometer-formatting-mark {
                 display: none;
@@ -125,6 +144,10 @@
         position: relative;
         z-index: 1;
 
+        @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+            padding: 40px 20px;
+        }
+
         &::after {
             content: "";
             width: 100%;
@@ -140,6 +163,10 @@
             color: #fff;
             font-size: 38px;
             margin-bottom: 15px;
+
+            @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+                font-size: 30px;
+            }
         }
 
         .disc {
@@ -150,10 +177,23 @@
 
     &-result {
         padding: 40px 40px;
+
+        @media #{$xxxl,$xxl,$xl} {
+            padding: 40px 20px;
+        }
+        @media #{$lg,$md,$xs} {
+            padding: 40px 20px;
+            height: 400px;
+        }
+
         .title {
             color: #fff;
             font-size: 38px;
             margin-bottom: 15px;
+
+            @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+                font-size: 30px;
+            }
         }
 
         .disc {

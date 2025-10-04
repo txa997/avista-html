@@ -63,6 +63,7 @@
         margin-top: -120px;
         padding-top: 200px;
         border-radius: 0 0 60px 60px;
+        
     }
 
     &-wrap {
@@ -101,11 +102,37 @@
         max-width: 1100px;
         margin-top: 308px;
 
+        @media #{$md,$xs} {
+            margin-top: 100px;
+        }
+
         .title-1 {
             font-size: 189px;
             color: #fff;
             line-height: 1;
-                   will-change: transform;
+            will-change: transform;
+
+            @media #{$xxxl} {
+                font-size: 160px;
+            }
+            @media #{$xxl} {
+                font-size: 150px;
+            }
+            @media #{$xl} {
+                font-size: 140px;
+            }
+            @media #{$lg} {
+                font-size: 130px;
+            }
+            @media #{$md} {
+                font-size: 120px;
+            }
+            @media #{$xs} {
+                font-size: 60px;
+            }
+            @media #{$sm} {
+                font-size: 80px;
+            }
         }
 
         .title-2 {
@@ -113,6 +140,16 @@
             color: var(--as-clr-pr-1);
             margin-bottom: 40px;
                    will-change: transform;
+
+            @media #{$md} {
+                font-size: 80px;
+            }
+            @media #{$xs} {
+                font-size: 40px;
+            }
+            @media #{$sm} {
+                font-size: 60px;
+            }
         }
 
         .btn-wrap {
@@ -127,7 +164,12 @@
             &:nth-child(1) {
                 background: #393939;
                 .icon {
+                    color: #fff;
                     background: #000;
+                }
+
+                &:hover {
+                    background: var(--as-clr-pr-1);
                 }
             }
             &:nth-child(2) {
@@ -138,6 +180,10 @@
                 i {
                     color: var(--as-clr-pr-1);
                     transform: rotate(-45deg);
+                }
+
+                &:hover {
+                    color: var(--as-clr-pr-1);
                 }
             }
         }
@@ -160,6 +206,10 @@
             img {
                 border-radius: 10px;
             }
+
+            @media #{$md,$xs} {
+                display: none;
+            }
         }
         &-2 {
             width: 260px;
@@ -176,6 +226,10 @@
             img {
                 border-radius: 8px;
             }
+
+            @media #{$md,$xs} {
+                display: none;
+            }
         }
     }
     
@@ -186,6 +240,10 @@
         top: 0;
         left: 50px;
         will-change: transform;
+
+        @media #{$md,$xs} {
+            display: none;
+        }
     }
     
     &-hand-2 {
@@ -196,6 +254,10 @@
         bottom: 6%;
         z-index: -1;
         will-change: transform;
+
+        @media #{$md,$xs} {
+            display: none;
+        }
     }
     
     
@@ -261,6 +323,14 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 15px;
+
+        @media #{$xl,$lg} {
+            align-items: start;
+        }
+        @media #{$md,$xs} {
+            align-items: start;
+            grid-template-columns: 1fr;
+        }
     }
 
     &-left {
@@ -272,6 +342,10 @@
             gap: 10px;
             padding: 10px;
             margin-bottom: 15px;
+
+            @media #{$lg,$md,$xs} {
+                grid-template-columns: 1fr;
+            }
         }
     }
 
@@ -280,9 +354,17 @@
         border-radius: 16px;
         padding: 40px 45px;
 
+        @media #{$xl,$lg,$md,$xs} {
+            padding: 40px 25px; 
+        }
+
         .title {
             font-size: 36px;
             margin-bottom: 8px;
+
+            @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+                font-size: 26px;
+            }
         }
 
         .disc {
@@ -297,12 +379,18 @@
             display: flex;
             align-items: center;
             gap: 25px;
+            flex-wrap: wrap;
         }
 
         .mail {
             a {
                 color: #000;
                 font-weight: 600;
+                transition: all .4s var(--as-cube-1);
+
+                &:hover {
+                    color: var(--as-clr-pr-1);
+                }
             }
         }
     }
@@ -325,8 +413,9 @@
         .text-elm {
             font-size: 24px;
 
-            i {
-                color: #FFC015;
+            img {
+                max-width: 30px;
+                margin-top: -10px;
             }
         }
         
@@ -340,6 +429,10 @@
         position: relative;
         z-index: 1;
         overflow: hidden;
+
+        @media #{$xl,$lg,$md,$xs} {
+            padding: 40px 20px;
+        }
 
         &::after {
             content: "";
@@ -365,6 +458,10 @@
 
             .as-pr-btn-1 {
                 background-color: #323232;
+
+                &:hover {
+                    background: var(--as-clr-pr-1);
+                }
             }
 
         }
@@ -372,6 +469,10 @@
         .title {
             color: #fff;
             font-size: 36px;
+
+            @media #{$xl,$lg,$md,$xs} {
+                font-size: 26px;
+            }
         }
 
         &-ss {
@@ -418,7 +519,7 @@
             border-radius: 20px;
             padding: 90px 45px;
     
-            @media #{$xs} {
+            @media #{$xl,$lg,$md,$xs} {
                 padding: 50px 20px;
             }
         }
@@ -472,6 +573,12 @@
             grid-template-columns: 1fr 1fr;
             margin-bottom: 15px;
 
+            @media #{$xs} {
+                grid-template-columns: 1fr;
+            }
+            @media #{$sm} {
+                grid-template-columns: 1fr 1fr;
+            }
         }
         &-input {
             height: 50px;
@@ -487,6 +594,11 @@
             &:is(textarea) {
                 height: 120px;
                 padding-top: 11px;
+            }
+
+
+            &:focus-within {
+                border-color:var(--as-clr-pr-1);
             }
 
         }
@@ -604,6 +716,11 @@
         .as-pr-btn-1 {
             background: #fff;
             color: #000;
+
+            &:hover {
+                background: var(--as-clr-pr-1);
+                color: #fff;
+            }
         }
     }
 }

@@ -17,6 +17,10 @@
         justify-content: space-between;
         gap: 30px;
 
+        @media #{$md,$xs} {
+            flex-wrap: wrap;
+        }
+
         .left {
             max-width: 550px;
         }
@@ -54,6 +58,12 @@
         align-items: center;
         gap: 20px;
 
+        
+        @media #{$md,$xs} {
+            padding: 30px 20px;
+            grid-template-columns: 1fr;
+        }
+
         .item-tags {
             display: inline-flex;
             flex-wrap: wrap;
@@ -79,6 +89,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            
+            @media #{$md,$xs} {
+                display: none;
+            }
         }
 
             
@@ -97,6 +112,23 @@
         .title {
             font-size: 48px;
             transition: all .5s var(--as-cube-1);
+
+            @media #{$xxxl,$xxl,$xl} {
+                font-size: 35px;
+            }
+            @media #{$lg,$md} {
+                font-size: 30px;
+            }            
+            @media #{$xs} {
+                font-size: 22px;
+            }
+        }
+
+
+        .star-icon {
+            @media #{$md,$xs} {
+                display: none;
+            }
         }
 
         .title-wrap {
@@ -133,6 +165,10 @@
             span {
                 color: #5C5B5B;
                 transition: all .5s var(--as-cube-1);
+            }
+
+            @media #{$xs} {
+                display: none;
             }
         }
 

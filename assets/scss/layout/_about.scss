@@ -6,6 +6,12 @@
         display: grid;
         gap: 50px;
         grid-template-columns: 1.39fr 1fr 1fr;
+        @media #{$xxl,$xl,$lg,$md} {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
     }
 
     &-content {
@@ -40,9 +46,17 @@
         .middle-title {
             font-size: 34px;
             margin-bottom: 21px;
+
+            @media #{$md,$xs} {
+                font-size: 26px;
+            }
         }
     }
     &-right {
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            display: none;
+        }
         .right-title {
             font-size: 34px;
             margin-bottom: 21px;
@@ -71,6 +85,13 @@
 
                 &:hover {
                     color: var(--as-clr-pr-1);
+                }
+
+                @media #{$xs} {
+                    font-size: 22px;
+                }
+                @media #{$sm} {
+                    font-size: 24px;
                 }
             }
             .item-disc {

@@ -1,0 +1,202 @@
+/* 
+    footer-1-start
+*/
+.as-footer-1 {
+    &-area {
+        background-color: #000;
+    }
+
+    &-wrap {
+        max-width: 1590px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+
+
+    &-widget {
+        // flex: 0 0 auto;
+        &-title {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        &:nth-child(1) {
+            flex: 0 0 auto;
+            max-width: 395px;
+            width: 100%;
+        }
+    }
+    
+    &-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        a {
+            color: #f2f2f2;
+            position: relative;
+            z-index: 1;
+            transition: all .5s var(--as-cube-1);
+
+            &::after {
+                content: "";
+                width: 8px;
+                height: 2px;
+                background: var(--as-clr-pr-1);
+                position: absolute;
+                top: 50%;
+                left: -16px;
+                transform: translateY(-50%) scaleX(0);
+                transform-origin: left;
+                transition: all .5s var(--as-cube-1);
+            }
+
+            &:hover {
+                transform: translateX(16px);
+                color: var(--as-clr-pr-1);
+                &::after {
+                    transform: translateY(-50%) scaleX(1);
+                }
+            }
+        }
+    }
+
+
+    &-big-email {
+        color: #fff;
+        font-size: 48px;
+        background: var(--as-clr-pr-1);
+
+        border-radius: 30px;
+        padding: 11px 74px;
+        transition: all .4s var(--as-cube-1);
+        animation: f1bigEmail 2s linear infinite;
+        &:hover {
+            color: #fff;
+            transform: scale(.95);
+        }
+
+        @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+            font-size: 28px;
+            padding: 6px 34px;
+        }
+    }
+    
+    &-newsletter {
+        width: 100%;
+
+        .title {
+            color: #fff;
+            display: flex;
+            gap: 11px;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .disc {
+            color: #a6a6a6;
+            margin-bottom: 16px;
+        }
+
+        &-form {
+            &-input {
+                height: 60px;
+                width: 100%;
+                font-family: var(--as-font-1);
+                border-radius: 20px;
+                background: #000;
+                border: 1px solid rgb(54 54 54 / 70%);
+                color: rgb(255 255 255 / 70%);
+                font-size: 14px;
+                padding-left: 20px;
+                padding-right: 130px;
+            }
+
+            &-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 8px;
+                padding: 10px 25px;
+                background: var(--as-clr-pr-1);
+                border-radius: 16px;
+
+                &:hover {
+                    background: #fff;
+                    color: var(--as-clr-h-1);
+                }
+            }
+            
+        }
+    }
+
+
+    &-bottom {
+        border-top: 1px solid rgba(95, 95, 95, 0.3);
+        max-width: 1060px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 21px 0;
+
+        &-link {
+            .link-elm {
+                color: #acacac;
+                transition: all .5s var(--as-cube-1);
+
+                &:hover {
+                    color: var(--as-clr-pr-1);
+                }
+            }
+        }
+    }
+    
+    &-copyright {
+        color: #acacac;
+
+        span {
+            color: #fff;
+        }
+    }
+    
+    &-make {
+        color: #acacac;
+        i {
+            color: var(--as-clr-pr-1);
+        }
+        a {
+            color: #fff;
+            transition: all .5s var(--as-cube-1);
+
+            &:hover {
+                color: var(--as-clr-pr-1);
+            }
+        }
+    }
+}
+
+
+@keyframes f1bigEmail {
+    0% {
+        box-shadow: 0px 0px 0px 0px rgb(253 63 0);
+    }
+    50% {
+        box-shadow: 0px 0px 27px 0px rgb(253 63 0);
+    }
+    100% {
+        box-shadow: 0px 0px 0px 0px rgb(253 63 0);
+    }
+}
+
+
+/* 
+    footer-1-end
+*/

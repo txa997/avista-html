@@ -29,6 +29,17 @@
         background-color: rgba(255, 255, 255, 0);
         -webkit-mask-image: linear-gradient(to top, #000 10%, rgba(0, 0, 0, 0) 100%);
         mask-image: linear-gradient(to top, #000 10%, rgba(0, 0, 0, 0) 100%);
+
+
+        @media #{$lg} {
+            height: 120px;
+        }
+        @media #{$md} {
+            height: 100px;
+        }
+        @media #{$xs} {
+            height: 60px;
+        }
     }
 
 }

@@ -12,6 +12,15 @@
         grid-template-columns: 2.67fr 1fr;
         margin-right: -50px;
         align-items: start;
+
+        @media #{$xl} {
+            grid-template-columns: 2.5fr 1fr;
+            margin-right: 0;
+        }
+        @media #{$lg,$md,$xs} {
+            grid-template-columns: 1fr;
+            margin-right: 0;
+        }
     }
     &-circle-text {
         position: absolute;
@@ -21,6 +30,10 @@
         border-radius: 50%;
         padding: 16px;
         z-index: 3;
+
+        @media #{$lg,$md,$xs} {
+            display: none;
+        }
 
         .illus {
             position: absolute;
@@ -37,6 +50,15 @@
     &-logo {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr 1fr;
+        }
 
         &-single {
             display: flex;
@@ -150,7 +172,7 @@
         .rocket {
             position: absolute;
             left: 33%;
-            bottom: 22%;
+            bottom: 42%;
         }
     }
 
@@ -182,6 +204,13 @@
             position: relative;
             z-index: 1;
         }
+    }
+
+    &-right {
+        @media #{$lg,$md,$xs} {
+            display: none;
+        }
+     
     }
     
     

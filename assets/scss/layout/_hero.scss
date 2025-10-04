@@ -5,6 +5,11 @@
     &-area {
         border-radius: 0 0  150px 150px;
         border: 12px solid #fff;
+
+        @media #{$md,$xs} {
+            border-radius: 0 0  50px 50px;
+            border: 4px solid #fff;
+        }
     }
 
     &-bg-color {
@@ -46,6 +51,10 @@
         z-index: 1;
         padding: 13px 63px;
 
+        @media #{$xs} {
+            display: none;
+        }
+
         .bg-shape {
             position: absolute;
             top: -2px;
@@ -78,10 +87,23 @@
         justify-content: space-between;
         margin-left: 95px;
         position: relative;
+
+        @media #{$xxxl,$xxl,$xl,$lg,$md} {
+            margin-left: 0px; 
+        }
+        @media #{$xs} {
+            margin-left: 0px; 
+            padding-top: 150px;
+            padding-bottom: 100px;
+        }
     }
 
     &-left {
         display: flex;
+
+        @media #{$xs} {
+            display: none;
+        }
     }
 
     &-copyright {
@@ -154,6 +176,12 @@
 
     &-right {
         margin-top: 50px;
+        max-width: 810px;
+        width: 100%;
+
+        @media #{$xl,$lg,$md,$xs} {
+            max-width: 630px;
+        }
     }
     
 
@@ -173,6 +201,28 @@
             font-size: 150px;
             font-weight: 600;
             line-height: 1.066;
+
+            @media #{$xxxl} {
+                font-size: 130px;
+            }
+            @media #{$xxl} {
+                font-size: 110px;
+            }
+            @media #{$xl} {
+                font-size: 90px;
+            }
+            @media #{$lg} {
+                font-size: 85px;
+            }
+            @media #{$md} {
+                font-size: 70px;
+            }
+            @media #{$xs} {
+                font-size: 50px;
+            }
+            @media #{$sm} {
+                font-size: 60px;
+            }
         }
 
         &-inner {
@@ -182,9 +232,19 @@
             justify-content: space-between;
             margin-top: -100px;
 
+            @media #{$xl,$lg} {
+                margin-top: -40px;
+            }
+            @media #{$md,$xs} {
+                margin-top: 40px;
+                justify-content: end;
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
             .guaranteed {
                 display: flex;
-                gap: 20px;
+                gap: 10px;
                 font-style: italic;
                 color: #fff;
                 font-size: 49px;
@@ -192,8 +252,15 @@
                 align-items: center;
 
                 i {
-                    font-size: 40px;
                     color: var(--as-clr-pr-1);
+                }
+
+                @media #{$xxxl,$xxl,$xl,$lg} {
+                    font-size: 35px;
+                }
+                @media #{$md,$xs} {
+                    font-size: 35px;
+                    margin-top: 0px;
                 }
             }
             
@@ -277,6 +344,17 @@
         height: 100%;
         perspective: 2000px;
         transform-style: preserve-3d;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+        }
+
+        @media #{$xxxl,$xxl,$xl} {
+            left: -16%;
+            width: 700px;
+        }
     }
 }
 

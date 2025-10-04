@@ -59,17 +59,28 @@
     margin-bottom: 0;
     font-size: 54px;
 
+    @media #{$xxxl} {
+        font-size: 50px;
+    }
+
+    @media #{$xxl} {
+        font-size: 48px;
+    }
+
+    @media #{$xl} {
+        font-size: 45px;
+    }
     @media #{$lg} {
-        font-size: 38px;
+        font-size: 42px;
     }
     @media #{$md} {
-        font-size: 35px;
+        font-size: 38px;
     }
     @media #{$xs} {
-        font-size: 30px;
+        font-size: 32px;
     }
     @media #{$sm} {
-        font-size: 33px;
+        font-size: 35px;
     }
 }
 
