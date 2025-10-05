@@ -10,7 +10,7 @@
     
     @media #{$over,$xxxl,$xxl} {
         &::-webkit-scrollbar-thumb {
-            background: var(--sr-clr-pr-2);
+            background: var(--as-clr-pr-1);
         }
 
     }
@@ -39,6 +39,18 @@
         }
         @media #{$xs} {
             height: 60px;
+        }
+    }
+
+}
+
+.as-home-2 {
+    background-color: #F5F5F5;
+
+
+    @media #{$over,$xxxl,$xxl} {
+        &::-webkit-scrollbar-thumb {
+            background: #000;
         }
     }
 

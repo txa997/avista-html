@@ -223,3 +223,60 @@
 /* 
     partner-1-end
 */
+/* 
+    partner-2-start
+*/
+.as-partner-2 {
+    &-area {
+        margin-bottom: -8px;
+    }
+    &-wrap {
+        border-top: 1px solid rgb(10 10 10 / 16%);
+        border-bottom: 1px solid rgb(10 10 10 / 16%);
+        display: flex;
+    }
+
+    &-item {
+        border-right: 1px solid rgb(10 10 10 / 16%);
+        padding: 24px 24px;
+        flex: 0 0 auto;
+
+        @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+            padding: 8px 8px;
+        }
+
+        .logo-elm {
+            border-radius: 12px;
+            height: 132px;
+            width: 264px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .5s var(--as-cube-1);
+            padding: 10px;
+            img {
+                transition: all .5s var(--as-cube-1);
+            }
+
+
+            @media #{$xs} {
+                height: 110px;
+                width: 234px;
+            }
+        }
+
+        &:hover {
+            .logo-elm {
+                background-color: #000;
+                img {
+                    filter: grayscale(1) brightness(0) invert(1); 
+                }
+            }
+        }
+    }
+}
+
+
+/* 
+    partner-2-end
+*/

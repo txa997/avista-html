@@ -388,3 +388,183 @@
 /* 
     hero-1-end
 */
+/* 
+    hero-2-start
+*/
+.as-hero-2 {
+    &-area {
+        padding-bottom: 10px;
+    }
+    &-bg-border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -3;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &-masking {
+        mask-image: url("../img/hero/h2-masking-img.png");
+        -webkit-mask-image: url("../img/hero/h2-masking-img.png");
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        mask-size: 100% 100%;
+        -webkit-mask-size: 100% 100%;
+    }
+
+
+    &-content {
+        max-width: 600px;
+
+        .hero-title {
+            font-size: 80px;
+            font-weight: 600;
+            line-height: 1.05;
+            color: #fff;
+            letter-spacing: -0.02em;
+            margin-bottom: 200px;
+
+            @media #{$xl} {
+                font-size: 70px;
+            }
+            @media #{$lg} {
+                font-size: 65px;
+            }
+            @media #{$md} {
+                font-size: 55px;
+                margin-bottom: 40px;
+            }
+            @media #{$xs} {
+                font-size: 40px;
+                margin-bottom: 40px;
+            }
+            @media #{$sm} {
+                font-size: 45px;
+                margin-bottom: 40px;
+            }
+        }
+
+        .hero-disc {
+            color: #fff;
+            max-width: 400px;
+            margin-bottom: 35px;
+        }
+    }
+
+
+    &-slider {
+        &-item {
+            padding-top: 195px;
+            padding-bottom: 116px;
+
+            @media #{$md,$xs} {
+                padding-bottom: 356px;
+            }
+
+            &-img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -2;
+            }
+        }
+    }
+
+
+    &-video {
+        max-width: 342px;
+        padding: 16px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(6px);
+        position: absolute;
+        bottom: 13%;
+        right: 5%;
+
+        @media #{$md,$xs} {
+            bottom: 3%;
+            right: 3%;
+        }
+
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            padding: 1px;
+            background: linear-gradient(45deg, rgb(199 255 73 / 0%) 60%, rgb(255 255 255) 100%);
+            z-index: -1;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: .7;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            padding: 1px;
+            background: linear-gradient(205deg, rgb(199 255 73 / 0%) 60%, rgb(255 255 255) 100%);
+            z-index: -1;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: .7;
+        }
+  
+
+        .video-elm {
+            height: 180px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .icon {
+                width: 28px;
+                height: 28px;
+                background: #fff;
+                color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                border-radius: 50%;
+                flex: 0 0 auto;
+                transform: rotate(-45deg);
+            }
+        }
+        
+    }
+    
+
+    
+}
+
+
+/* 
+    hero-2-end
+*/

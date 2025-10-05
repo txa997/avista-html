@@ -721,6 +721,33 @@ if ($(".wa_magnetic_1_trigger").length) {
     }
 }
 
+/* 
+	button-2-animation
+*/
+if (document.querySelectorAll(".as-pr-btn-2").length) {
+    document.querySelectorAll(".as-pr-btn-2").forEach(btn => {
+        const icon = btn.querySelector(".icon");
+        const text = btn.querySelector(".text");
+
+        function hoverEnter() {
+            gsap.timeline()
+                .to(icon, { left: "-20%", duration: 0.2, ease: "power4.in" })
+                .to(icon, { left: "calc(100% - 44px)", rotation: -45, duration: 0.2, ease: "power4.in" });
+            gsap.to(text, { x: -35, duration: 0.2, ease: "power4.in" });
+        }
+
+        function hoverLeave() {
+            gsap.timeline()
+                .to(icon, { left: "calc(120% - 44px)", duration: 0.2, ease: "power4.out" })
+                .to(icon, { left: "3%", rotation: 0, duration: 0.2, ease: "power4.out" });
+            gsap.to(text, { x: 0, duration: 0.2, ease: "power4.out" });
+        }
+
+        btn.addEventListener("mouseenter", hoverEnter);
+        btn.addEventListener("mouseleave", hoverLeave);
+    });
+}
+
 
 /* 
 	team-1-animation
@@ -983,6 +1010,23 @@ const paths = document.querySelectorAll('.as-blog-1-left-svg path');
 });
 
 
+/* 
+	portfolio-2-bg-color
+*/
+
+
+gsap.to(".as-portfolio-2-bg-color .circle", {
+	scrollTrigger: {
+	  trigger: ".as-portfolio-2-bg-color",
+	  start: "bottom-=300 bottom",  
+	  end: "bottom bottom",         
+	  scrub: true,
+	  markers: false,
+	},
+	width: "300vh",
+	height: "300vh",
+	ease: "none"
+  });
 
 
 

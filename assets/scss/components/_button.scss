@@ -24,6 +24,32 @@
 }
 
 
+.sr-offcanvas-btn-2 {
+    font-family: var(--as-font-3);
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    padding: 8px;
+    padding-left: 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+    }
+}
+
 
 .as-pr-btn-1 {
     font-family: var(--as-font-1);
@@ -99,6 +125,53 @@
     
 }
 
+
+.as-pr-btn-2 {
+    font-family: var(--as-font-3);
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    background: #000;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 100px;
+    padding: 10px 24px;
+    padding-left: 57px;
+    transition: all 0.6s var(--as-cube-1);
+    position: relative;
+    z-index: 1;
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        border-radius: 50%;
+        overflow: hidden;
+
+        position: absolute;
+        top: 50%;
+        left: calc(3% - 0px);
+        transform: translateY(-50%);
+        will-change: transform;
+        z-index: 1;
+    }
+
+
+    .text {
+        will-change: transform;
+    }
+
+    &:hover {
+        color: #fff;
+    }
+
+}
 
 /* 
     button-end

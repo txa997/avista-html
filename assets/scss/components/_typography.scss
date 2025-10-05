@@ -16,12 +16,29 @@
     margin-bottom: 0;
 }
 
+.as-p-2 {
+    font-family: var(--as-font-1);
+    line-height: 1.555;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--as-clr-p-2);
+    margin-bottom: 0;
+}
+
 .as-h-1 {
     font-family: var(--as-font-1);
     line-height: 1.1111;
     letter-spacing: -0.05em;
     font-weight: 500;
     color: var(--as-clr-h-1);
+    margin-bottom: 0;
+}
+
+.as-h-2 {
+    font-family: var(--as-font-3);
+    line-height: 1.272;
+    font-weight: 500;
+    color: var(--as-clr-h-2);
     margin-bottom: 0;
 }
 
@@ -48,6 +65,43 @@
     }
 }
 
+
+.as-subtitle-2 {
+    font-family: var(--as-font-3);
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    color: var(--as-clr-h-2);
+    margin-bottom: 16px;
+    background: #fff;
+    padding: 2px 20px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        content: "";
+        width: 4px;
+        height: 4px;
+        background: #000;
+        border-radius: 50%;
+        position: absolute;
+        right: 9px;
+    }
+    
+    &::before {
+        content: "";
+        width: 4px;
+        height: 4px;
+        background: #000;
+        border-radius: 50%;
+        position: absolute;
+        left: 9px;
+    }
+}
 
 
 .as-sec-title-1 {
@@ -84,6 +138,48 @@
     }
 }
 
+
+.as-sec-title-2 {
+    font-family: var(--as-font-3);
+    font-weight: 500;
+    color: var(--as-clr-h-2);
+    line-height: 1.083;
+    font-size: 48px;
+    margin-bottom: 0;
+
+    @media #{$xl} {
+        font-size: 45px;
+    }
+    
+    @media #{$lg} {
+        font-size: 42px;
+    }
+    
+    @media #{$md} {
+        font-size: 38px;
+    }
+    
+    @media #{$xs} {
+        font-size: 32px;
+    }
+    
+    @media #{$sm} {
+        font-size: 36px;
+    }
+
+    &:is(.wa_bg_position) {
+        div {
+            background-size: 200% 100%;
+            background-position-x: 100%;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-image: linear-gradient(to right, var(--nm-clr-h-4) 50%, rgba(104, 104, 104, 0.7) 50%);
+            padding-bottom: 7px;
+        }
+    }
+
+}
 
 /* 
     typography-end

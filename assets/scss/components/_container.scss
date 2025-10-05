@@ -11,6 +11,14 @@
     }
 }
 
+@media (min-width: 1400px) {
+    .container{
+        &.as-container-2 {
+            max-width: 1350px;
+        }
+    }
+}
+
 
 
 

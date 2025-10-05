@@ -255,6 +255,56 @@
 /* 
     header-1-end
 */
+/* 
+    header-2-start
+*/
+.as-header-2 {
+    &-area {
+        position: absolute;
+        top: 34px;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+    }
+
+    &-container {
+        max-width: 1790px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    &-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    &-logo {
+        max-width: 160px;
+    }
+
+    &-action-link {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .as-phone-btn-1 {
+            @media #{$xs} {
+                display: none;
+            }            
+            @media #{$sm} {
+                display: inline-flex;
+            }
+        }
+    }
+}
+
+
+/* 
+    header-2-end
+*/
 
 
 
