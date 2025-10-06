@@ -1029,6 +1029,117 @@ gsap.to(".as-portfolio-2-bg-color .circle", {
   });
 
 
+/* 
+	portfolio-2-animation
+*/
+if (window.matchMedia("(min-width: 992px)").matches) {
+
+
+	gsap.to(".as-portfolio-2-pin", {
+		scrollTrigger: {
+			trigger: ".as-portfolio-2-height",
+			start: "top 10%", 
+			end: "bottom 85%",
+			pin: ".as-portfolio-2-pin", 
+			pinSpacing: false,
+			markers: false
+		}
+	});
+
+
+	var portfolio2ani23 = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as-portfolio-2-sec-title",
+			start: "bottom-=300 bottom",  
+			end: "bottom bottom",      
+			toggleActions: "play none none reverse",
+			scrub: true,
+			markers: true,
+		},
+	});
+
+	portfolio2ani23.from(".as-portfolio-2-main-wrap", {
+		scale: .25,
+		yPercent: -55,
+		x: 40,
+	});
+	
+
+	var portfolio2ani = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as-portfolio-2-height",
+			start: "top 10%",
+			end: "bottom bottom",
+			toggleActions: "play none none reverse",
+			scrub: true,
+			markers: false,
+		},
+	});
+
+
+	
+	portfolio2ani.to(".as-portfolio-2-item:nth-of-type(1) .as-portfolio-2-item-content", {
+		opacity: 0,
+		duration: .5,
+	});
+	portfolio2ani.to(".as-portfolio-2-item:nth-of-type(1)", {
+		height: 0,
+	});	
+	portfolio2ani.to(".as-portfolio-2-sm-item-scroll", {
+		y: -488,
+	},"<");
+	portfolio2ani.to(".as-portfolio-2-item:nth-of-type(2) .as-portfolio-2-item-content", {
+		opacity: 0,
+		duration: .5,
+	});
+	portfolio2ani.to(".as-portfolio-2-item:nth-of-type(2)", {
+		height: 0,
+	});
+	portfolio2ani.to(".as-portfolio-2-sm-item-scroll", {
+		y: -976,
+	},"<");
+	// portfolio2ani.to(".as-portfolio-2-item:nth-of-type(3) .as-portfolio-2-item-content", {
+	// 	opacity: 0,
+	// 	duration: .5,
+	// });
+	// portfolio2ani.to(".as-portfolio-2-item:nth-of-type(3)", {
+	// 	height: 0,
+	// });
+
+	
+	var portfolio2ani2 = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as-portfolio-2-height",
+			start: "top 40%",
+			end: "bottom bottom",
+			toggleActions: "play none none reverse",
+			markers: false,
+		},
+	});
+
+	portfolio2ani2.from(".as-portfolio-2-sm-item", {
+		opacity: 0,
+		duration: .7,
+	});
+	
+	// var portfolio2ani3 = gsap.timeline({
+	// 	scrollTrigger: {
+	// 		trigger: ".as-portfolio-2-height",
+	// 		start: "top 10%",
+	// 		end: "bottom bottom",
+	// 		toggleActions: "play none none reverse",
+	// 		scrub: true,
+	// 		markers: true,
+	// 	},
+	// });
+
+	// portfolio2ani3.to(".as-portfolio-2-sm-item-scroll", {
+	// 	y: -976,
+	// });
+	
+}
+
+
 
 /* 
 	price-4-hover-active
