@@ -206,5 +206,123 @@
 
 
 /* 
+    process-1-end
+*/
+/* 
+    process-2-start
+*/
+.as-process-2 {
+    &-sec-title {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .as-subtitle-2 {
+            flex: 0 0 auto;
+            gap: 0 40px;
+        }
+
+        .as-sec-title-2 {
+            max-width: 870px;
+        }
+        
+    }
+
+    &-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        @media #{$md} {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+        @media #{$sm} {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &::after {
+            content: "";
+            width: 120%;
+            height: 1px;
+            background-color: #C6C6C6;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media #{$xxl,$xl,$lg} {
+                width: 100%;
+            }
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+
+
+    }
+    
+
+    &-item {
+        padding: 44px 32px;
+        padding-bottom: 55px;
+        border-left: 1px solid #C6C6C6;
+        z-index: 1;
+
+        @media #{$xl,$lg} {
+            padding: 44px 22px;
+        }
+
+        @media #{$md,$xs} {
+            padding: 44px 22px;
+            border-bottom: 1px solid #C6C6C6;
+        }
+
+        .title {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .icon {
+            margin-bottom: 45px;
+        }
+
+        .disc {
+            font-size: 16px;
+        }
+        
+
+        .number {
+            width: 52px;
+            height: 52px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 400;
+            position: absolute;
+            bottom: -26px;
+            left: -26px;
+            z-index: 2;
+
+            &::after {
+                content: "";
+                width: 64px;
+                height: 64px;
+                border: 1px solid #C6C6C6;
+                position: absolute;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+
+/* 
     process-2-end
 */

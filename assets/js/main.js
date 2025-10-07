@@ -1054,7 +1054,7 @@ if (window.matchMedia("(min-width: 992px)").matches) {
 			end: "bottom bottom",      
 			toggleActions: "play none none reverse",
 			scrub: true,
-			markers: true,
+			markers: false,
 		},
 	});
 
@@ -1140,7 +1140,39 @@ if (window.matchMedia("(min-width: 992px)").matches) {
 }
 
 
-
+// services-2-img
+if (window.matchMedia("(min-width: 1200px)").matches) { 
+if ($(".as-services-2-item").length) {
+	const featureItems = document.querySelectorAll(".as-services-2-item");
+  
+	featureItems.forEach((featureItem) => {
+	  const flair = featureItem.querySelector(".cursor-follow");
+  
+	  // Initial state
+	  gsap.set(flair, { scale: 0, opacity: 0, xPercent: 50, yPercent: -50 });
+  
+	  // Prepare smooth cursor motion
+	  const xTo = gsap.quickTo(flair, "x", { duration: 0.2, ease: "power2.out" });
+	  const yTo = gsap.quickTo(flair, "y", { duration: 0.2, ease: "power2.out" });
+  
+	  featureItem.addEventListener("mouseenter", () => {
+		gsap.to(flair, { scale: 1, opacity: 1, duration: 0.3, ease: "power3.out" });
+	  });
+  
+	  featureItem.addEventListener("mousemove", (e) => {
+		const rect = featureItem.getBoundingClientRect();
+		const x = e.clientX - rect.left;
+		const y = e.clientY - rect.top;
+		xTo(x);
+		yTo(y);
+	  });
+  
+	  featureItem.addEventListener("mouseleave", () => {
+		gsap.to(flair, { scale: 0, opacity: 0, duration: 0.3, ease: "power3.in" });
+	  });
+	});
+  } 
+}
 /* 
 	price-4-hover-active
 */

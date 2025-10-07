@@ -45,3 +45,46 @@
 /* 
     marquee-text-1-end
 */
+/* 
+    marquee-text-2-start
+*/
+.as-marquee-text-2 {
+    &-wrap {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    &-text {
+        font-size: 140px;
+        font-weight: 700;
+        color: #E7E7E7;
+        flex: 0 0 auto;
+        line-height: 1;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+
+        @media #{$lg,$md} {
+            font-size: 100px;
+        }
+        @media #{$xs} {
+            font-size: 50px;
+        }
+
+        i {
+            font-size: 95px;
+            @media #{$lg,$md} {
+                font-size: 60px;
+            }
+            @media #{$xs} {
+                font-size: 30px;
+            }
+    
+        }
+    }
+}
+
+/* 
+    marquee-text-2-end
+*/
