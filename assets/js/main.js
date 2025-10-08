@@ -1231,8 +1231,18 @@ if ($('.s4_slider_active').length) {
 
 	});
 
+}
 
-
+/* 
+	blog-2-slider-function
+*/
+if ($('.b2_slider_active').length) {
+	var b2_slider_active = new Swiper(".b2_slider_active", {
+		loop: true,
+		speed: 600,
+		spaceBetween: 32,
+        slidesPerView: "auto",
+	});
 
 }
 

@@ -1,0 +1,128 @@
+
+/* 
+    trust-2-start
+*/
+.as-trust-2 {
+    &-area {
+        margin: 0 24px;
+        border-radius: 20px;
+        padding-top: 140px;
+    }
+
+    &-content {
+        max-width: 450px;
+        margin-bottom: 400px;
+
+        @media #{$lg,$md,$xs} {
+            margin-bottom: 200px;
+        }
+    }
+    
+    &-comment {
+        display: inline-block;
+        font-size: 26px;
+        font-weight: 400;
+        font-style: italic;
+        margin-bottom: 12px;
+
+        span {
+            background-color: #fff;
+            padding: 9px 18px;
+
+            &:first-child {
+                border-radius: 8px 8px 0 0;
+            }
+
+            
+            &:last-child {
+                border-radius: 0 0 8px 8px;
+            }
+
+            &:nth-child(2) {
+                display: block;
+                border-radius: 0 0  8px 0;
+            }
+        }
+    }
+
+
+    &-author {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        .content-wrap {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 5px 15px;
+        }
+
+        .img-elm {
+            width: 54px;
+            height: 60px;
+            border-radius: 5px;
+            flex: 0 0 auto;
+            display: flex;
+        }
+
+        .name {
+            font-size: 20px;
+        }
+
+        .bio {
+            font-size: 15px;
+        }
+    }
+
+    &-marquee {
+        margin-bottom: -34px;
+
+        &-wrap {
+            display: flex;
+            margin-right: 80px;
+
+            .text-elm {
+                display: flex;
+                align-items: center;
+                font-size: 200px;
+                color: #fff;
+                flex: 0 0 auto;
+                gap: 80px;
+                letter-spacing: -0.02em;
+                line-height: .9;
+
+                i {
+                    font-size: 131px;
+                }
+
+                @media #{$xxl} {
+                    font-size: 180px; 
+                }
+                @media #{$xl} {
+                    font-size: 160px; 
+                }
+                @media #{$lg} {
+                    font-size: 140px; 
+                }
+                @media #{$md} {
+                    font-size: 120px; 
+                }
+                @media #{$xs} {
+                    font-size: 80px; 
+                }
+                @media #{$sm} {
+                    font-size: 100px; 
+                }
+            }
+        }
+        
+    }
+
+    
+    
+}
+/* 
+    trust-2-end
+*/
+
+
