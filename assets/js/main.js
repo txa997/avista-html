@@ -39,10 +39,7 @@ $('a[href^="#"]').on('click', function (e) {
 gsap.config({
 	nullTargetWarn: false,
 });
-
-if($(".sr-home-2").length) {
-    gsap.registerPlugin(MotionPathPlugin);
-}
+PIXI.utils.skipHello(); 
 
 /* 
 	sticky-header-function
@@ -156,15 +153,6 @@ $(".as-header-1-menu-toggle-btn").on("click", function () {
 */
 
 window.addEventListener('load', function(){
-
-	let preloader = document.querySelector(".nm-preloader");
-	if (preloader) {
-		preloader.classList.add("preloaded");
-		setTimeout(function () {
-				preloader.remove();
-		}, 1000 ) ;
-
-	}
 
 
 	if (document.querySelectorAll(".pg-preloader").length) {
@@ -400,10 +388,187 @@ function afterPreloader() {
 		});
 
 
+		/* 
+			data-wa-split-1
+		*/
+		if($('[data-wa-split-1]').length) {
+			var dataWaSplit1 = $('[data-wa-split-1]');
+			if(dataWaSplit1.length == 0) return; gsap.registerPlugin(SplitText); dataWaSplit1.each(function(index, el) {
+				el.split = new SplitText(el, { 
+				type: "lines,words",
+				linesClass: "split-line"
+				});
+			});
+		}
+
+
 	}	
 
 
-    
+	/* 
+		hero-2-slider-function
+	*/
+	if ($('.as_h2_slider_active').length) {
+		var as_h2_slider_active = new Swiper(".as_h2_slider_active", {
+			loop: true,
+			speed: 1000,
+
+			effect: "fade",
+			fadeEffect: {
+				crossFade: true
+			},
+
+
+			// autoplay: {
+			//     delay: 5000,
+			// },
+
+			// navigation: {
+			// 	nextEl: ".pg_h2_next",
+			// 	prevEl: ".pg_h2_prev",
+			// },
+
+			// pagination: {
+			// 	el: ".pg_h2_pagination",
+			// 	clickable: true,
+			// },
+
+		});
+
+	}
+
+	if (document.querySelector(".as_h2_slider_active-")) {
+		const WA_DISP_IMG = "assets/img/hero/3d-grey.webp";
+		const waTextures = {
+			waDisp: PIXI.Texture.from(WA_DISP_IMG)
+		};
+
+		initGlassyEffect();
+
+		function waRunGlassyEffectOnSlide(swiper) {
+			document.querySelectorAll(".wa-pixi-wrap").forEach(el => el.remove());
+			document.querySelectorAll(".as-hero-2-slider-item-img img").forEach(img => { img.style.opacity = "1"; });
+
+			const activeSlide = swiper.slides[swiper.activeIndex];
+			if (!activeSlide) return;
+
+			const imgEl = activeSlide.querySelector(".as-hero-2-slider-item-img img");
+			const imgWrap = activeSlide.querySelector(".as-hero-2-slider-item-img");
+			if (!imgEl || !imgWrap) return;
+
+			const computedPos = window.getComputedStyle(imgWrap).position;
+			if (computedPos === "static") imgWrap.style.position = "relative";
+
+			const oldWrap = imgWrap.querySelector(".wa-pixi-wrap");
+			if (oldWrap) oldWrap.remove();
+
+			const wrap = document.createElement("div");
+			wrap.className = "wa-pixi-wrap";
+			wrap.style.position = "absolute";
+			wrap.style.inset = "0";
+			wrap.style.zIndex = "1";
+			wrap.style.pointerEvents = "none"; 
+
+			const rect = imgWrap.getBoundingClientRect();
+			const w = Math.max(1, Math.round(rect.width));
+			const h = Math.max(1, Math.round(rect.height));
+
+			imgEl.style.opacity = "0";
+			imgWrap.appendChild(wrap);
+
+			const app = new PIXI.Application({
+				width: w,
+				height: h,
+				transparent: true,
+				autoDensity: true,
+				resolution: window.devicePixelRatio,
+			});
+			app.view.style.pointerEvents = "none";
+			wrap.appendChild(app.view);
+
+			const imgURL = imgEl.getAttribute("src");
+			const heroTexture = PIXI.Texture.from(imgURL);
+
+			if (heroTexture.baseTexture.valid) {
+				renderSlide(app, heroTexture, waTextures.waDisp, w, h, wrap, imgEl);
+			} else {
+				heroTexture.baseTexture.once('loaded', () => {
+					renderSlide(app, heroTexture, waTextures.waDisp, w, h, wrap, imgEl);
+				});
+			}
+		}
+
+		function renderSlide(app, heroTexture, dispTexture, w, h, wrap, imgEl) {
+			const stageContainer = new PIXI.Container();
+			app.stage.addChild(stageContainer);
+
+			const hero = new PIXI.Sprite(heroTexture);
+			stageContainer.addChild(hero);
+
+			const texRatio = hero.texture.width / hero.texture.height;
+			const contRatio = w / h;
+
+			if (contRatio > texRatio) {
+				hero.width = w;
+				hero.height = w / texRatio;
+			} else {
+				hero.height = h;
+				hero.width = h * texRatio;
+			}
+
+			hero.x = (w - hero.width) / 2;
+			hero.y = (h - hero.height) / 2;
+
+			const dispSprite = new PIXI.Sprite(dispTexture);
+			dispSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+			const dispFilter = new PIXI.filters.DisplacementFilter(dispSprite);
+			dispSprite.scale.set(2);
+			app.stage.addChild(dispSprite);
+			stageContainer.filters = [dispFilter];
+
+			gsap.fromTo(
+				dispFilter.scale,
+				{ x: -400, y: -400 },
+				{ x: 0, y: 0, duration: 2, ease: "expo.out" }
+			);
+
+			app.ticker.add(() => {
+				dispSprite.x += 1;
+				dispSprite.y += 1;
+			});
+
+			wrap._waDestroy = () => {
+				try { app.destroy(true, { children: true, texture: false, baseTexture: false }); } catch(e){}
+				if (wrap.parentNode) wrap.parentNode.removeChild(wrap);
+				imgEl.style.opacity = "1";
+			};
+		}
+
+		function initGlassyEffect() {
+			const swiperInstance =
+				(typeof pg_h2_slider_active !== "undefined" && pg_h2_slider_active) ||
+				document.querySelector(".as_h2_slider_active").swiper;
+
+			if (swiperInstance) {
+				requestAnimationFrame(() => waRunGlassyEffectOnSlide(swiperInstance));
+
+				swiperInstance.on("slideChangeTransitionStart", () => {
+					waRunGlassyEffectOnSlide(swiperInstance);
+				});
+
+				window.addEventListener("resize", () => {
+					waRunGlassyEffectOnSlide(swiperInstance);
+				});
+
+				swiperInstance.on("destroy", () => {
+					document.querySelectorAll(".wa-pixi-wrap").forEach(w => {
+						if (w._waDestroy) w._waDestroy();
+						else w.remove();
+					});
+				});
+			}
+		}
+	}
 
 
 

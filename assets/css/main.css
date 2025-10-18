@@ -3225,6 +3225,34 @@ input:focus::placeholder, textarea:focus::placeholder {
   height: 100%;
   z-index: -2;
 }
+.as-hero-2-slider .swiper-slide .as-hero-2-content .hero-title .split-line {
+  overflow: hidden;
+}
+.as-hero-2-slider .swiper-slide .as-hero-2-content .hero-title .split-line > div {
+  transform: translateY(100%);
+  transition: all 0.8s var(--as-cube-1);
+  transition-delay: 0s;
+}
+.as-hero-2-slider .swiper-slide .as-hero-2-content .hero-btn, .as-hero-2-slider .swiper-slide .as-hero-2-content .hero-disc {
+  transform: translateY(100%);
+  transition: all 0.8s var(--as-cube-1);
+  transition-delay: 0s;
+  opacity: 0;
+}
+.as-hero-2-slider .swiper-slide:is(.swiper-slide-active) .as-hero-2-content .hero-title .split-line > div {
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+.as-hero-2-slider .swiper-slide:is(.swiper-slide-active) .as-hero-2-content .hero-btn {
+  transform: translateY(0%);
+  transition-delay: 1s;
+  opacity: 1;
+}
+.as-hero-2-slider .swiper-slide:is(.swiper-slide-active) .as-hero-2-content .hero-disc {
+  transform: translateY(0%);
+  transition-delay: 0.7s;
+  opacity: 1;
+}
 .as-hero-2-video {
   max-width: 342px;
   padding: 16px;
