@@ -80,6 +80,7 @@ CSS INDEX
   --as-clr-p-1: #3E3E3E;
   --as-clr-p-2: #515151;
   --as-cube-1: cubic-bezier(0.23, 1, 0.32, 1);
+  --as-cube-2: all .3s cubic-bezier(.44,0,.56,1)0s;
 }
 
 body {
@@ -7837,6 +7838,19 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 /* 
     home-css-end
+*/
+/* 
+    home-1-dark-start
+*/
+.as-home-1:is(.has-dark) {
+  background-color: #050505;
+}
+.as-home-1:is(.has-dark) .as-hero-1-area {
+  border-color: #050505;
+}
+
+/* 
+    home-1-dark-end
 */
 
 /*# sourceMappingURL=main.css.map */

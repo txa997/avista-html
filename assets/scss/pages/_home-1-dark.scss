@@ -1,0 +1,23 @@
+/* 
+    home-1-dark-start
+*/
+.as-home-1 {
+    &:is(.has-dark) {
+        background-color: #050505;
+
+
+
+
+
+        .as-hero-1-area {
+            border-color: #050505;
+        }
+
+
+
+
+    }
+}
+/* 
+    home-1-dark-end
+*/
