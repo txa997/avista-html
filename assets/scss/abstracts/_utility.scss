@@ -188,3 +188,11 @@
 .text-right {
     text-align: right;
 }
+
+.wa_parallax_img {
+    will-change: object-position;
+}
+
+.wa_parallax_bg {
+    will-change: background-position;
+}

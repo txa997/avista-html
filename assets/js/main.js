@@ -663,6 +663,7 @@ $('.wa_tilt').each(function () {
 	});
 });
 
+
 // wa-bg-parallax
 gsap.utils.toArray(".wa_parallax_bg").forEach(element => {
 	gsap.fromTo(
@@ -673,8 +674,25 @@ gsap.utils.toArray(".wa_parallax_bg").forEach(element => {
 			ease: "none",
 			scrollTrigger: {
 				trigger: element,
-				scrub: 2,    
+				scrub: true,    
 				markers: false,  
+			},
+		}
+	);
+});
+
+// wa-parallax-img
+gsap.utils.toArray(".wa_parallax_img").forEach(element => {
+	gsap.fromTo(
+		element,
+		{ objectPosition: "50% 0%" }, 
+		{ 
+			objectPosition: "50% 100%", 
+			ease: "none",
+			scrollTrigger: {
+				trigger: element,
+				scrub: true,    
+				markers: false,     
 			},
 		}
 	);
@@ -832,10 +850,10 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
 		x: -150,
 	},"<");	
 	partner1ani.from(".as-partner-1-cloud .rocket", {
-		y: 200,
+		y: 300,
 		x: 100,
 		rotation: -30,
-	},"<50%");
+	},"<10%");
 	
 	
 	
@@ -983,6 +1001,33 @@ if (window.matchMedia("(min-width: 992px)").matches) {
 
 	portfolio1title.to(".as-portfolio-1-sec-title .big-title", {
 		scale: .5,
+	});
+	
+
+	
+	
+}
+
+
+/* 
+	testimonial-2-animation
+*/
+if (window.matchMedia("(min-width: 992px)").matches) {
+
+
+	var portfolio1title = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as_t1_item",
+			start: "top 90%",
+			end: "bottom top",
+			toggleActions: "play none none reverse",
+			scrub: true,
+			markers: false,
+		},
+	});
+
+	portfolio1title.to(".as_t1_item", {
+		yPercent: -30,
 	});
 	
 
@@ -1149,14 +1194,14 @@ if ($(".as-services-2-item").length) {
 	  const flair = featureItem.querySelector(".cursor-follow");
   
 	  // Initial state
-	  gsap.set(flair, { scale: 0, opacity: 0, xPercent: 50, yPercent: -50 });
+	  gsap.set(flair, { scale: 0, opacity: 0, xPercent: -50, yPercent: -50 });
   
 	  // Prepare smooth cursor motion
-	  const xTo = gsap.quickTo(flair, "x", { duration: 0.2, ease: "power2.out" });
-	  const yTo = gsap.quickTo(flair, "y", { duration: 0.2, ease: "power2.out" });
+	  const xTo = gsap.quickTo(flair, "x", { duration: 0.2, ease: "power1.out", });
+	  const yTo = gsap.quickTo(flair, "y", { duration: 0.2, ease: "power1.out", });
   
 	  featureItem.addEventListener("mouseenter", () => {
-		gsap.to(flair, { scale: 1, opacity: 1, duration: 0.3, ease: "power3.out" });
+		gsap.to(flair, { scale: 1, opacity: 1, duration: 0.2, ease: "power1.out", });
 	  });
   
 	  featureItem.addEventListener("mousemove", (e) => {
@@ -1168,7 +1213,7 @@ if ($(".as-services-2-item").length) {
 	  });
   
 	  featureItem.addEventListener("mouseleave", () => {
-		gsap.to(flair, { scale: 0, opacity: 0, duration: 0.3, ease: "power3.in" });
+		gsap.to(flair, { scale: 0, opacity: 0, duration: 0.2, ease: "power1.out", });
 	  });
 	});
   } 

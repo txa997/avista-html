@@ -2,6 +2,9 @@
     price-1-start
 */
 .as-price-1 {
+    &-area {
+        padding-bottom: 30vh;
+    }
     &-sec-title {
         .sec-disc {
             max-width: 409px;

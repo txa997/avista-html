@@ -319,6 +319,14 @@
                 border-radius: 50%;
             }
         }
+
+        &:hover {
+            .icon {
+                img {
+                    animation: swing 1s ;
+                }
+            }
+        }
     }
 }
 

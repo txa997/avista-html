@@ -542,6 +542,7 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            transition: all .5s var(--as-cube-1);
 
             .icon {
                 width: 28px;
@@ -555,6 +556,16 @@
                 border-radius: 50%;
                 flex: 0 0 auto;
                 transform: rotate(-45deg);
+                transition: all .5s var(--as-cube-1);
+            }
+
+            &:hover {
+                color: var(--as-clr-pr-1);
+
+                .icon {
+                    transform: rotate(0);
+                    color: var(--as-clr-pr-1);
+                }
             }
         }
         

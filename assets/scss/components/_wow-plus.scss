@@ -283,6 +283,42 @@
   animation-duration: 800ms;
   animation-timing-function: var(--as-cube-1);
 }
+
+
+
+@-webkit-keyframes slideInRight2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(200px);
+    transform: translateX(200px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(200px);
+    -ms-transform: translateX(200px);
+    transform: translateX(200px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.slideInRight2 {
+  -webkit-animation-name: slideInRight2;
+  animation-name: slideInRight2;
+}
+
 /* 
     wow-plus-end
 */

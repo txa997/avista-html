@@ -306,6 +306,7 @@
             will-change: transform, opacity;
             transform: translate3d(0, 0, 0);
             pointer-events: none;
+            pointer-events: none;
 
             @media #{$lg,$md,$xs} {
                 display: none;
