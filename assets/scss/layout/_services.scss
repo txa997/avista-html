@@ -326,3 +326,151 @@
 /* 
     services-2-end
 */
+/* 
+    services-3-start
+*/
+
+.as-services-3 {
+    &-area {
+        background: #000;
+    }
+
+    &-wrap {
+        display: grid;
+        gap: 50px;
+        grid-template-columns: 1fr 2.1fr;
+    }
+
+    &-left {
+        .as-subtitle-3 {
+            color: #fff;
+        }
+        
+    }
+
+    &-illus {
+        margin-left: -120px;
+        margin-top: 200px;
+    }
+
+    &-accordion {
+        &-item {
+            border-bottom: 1px solid #333333;
+            .item-title {
+                width: 100%;
+                text-align: left;
+                display: flex;
+                align-items: center;
+                background: transparent;
+                padding: 35px 0;
+                gap: 30px;
+                line-height: 1.2;
+
+                .number {
+                    font-size: 22px;
+                    font-family: var(--as-font-2);
+                    color: var(--as-clr-pr-3);
+                    font-weight: 400;
+                    align-self: flex-start;
+                    margin-top: 20px;
+
+                    .just-number {
+                        color: #fff;
+                    }
+                }
+
+                .text {
+                    font-size: 100px;
+                    font-weight: 700;
+                    background: linear-gradient(90deg, #333333        , transparent);
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transition: var(--as-cube-2);
+                }
+
+
+                .icon {
+                    width: 60px;
+                    height: 60px;
+                    flex: 0 0 auto;
+                    border-radius: 50%;
+                    border: 1.5px solid #fff;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 40px;
+                    font-weight: 200;
+                    margin-left: auto;
+                    transition: var(--as-cube-2);
+                }
+
+                &:is(:not(.collapsed)) {
+                    .text {
+                        -webkit-text-fill-color: #fff;
+                    }
+                    .icon {
+                        transform: rotate(180deg);
+                    }
+                }
+    
+                &:is(.collapsed) {
+                    &:hover {
+
+
+                    }
+                }
+            }
+
+            .item-wrap {
+                margin-left: auto;
+                max-width: 990px;
+                display: grid;
+                gap: 50px;
+                grid-template-columns: 1.45fr 1fr;
+                align-items: center;
+                padding-bottom: 45px;
+
+                .item-img {
+                    border-radius: 40px;
+                    height: 225px;
+                }
+    
+                .item-disc {
+                    font-size: 18px;
+                    color: #909090;
+                    margin-bottom: 45px;
+                }
+
+
+                .item-tags {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 15px;
+
+                    .link-elm {
+                        color: #fff;
+                        font-weight: 400;
+                        border: 1px solid #909090;
+                        border-radius: 100px;
+                        padding: 5px 20px;
+                        transition: var(--as-cube-2);
+
+                        &:hover {
+                            background-color: var(--as-clr-pr-3);
+                            border-color: transparent;
+                        }
+                    }
+                }
+                
+            }
+            
+
+        }
+    }
+}
+
+
+/* 
+    services-3-end
+*/

@@ -173,6 +173,125 @@
 
 }
 
+.as-pr-btn-3 {
+    font-family: var(--as-font-1);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    font-size: 15px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 10px;
+    background: #0a0a0a;
+    border-radius: 100px;
+    color: #fff;
+    padding: 11px 31px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    .icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        i {
+            transform: rotate(-45deg);
+            transition: var(--as-cube-2);
+
+            &:nth-child(2) {
+                position: absolute;
+                transform: rotate(-45deg) translate(-20px, 0px);
+            }
+        }
+    }
+
+    .text {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+
+        &::after {
+            top: 0;
+            left: 0;
+            opacity: 0;
+            width: 100%;
+            display: block;
+            transition: var(--as-cube-2);
+            position: absolute;
+            content: attr(data-back);
+            transform: translateY(100%);
+        }
+    
+        &::before {
+            top: 0;
+            left: 0;
+            opacity: 1;
+            display: block;
+            transition: var(--as-cube-2);
+            position: relative;
+            content: attr(data-front);
+            transform: translateY(0);
+        }
+    }
+
+
+    &::after {
+        content: "";
+        background-image: linear-gradient(90deg, #0a0a0a, var(--as-clr-pr-3) 50%, #0a0a0a);
+        position: absolute;
+        inset: 0%;
+        transform: translate(-100%);
+        z-index: -1;
+    }
+
+    &:hover {
+        color: #fff;
+        &::after {
+            animation: asBtn3kf 1s ;
+        }
+
+        .icon {
+            i {
+                &:nth-child(1) {
+                    transform: rotate(-45deg) translate(20px, 0px);
+                }    
+                &:nth-child(2) {
+                    transform: rotate(-45deg) translate(0px, 0px);
+                }
+            }
+        }
+
+        .text {
+            &::after {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+            &::before {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+        }
+    }
+}
+
+
+@keyframes asBtn3kf {
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.as-search-btn-2 {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    transition: var(--as-cube-2);
+    &:hover {
+        color: var(--as-clr-pr-3);
+    }
+}
 /* 
     button-end
 */

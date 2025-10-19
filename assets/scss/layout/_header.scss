@@ -306,6 +306,146 @@
     header-2-end
 */
 
+/* 
+    header-3-start
+*/
+.as-header-3 {
+    &-area {
+        position: fixed;
+        left: 0;
+        top: 778px;
+        width: 100%;
+        z-index: 3;
+
+        @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+            top: unset;
+            bottom: 30px;
+        }
+    }
+
+    &-wrap {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 45px;
+        padding: 15px 20px;
+        border-radius: 100px;
+        position: relative;
+        z-index: 1;
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: rgb(1 20 76 / 80%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 100px;
+            border: 1px solid rgb(255 255 255 / 20%);
+            backdrop-filter: blur(11px);
+        }
+    }
+
+    &-logo {
+        background-color: #fff;
+        border-radius: 50%;
+        padding: 5px;
+    }
+
+    &-action-link {
+        gap: 30px;
+        display: flex;
+        align-items: center;
+        .as-pr-btn-3 {
+            padding: 17px 49px;
+
+            @media #{$xs} {
+                display: none;
+            }
+            @media #{$sm} {
+                display: inline-flex;
+            }
+        }
+
+        .sr-offcanvas-btn-1  {
+            border-radius: 50%;
+        }
+    }
+}
+
+
+.as-main-navigation {
+    &:is(.as-header-3-menu) {
+        .navbar-nav {
+            gap: 0;
+            li {
+                a {
+                    color: #fff;
+                    padding: 12px 32px;
+
+                    @media #{$xxxl,$xxl,$xl} {
+                        padding: 10px 15px;
+                    }
+
+                    &::before {
+                        display: none !important;
+                    }
+                    &::after {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, #ffffff, #000000);
+                        border-radius: 100px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: -1;
+                        transition: var(--as-cube-2);
+                        opacity: 0;
+                        transform: translateX(5px);
+                    }
+                }
+
+                &:hover {
+                    > a {
+                        &::after {
+                            opacity: 1;
+                            transform: translateX(0px);
+                        }
+                    }
+                }
+
+                .dropdown-menu {
+                    top: unset;
+                    bottom: 100%;
+                    transform-origin: bottom;
+                    background-color: rgba(1, 20, 76,);
+
+                    li {
+                        &:hover {
+                            > a {
+                                transform: unset;
+                            }
+                        }
+
+
+                        .dropdown-menu {
+                            top: unset;
+                            bottom: 0%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 
+    header-3-end
+*/
+
 
 
 

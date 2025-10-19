@@ -76,6 +76,20 @@ function waStickyHeader() {
 waStickyHeader();
 
 /* 
+	header-3-sticky-function
+*/
+$(window).scroll(function() {
+	if ($(this).scrollTop() > 100){
+	$('.as-header-3-area').addClass('has-sticky');
+	}
+	else{
+	$('.as-header-3-area').removeClass('has-sticky');
+	}
+});
+
+
+
+/* 
 	offcanvas-function
 */
 
