@@ -5793,10 +5793,10 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .as-portfolio-2-big-item {
   width: 100%;
-  height: 100vh;
+  height: 840px;
 }
 .as-portfolio-2-item {
-  height: 840px;
+  height: 100%;
   padding: 0 20px;
   display: flex;
   align-items: center;

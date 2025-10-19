@@ -1234,36 +1234,33 @@ const paths = document.querySelectorAll('.as-blog-1-left-svg path');
 });
 
 
-/* 
-	portfolio-2-bg-color
-*/
-
-
-gsap.to(".as-portfolio-2-bg-color .circle", {
-	scrollTrigger: {
-	  trigger: ".as-portfolio-2-bg-color",
-	  start: "bottom-=300 bottom",  
-	  end: "bottom bottom",         
-	  scrub: true,
-	  markers: false,
-	},
-	width: "300vh",
-	height: "300vh",
-	ease: "none"
-  });
 
 
 /* 
 	portfolio-2-animation
 */
-if (window.matchMedia("(min-width: 992px)").matches) {
+if (window.matchMedia("(min-width: 1400px)").matches) {
+
+	
+	gsap.to(".as-portfolio-2-bg-color .circle", {
+		scrollTrigger: {
+		trigger: ".as-portfolio-2-bg-color",
+		start: "bottom-=300 bottom",  
+		end: "bottom bottom",         
+		scrub: true,
+		markers: false,
+		},
+		width: "300vh",
+		height: "300vh",
+		ease: "none"
+	});
 
 
 	gsap.to(".as-portfolio-2-pin", {
 		scrollTrigger: {
 			trigger: ".as-portfolio-2-height",
 			start: "top 10%", 
-			end: "bottom 85%",
+			end: "2900px",
 			pin: ".as-portfolio-2-pin", 
 			pinSpacing: false,
 			markers: false
@@ -1274,8 +1271,8 @@ if (window.matchMedia("(min-width: 992px)").matches) {
 	var portfolio2ani23 = gsap.timeline({
 		scrollTrigger: {
 			trigger: ".as-portfolio-2-sec-title",
-			start: "bottom-=300 bottom",  
-			end: "bottom bottom",      
+			start: "bottom+=400 bottom",  
+			end: "bottom +100px",      
 			toggleActions: "play none none reverse",
 			scrub: true,
 			markers: false,
@@ -1284,7 +1281,7 @@ if (window.matchMedia("(min-width: 992px)").matches) {
 
 	portfolio2ani23.from(".as-portfolio-2-main-wrap", {
 		scale: .25,
-		yPercent: -55,
+		yPercent: -70,
 		x: 40,
 	});
 	
@@ -1293,7 +1290,7 @@ if (window.matchMedia("(min-width: 992px)").matches) {
 		scrollTrigger: {
 			trigger: ".as-portfolio-2-height",
 			start: "top 10%",
-			end: "bottom bottom",
+			end: "2900px",
 			toggleActions: "play none none reverse",
 			scrub: true,
 			markers: false,
@@ -1322,13 +1319,7 @@ if (window.matchMedia("(min-width: 992px)").matches) {
 	portfolio2ani.to(".as-portfolio-2-sm-item-scroll", {
 		y: -976,
 	},"<");
-	// portfolio2ani.to(".as-portfolio-2-item:nth-of-type(3) .as-portfolio-2-item-content", {
-	// 	opacity: 0,
-	// 	duration: .5,
-	// });
-	// portfolio2ani.to(".as-portfolio-2-item:nth-of-type(3)", {
-	// 	height: 0,
-	// });
+
 
 	
 	var portfolio2ani2 = gsap.timeline({
@@ -1340,26 +1331,26 @@ if (window.matchMedia("(min-width: 992px)").matches) {
 			markers: false,
 		},
 	});
-
 	portfolio2ani2.from(".as-portfolio-2-sm-item", {
 		opacity: 0,
 		duration: .7,
 	});
 	
-	// var portfolio2ani3 = gsap.timeline({
-	// 	scrollTrigger: {
-	// 		trigger: ".as-portfolio-2-height",
-	// 		start: "top 10%",
-	// 		end: "bottom bottom",
-	// 		toggleActions: "play none none reverse",
-	// 		scrub: true,
-	// 		markers: true,
-	// 	},
-	// });
+	var portfolio2ani24 = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as-portfolio-2-height",
+			start: "top 80%",
+			end: "bottom bottom",
+			toggleActions: "play none none reverse",
+			markers: false,
+		},
+	});
+	portfolio2ani24.from(".as-portfolio-2-item-content", {
+		opacity: 0,
+		duration: .3,
+	});
+	
 
-	// portfolio2ani3.to(".as-portfolio-2-sm-item-scroll", {
-	// 	y: -976,
-	// });
 	
 }
 
