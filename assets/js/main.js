@@ -449,6 +449,10 @@ function afterPreloader() {
 
 		});
 
+		as_h2_slider_active.on("reachEnd", function () {
+			as_h2_slider_active.autoplay.stop();
+		});
+
 	}
 
 	if (document.querySelector(".as_h2_slider_active")) {
