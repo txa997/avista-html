@@ -419,3 +419,234 @@
 /* 
     faqs-2-end
 */
+/* 
+    faqs-3-start
+*/
+.as-faqs-3 {
+    &-top {
+        height: 995px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+
+        @media #{$xs} {
+            height: 495px;
+        }
+        @media #{$sm} {
+            height: 595px;
+        }
+
+
+        &-content {
+            max-width: 380px;
+            margin-top: 90px;
+
+            .title {
+                font-size: 42px;
+                font-weight: 600;
+                margin-bottom: 20px;
+
+                @media #{$md} {
+                    font-size: 38px;
+                }
+                @media #{$xs} {
+                    font-size: 32px;
+                }
+                @media #{$sm} {
+                    font-size: 35px;
+                }
+            }
+
+            .disc {
+                color: #5c5c5c;
+            }
+        }
+        
+
+        &-bg-circle {
+            position: absolute;
+            z-index: -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+
+
+            img {
+                position: absolute;
+            }
+
+            .ball {
+                transform: translateY(-100px);
+            }
+
+            .circle-1 {
+                animation: wa-rotated 10s linear infinite;
+            }
+            .circle-2 {
+                animation: wa-rotated-minus 10s linear infinite;
+            }
+            .circle-3 {
+                animation: wa-rotated 10s linear infinite;
+            }
+        }
+
+        &-img-1 {
+            position: absolute;
+            z-index: 1;
+            border-radius: 30px;
+            width: 240px;
+            height: 260px;
+            will-change: transform , width , height;
+
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                display: none;
+            }
+        }
+        &-img-2 {
+            position: absolute;
+            border-radius: 30px;
+            width: 165px;
+            height: 160px;
+
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                display: none;
+            }
+        }
+        &-img-3 {
+            position: absolute;
+            border-radius: 30px;
+            width: 150px;
+            height: 210px;
+
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                display: none;
+            }
+        }
+        &-img-4 {
+            position: absolute;
+            border-radius: 30px;
+            width: 240px;
+            height: 250px;
+
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                display: none;
+            }
+        }
+        &-img-5 {
+            position: absolute;
+            border-radius: 30px;
+            width: 140px;
+            height: 160px;
+
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                display: none;
+            }
+        }
+        &-img-6 {
+            position: absolute;
+            border-radius: 30px;
+            width: 190px;
+            height: 190px;
+
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                display: none;
+            }
+        }
+        &-img-7 {
+            position: absolute;
+            border-radius: 30px;
+            width: 180px;
+            height: 140px;
+
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                display: none;
+            }
+        }
+
+
+        &-bg-dot {
+            position: absolute;
+            top: 5%;
+            left: 0;
+            width: 100%;
+            z-index: -2;
+
+            @media #{$lg,$md,$xs} {
+                display: none;
+            }
+        }
+    }
+
+
+    &-bottom {
+        max-width: 1575px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 55px;
+        display: grid;
+        grid-template-columns: 1fr 1.25fr;
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-accordion {
+        padding: 45px 20px;
+        border-radius: 30px;
+        background-color: #020202;
+
+        .as-accordion {
+            gap: 35px;
+            &-item {
+                border-radius: 0;
+                background: transparent;
+                border-color: #2B2B2B;
+    
+    
+                .item-title {
+                    padding: 18px 20px;
+                    border: none;
+    
+                    .icon {
+                        width: auto;
+                        height: auto;
+                        background: transparent;
+                        border: none;
+                    }
+
+
+                    &:is(:not(.collapsed)) {
+                        .icon {
+                            color: #fff;
+                        }
+        
+                    }
+        
+                    &:is(.collapsed) {
+                        &:hover {
+                            .icon {
+                                background: transparent;
+                                color: var(--as-clr-pr-3);
+                            }
+                        }
+                    }
+                }
+    
+                .item-disc {
+                    color: #b3b3b3;
+                    font-size: 20px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+/* 
+    faqs-3-end
+*/

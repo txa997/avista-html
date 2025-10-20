@@ -10,6 +10,12 @@
     transform: rotate(360deg);
   }
 }
+@keyframes wa-rotated-minus {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
 @keyframes fadeInUp2 {
   0% {
     opacity: 0;

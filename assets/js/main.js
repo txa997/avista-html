@@ -1404,27 +1404,88 @@ if ($(".as-services-2-item").length) {
 	});
   } 
 }
-/* 
-	price-4-hover-active
-*/
-$(".sr-price-4-card").on("mouseover", function(){
-	var current_class = document.getElementsByClassName("sr-price-4-card active");
-	current_class[0].className = current_class[0].className.replace(" active", "");
-	this.className += " active";
-});
+
+
 
 /* 
-	faqs-4-hover-active
+	faqs-3-top-animation
 */
+if (window.matchMedia("(min-width: 1600px)").matches) {
 
-$(".sr-faqs-4-item-single").on("click", function () {
-    if ($(this).hasClass("active")) {
-        $(this).removeClass("active");
-    } else {
-        $(".sr-faqs-4-item-single").removeClass("active");
-        $(this).addClass("active");
-    }
-});
+	
+	var faqs3topAnimation = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as-faqs-3-top",
+			start: "top 20%",
+			end: "bottom bottom",
+			toggleActions: "play none none reverse",
+			scrub: true,
+			markers: false,
+		},
+	});
+
+	faqs3topAnimation.to(".as-faqs-3-top-img-1", {
+		yPercent: -100,
+		xPercent: -120,
+	});
+	faqs3topAnimation.to(".as-faqs-3-top-img-2", {
+		yPercent: -180,
+		xPercent: 60,
+	},"<");
+	faqs3topAnimation.to(".as-faqs-3-top-img-3", {
+		yPercent: -70,
+		xPercent: 250,
+	},"<");
+	faqs3topAnimation.to(".as-faqs-3-top-img-4", {
+		yPercent: 100,
+		xPercent: 220,
+	},"<");
+	faqs3topAnimation.to(".as-faqs-3-top-img-5", {
+		yPercent: 60,
+		xPercent: 200,
+	},"<");
+	faqs3topAnimation.to(".as-faqs-3-top-img-7", {
+		yPercent: 30,
+		xPercent: -240,
+	},"<");
+	faqs3topAnimation.to(".as-faqs-3-top-img-6", {
+		yPercent: 150,
+		xPercent: -80,
+	},"<");
+	
+	faqs3topAnimation.from(".as-faqs-3-top-content", {
+		opacity: 0,
+		scale: .5,
+	},"<10%");	
+	faqs3topAnimation.from(".as-faqs-3-top-bg-circle .ball", {
+		opacity: 0,
+		scale: .5,
+	},"<");
+
+
+
+		
+	var faqs3topAnimation2 = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as-faqs-3-bottom",
+			start: "top 100%",
+			end: "bottom bottom",
+			toggleActions: "play none none reverse",
+			scrub: true,
+			markers: false,
+		},
+	});
+
+	faqs3topAnimation2.to(".as-faqs-3-top-img-1", {
+		y: 1600,
+		x: 355,
+		width: "670px",
+		height: "735px",
+	});
+	
+	
+}
+
 
 
 

@@ -355,10 +355,46 @@
         background: #000;
     }
 
+    &-bg-text {
+        font-size: 200px;
+        color: #fff;
+        font-weight: 700;
+        opacity: 10%;
+        position: absolute;
+        top: 7%;
+        left: -60px;
+
+        @media #{$xxxl} {
+            font-size: 160px;
+        }
+        @media #{$xxl} {
+            font-size: 150px;
+        }
+        @media #{$xl} {
+            font-size: 140px;
+        }
+        @media #{$lg} {
+            font-size: 130px;
+        }
+        @media #{$md} {
+            font-size: 120px;
+        }
+        @media #{$xs} {
+            font-size: 70px;
+        }
+        @media #{$sm} {
+            font-size: 100px;
+        }
+    }
+
     &-wrap {
         display: grid;
         gap: 50px;
         grid-template-columns: 1fr 2.1fr;
+
+        @media #{$md,$xs} {
+            grid-template-columns: 1fr ;
+        }
     }
 
     &-left {
@@ -371,6 +407,10 @@
     &-illus {
         margin-left: -120px;
         margin-top: 200px;
+
+        @media #{$lg,$md,$xs} {
+            margin-left: 0px;
+        }
     }
 
     &-accordion {
@@ -393,6 +433,7 @@
                     font-weight: 400;
                     align-self: flex-start;
                     margin-top: 20px;
+                    flex: 0 0 auto;
 
                     .just-number {
                         color: #fff;
@@ -406,6 +447,19 @@
                     background-clip: text;
                     -webkit-text-fill-color: transparent;
                     transition: var(--as-cube-2);
+
+                    @media #{$xxxl,$xxl,$xl} {
+                        font-size: 50px;
+                    }
+                    @media #{$lg,$md} {
+                        font-size: 40px;
+                    }
+                    @media #{$xs} {
+                        font-size: 25px;
+                    }
+                    @media #{$sm} {
+                        font-size: 30px;
+                    }
                 }
 
 
@@ -423,6 +477,17 @@
                     font-weight: 200;
                     margin-left: auto;
                     transition: var(--as-cube-2);
+
+                    span {
+                        margin-top: -5px;
+                    }
+
+                    @media #{$xs} {
+                        display: none;
+                    }
+                    @media #{$sm} {
+                        display: inline-flex;
+                    }
                 }
 
                 &:is(:not(.collapsed)) {
@@ -430,14 +495,16 @@
                         -webkit-text-fill-color: #fff;
                     }
                     .icon {
-                        transform: rotate(180deg);
+                        transform: rotate(227deg);
                     }
                 }
     
                 &:is(.collapsed) {
                     &:hover {
-
-
+                        .icon {
+                            color: var(--as-clr-pr-3);
+                            border-color: var(--as-clr-pr-3);
+                        }
                     }
                 }
             }
@@ -450,6 +517,10 @@
                 grid-template-columns: 1.45fr 1fr;
                 align-items: center;
                 padding-bottom: 45px;
+
+                @media #{$xs} {
+                    grid-template-columns: 1fr;
+                }
 
                 .item-img {
                     border-radius: 40px;
