@@ -367,6 +367,7 @@
                     border-radius: 0 0 16px 16px;
                     position: relative;
                     z-index: 1;
+                    transition: all 0s var(--as-cube-1);
 
                     .icon {
                         background: transparent;

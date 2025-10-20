@@ -424,7 +424,7 @@ function afterPreloader() {
 	*/
 	if ($('.as_h2_slider_active').length) {
 		var as_h2_slider_active = new Swiper(".as_h2_slider_active", {
-			loop: true,
+			loop: false,
 			speed: 1000,
 
 			effect: "fade",
@@ -583,6 +583,7 @@ function afterPreloader() {
 			}
 		}
 	}
+
 
 
 
@@ -811,6 +812,8 @@ if ($(".wa_magnetic_btn_1").length) {
         });
     }
 }
+
+
 
 /* 
 	tilt-1
@@ -1191,25 +1194,34 @@ if (window.matchMedia("(min-width: 992px)").matches) {
 /* 
 	testimonial-2-animation
 */
-if (window.matchMedia("(min-width: 992px)").matches) {
+if (window.matchMedia("(min-width: 1400px)").matches) {
 
 
 	var portfolio1title = gsap.timeline({
 		scrollTrigger: {
-			trigger: ".as_t1_item",
-			start: "top 90%",
-			end: "bottom top",
+			trigger: ".as-testimonial-2-wrap",
+			start: "top 40%",
+			end: "bottom bottom",
 			toggleActions: "play none none reverse",
 			scrub: true,
 			markers: false,
 		},
 	});
 
-	portfolio1title.to(".as_t1_item", {
-		yPercent: -30,
+	portfolio1title.from(".as_t2_item1", {
+		yPercent: 60,
 	});
+	portfolio1title.from(".as_t2_item2", {
+		yPercent: 60,
+	},"<");	
+	portfolio1title.from(".as_t2_item3", {
+		yPercent: -130,
+	},"<");
+	portfolio1title.from(".as_t2_item4", {
+		xPercent: -100,
+	},"<");
 	
-
+  
 	
 	
 }

@@ -287,6 +287,11 @@
 
         .icon {
             margin-bottom: 45px;
+
+            .svg-path {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+            }
         }
 
         .disc {
