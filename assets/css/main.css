@@ -1531,6 +1531,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   font-size: 18px;
   font-weight: 500;
   color: #fff;
+  transition: all 0.4s var(--as-cube-1);
 }
 .sr-offcanvas-btn-2 .icon {
   width: 40px;
@@ -1540,6 +1541,10 @@ input:focus::placeholder, textarea:focus::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #000;
+}
+.sr-offcanvas-btn-2:hover {
+  background: #fff;
   color: #000;
 }
 
@@ -2502,10 +2507,15 @@ input:focus::placeholder, textarea:focus::placeholder {
   font-size: 16px;
   display: flex;
   gap: 10px;
+  transition: all 0.4s var(--as-cube-1);
 }
 .as-phone-btn-1 span {
   font-weight: 500;
   opacity: 0.7;
+}
+.as-phone-btn-1:hover {
+  color: #fff;
+  transform: translateX(3px);
 }
 
 /* 
@@ -5742,6 +5752,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   position: relative;
   z-index: 1;
 }
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .as-portfolio-2-bg-color {
+    display: none;
+  }
+}
 .as-portfolio-2-bg-color .circle {
   position: absolute;
   width: 0vh;
@@ -5756,10 +5771,21 @@ input:focus::placeholder, textarea:focus::placeholder {
   padding-right: 24px;
   background-color: #000;
 }
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .as-portfolio-2-area {
+    padding-top: 140px;
+  }
+}
 .as-portfolio-2-sec-title {
   display: flex;
   align-items: start;
   gap: 60px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .as-portfolio-2-sec-title {
+    gap: 10px;
+    flex-direction: column;
+  }
 }
 .as-portfolio-2-sec-title .as-subtitle-2 {
   background: linear-gradient(90deg, #666666 0%, rgba(245, 245, 245, 0) 50%, #666666 100%);
@@ -5777,6 +5803,31 @@ input:focus::placeholder, textarea:focus::placeholder {
   letter-spacing: -0.01em;
   line-height: 0.7;
 }
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .as-portfolio-2-sec-title .as-sec-title-2 {
+    font-size: 45px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .as-portfolio-2-sec-title .as-sec-title-2 {
+    font-size: 42px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .as-portfolio-2-sec-title .as-sec-title-2 {
+    font-size: 38px;
+  }
+}
+@media (max-width: 767px) {
+  .as-portfolio-2-sec-title .as-sec-title-2 {
+    font-size: 32px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .as-portfolio-2-sec-title .as-sec-title-2 {
+    font-size: 36px;
+  }
+}
 .as-portfolio-2-animation-title {
   color: #fff;
   display: flex;
@@ -5788,12 +5839,52 @@ input:focus::placeholder, textarea:focus::placeholder {
   margin-right: auto;
   line-height: 0.7;
 }
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .as-portfolio-2-animation-title {
+    font-size: 45px;
+    display: block;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .as-portfolio-2-animation-title {
+    font-size: 42px;
+    display: block;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .as-portfolio-2-animation-title {
+    font-size: 38px;
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .as-portfolio-2-animation-title {
+    font-size: 32px;
+    display: block;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .as-portfolio-2-animation-title {
+    font-size: 36px;
+    display: block;
+  }
+}
 .as-portfolio-2-height {
   height: 4000px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .as-portfolio-2-height {
+    height: auto;
+  }
 }
 .as-portfolio-2-big-item {
   width: 100%;
   height: 840px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .as-portfolio-2-big-item {
+    height: auto;
+  }
 }
 .as-portfolio-2-item {
   height: 100%;
@@ -5806,6 +5897,13 @@ input:focus::placeholder, textarea:focus::placeholder {
   width: 100%;
   overflow: hidden;
   border-radius: 12px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .as-portfolio-2-item {
+    height: 350px;
+    position: unset;
+    margin-bottom: 30px;
+  }
 }
 .as-portfolio-2-item::after {
   content: "";
@@ -5830,12 +5928,27 @@ input:focus::placeholder, textarea:focus::placeholder {
   position: relative;
   z-index: 2;
 }
+@media (max-width: 767px) {
+  .as-portfolio-2-item-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 .as-portfolio-2-item-content .title {
   font-size: 80px;
   font-weight: 700;
   color: #fff;
   max-width: 490px;
   line-height: 1;
+  transition: all 0.4s var(--as-cube-1);
+}
+.as-portfolio-2-item-content .title:hover {
+  color: #000;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .as-portfolio-2-item-content .title {
+    font-size: 24px;
+  }
 }
 .as-portfolio-2-item-content .right-content {
   max-width: 390px;
@@ -5854,6 +5967,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   justify-content: center;
   font-size: 20px;
   color: #000;
+  transition: all 0.4s var(--as-cube-1);
+}
+.as-portfolio-2-item-content .item-btn:hover {
+  background-color: #000;
+  color: #fff;
 }
 .as-portfolio-2-item:nth-child(2) {
   z-index: -1;
@@ -5871,6 +5989,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .as-portfolio-2-sm-item {
+    display: none;
+  }
 }
 .as-portfolio-2-sm-item-scroll {
   display: grid;
@@ -8642,6 +8765,36 @@ input:focus::placeholder, textarea:focus::placeholder {
 @media (min-width: 1800px), only screen and (min-width: 1600px) and (max-width: 1799px), only screen and (min-width: 1400px) and (max-width: 1599px) {
   .as-home-2::-webkit-scrollbar-thumb {
     background: #000;
+  }
+}
+.as-home-2::after {
+  content: "";
+  height: 140px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  opacity: 1;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-mask-image: linear-gradient(to top, #000 10%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to top, #000 10%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .as-home-2::after {
+    height: 120px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .as-home-2::after {
+    height: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .as-home-2::after {
+    height: 60px;
   }
 }
 

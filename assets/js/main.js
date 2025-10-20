@@ -433,9 +433,9 @@ function afterPreloader() {
 			},
 
 
-			// autoplay: {
-			//     delay: 5000,
-			// },
+			autoplay: {
+			    delay: 5000,
+			},
 
 			// navigation: {
 			// 	nextEl: ".pg_h2_next",
@@ -451,7 +451,7 @@ function afterPreloader() {
 
 	}
 
-	if (document.querySelector(".as_h2_slider_active-")) {
+	if (document.querySelector(".as_h2_slider_active")) {
 		const WA_DISP_IMG = "assets/img/hero/3d-grey.webp";
 		const waTextures = {
 			waDisp: PIXI.Texture.from(WA_DISP_IMG)
