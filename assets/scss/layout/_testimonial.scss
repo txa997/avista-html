@@ -263,3 +263,52 @@
 /* 
     testimonial-2-end
 */
+/* 
+    testimonial-3-start
+*/
+.as-testimonial-3 {
+    &-area {
+        background-color: var(--as-clr-pr-3);
+    }
+
+    &-sec-title {
+        .as-subtitle-3 {
+            color: #111111;
+            margin-bottom: 34px;
+            &::after {
+                background: #111111;
+            }
+        }
+
+        .section-title {
+            color: #111111;
+            font-weight: 600;
+            font-size: 48px;
+        }
+    }
+
+
+
+    &-slider-main {
+
+        &-item {
+            background: #FDF2F2;
+            padding: 30px 25px;
+            border-radius: 10px;
+
+            .comment {
+                color: #333333;
+                font-size: 18px;
+            }
+        }
+        
+        .swiper-wrapper {
+            .swiper-slide {
+                max-width: 420px;
+            }
+        }
+    }
+}
+/* 
+    testimonial-3-end
+*/

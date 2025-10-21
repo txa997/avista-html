@@ -88,3 +88,66 @@
 /* 
     marquee-text-2-end
 */
+/* 
+    marquee-text-3-start
+*/
+.as-marquee-text-3 {
+    &-wrap {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .text-elm {
+            font-size: 130px;
+            font-weight: 600;
+            color: #000;
+            flex: 0 0 auto;
+
+            @media #{$xxxl} {
+                font-size: 120px;
+            }
+            @media #{$xxl} {
+                font-size: 110px;
+            }
+            @media #{$xl} {
+                font-size: 100px;
+            }
+            @media #{$lg} {
+                font-size: 90px;
+            }
+            @media #{$md} {
+                font-size: 80px;
+            }
+            @media #{$xs} {
+                font-size: 60px;
+            }
+            @media #{$sm} {
+                font-size: 70px;
+            }
+        }
+
+        .img-elm {
+            border-radius: 20px;
+            width: 190px;
+            height: 130px;
+            flex: 0 0 auto;
+
+            @media #{$md} {
+                width: 160px;
+                height: 120px;
+            }
+            @media #{$xs} {
+                width: 120px;
+                height: 100px;
+            }
+            @media #{$sm} {
+                width: 140px;
+                height: 110px;
+            }
+        }
+    }
+}
+
+/* 
+    marquee-text-3-end
+*/

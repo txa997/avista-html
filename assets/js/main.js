@@ -1485,6 +1485,96 @@ if (window.matchMedia("(min-width: 1600px)").matches) {
 	
 	
 }
+/* 
+	team-3-animation
+*/
+if (window.matchMedia("(min-width: 1600px)").matches) {
+
+	
+	var team3Animation = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as-team-3-wrap",
+			start: "top 80%",
+			end: "top 15%",
+			toggleActions: "play none none reverse",
+			scrub: 1.5,
+			markers: false,
+		},
+	});
+
+	team3Animation.from(".as-team-3-item:nth-of-type(1)", {
+		x: 700,
+		rotateY: 70,
+		scaleX: .5,
+		scaleY: .5,
+		opacity: 0,
+	});
+
+	team3Animation.from(".as-team-3-item:nth-of-type(2)", {
+		x: 500,
+		rotateY: 70,
+		scaleX: .5,
+		scaleY: .5,
+		opacity: 0,
+	},"<");
+	team3Animation.from(".as-team-3-item:nth-of-type(3)", {
+		x: 290,
+		rotateY: 70,
+		scaleX: .5,
+		scaleY: .5,
+		opacity: 0,
+	},"<");
+	team3Animation.from(".as-team-3-item:nth-of-type(4)", {
+		x: 100,
+		rotateY: 70,
+		scaleX: .5,
+		scaleY: .5,
+		opacity: 0,
+	},"<");
+	team3Animation.from(".as-team-3-item:nth-of-type(5)", {
+		x: -100,
+		rotateY: 70,
+		scaleX: .5,
+		scaleY: .5,
+		opacity: 0,
+	},"<");
+	team3Animation.from(".as-team-3-item:nth-of-type(6)", {
+		x: -290,
+		rotateY: 70,
+		scaleX: .5,
+		scaleY: .5,
+		opacity: 0,
+	},"<");
+	team3Animation.from(".as-team-3-item:nth-of-type(7)", {
+		x: -500,
+		rotateY: 70,
+		scaleX: .5,
+		scaleY: .5,
+		opacity: 0,
+	},"<");
+	team3Animation.from(".as-team-3-item:nth-of-type(8)", {
+		x: -700,
+		rotateY: 70,
+		scaleX: .5,
+		scaleY: .5,
+		opacity: 0,
+	},"<");
+	team3Animation.from(".as-team-3-ani-title-1", {
+		x: 816,
+		opacity: 1,
+	},"<");
+	team3Animation.from(".as-team-3-ani-title-2", {
+		x: -770,
+		opacity: 1,
+	},"<");
+
+
+
+		
+
+	
+	
+}
 
 
 
