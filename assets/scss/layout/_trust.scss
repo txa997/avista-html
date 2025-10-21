@@ -89,6 +89,7 @@
         &-wrap {
             display: flex;
             margin-right: 80px;
+            gap: 80px;
 
             .text-elm {
                 display: flex;
@@ -99,9 +100,10 @@
                 gap: 80px;
                 letter-spacing: -0.02em;
                 line-height: .9;
+                font-weight: 600;
 
                 i {
-                    font-size: 131px;
+                    font-size: 90px;
                 }
 
                 @media #{$xxl} {

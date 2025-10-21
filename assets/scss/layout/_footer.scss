@@ -465,6 +465,18 @@
 
     &-menu {
         border-left: 1px solid #454545;
+        position: relative;
+        z-index: 1;
+
+        &::after {
+            content: "";
+            width: 1px;
+            height: 100px;
+            background-color: #454545;
+            position: absolute;
+            left: -1px;
+            top: 100%;
+        }
 
         li {
             border-bottom: 1px solid #454545;
