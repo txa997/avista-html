@@ -291,3 +291,61 @@
 /* 
     partner-2-end
 */
+/* 
+    partner-3-start
+*/
+.as-partner-3 {
+    &-area {
+        background-color: #000;
+    }
+
+    &-logo {
+        display: flex;
+        gap: 8px;
+        margin-right: 8px;
+        
+
+        .single-logo {
+            width: 315px;
+            height: 232px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+            position: relative;
+            z-index: 1;
+            perspective: 2000px;
+            transform-style: preserve-3d;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 1px solid rgb(255 255 255 / 20%);
+                transition: var(--as-cube-2);
+                z-index: -1;
+            }
+
+            &:hover {
+                &::after {
+                    transform: rotateY(180deg);
+                    background: var(--as-clr-pr-3);
+                }
+            }
+
+            &:nth-child(odd) {
+            
+                &::after {
+                    border-radius: 120px;
+                }
+            }
+        }
+    }
+}
+
+/* 
+    partner-3-end
+*/

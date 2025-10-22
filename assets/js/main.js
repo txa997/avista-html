@@ -1576,6 +1576,68 @@ if (window.matchMedia("(min-width: 1600px)").matches) {
 	
 }
 
+/* 
+	testimonial-3-animation
+*/
+if (window.matchMedia("(min-width: 1200px)").matches) {
+
+
+	gsap.to(".as-testimonial-3-pin", {
+		scrollTrigger: {
+			trigger: ".as-testimonial-3-area",
+			start: "top 0%", 
+			end: "1650px",
+			pin: ".as-testimonial-3-pin", 
+			pinSpacing: false,
+			markers: false,
+		}
+	});
+	
+
+	var asTestimonial3ani = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as-testimonial-3-area",
+			start: "top 0%",
+			end: "1400px",
+			toggleActions: "play none none reverse",
+			scrub: true,
+			markers: false,
+		},
+	});
+
+	asTestimonial3ani.from(".as-testimonial-3-bg-color", {
+		width: "3000px",
+		height: "3000px",
+	});
+	
+	asTestimonial3ani.from(".as-testimonial-3-slider-preview-item:nth-of-type(3)", {
+		x: 160,
+		duration: .5,
+	});	
+	asTestimonial3ani.from(".as-testimonial-3-slider-preview-item:nth-of-type(2)", {
+		x: 350,
+		duration: .5,
+	},"<");	
+	asTestimonial3ani.from(".as-testimonial-3-slider-preview-item:nth-of-type(1)", {
+		x: 600,
+		duration: .5,
+	},"<");	
+	asTestimonial3ani.from(".as-testimonial-3-slider-preview-item:nth-of-type(5)", {
+		x: -160,
+		duration: .5,
+	},"<");	
+	asTestimonial3ani.from(".as-testimonial-3-slider-preview-item:nth-of-type(6)", {
+		x: -350,
+		duration: .5,
+	},"<");	
+	asTestimonial3ani.from(".as-testimonial-3-slider-preview-item:nth-of-type(7)", {
+		x: -600,
+		duration: .5,
+	},"<");
+
+	
+	
+}
 
 
 
@@ -1628,7 +1690,53 @@ if ($('.b2_slider_active').length) {
 
 }
 
+  
+/* 
+	testimonial-3-slider-active
+*/
+if ($('.as_t3_main_slider').length) {
 
+  
+	// const as_t3_preview_slider = new Swiper('.as_t3_preview_slider', {
+	// 	loop: true,
+	// 	speed: 500,
+	// 	slidesPerView: "auto",
+	// 	centeredSlides: true,
+ 	// 	slidesPerView: 1,
+	// 	// effect: "fade",
+	// 	// fadeEffect: { 
+	// 	// 	crossFade: true 
+	// 	// },
+
+	// 	navigation: {
+	// 		nextEl: ".kk_t1_next",
+	// 		prevEl: ".kk_t1_prev",
+	// 	},
+
+	// });
+
+
+	
+	const as_t3_main_slider = new Swiper('.as_t3_main_slider', {
+		loop: true,
+		speed: 500,
+		slidesPerView: "auto",
+		spaceBetween: 30,
+		centeredSlides: true,
+		// // slidesPerView: 5,
+
+		// thumbs: {
+		// 	swiper: as_t3_preview_slider,
+		// },
+
+		navigation: {
+			nextEl: ".as_t3_next",
+			prevEl: ".as_t3_prev",
+		},
+	});
+  
+}
+  
 
 	
 /* 

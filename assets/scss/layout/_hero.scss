@@ -700,6 +700,8 @@
             padding: 3px 15px;
             opacity: .5;
             transition: var(--as-cube-2);
+            font-weight: 300;
+            
             &:hover {
                 border-color: var(--as-clr-pr-3);
                 opacity: 1;
