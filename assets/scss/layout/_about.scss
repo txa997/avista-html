@@ -555,6 +555,7 @@
 
                 &:hover {
                     color: var(--as-clr-pr-3);
+                    transform: translateX(3px);
                 }
             }
             .author-dg {
@@ -635,15 +636,28 @@
             gap: 20px;
             justify-content: space-between;
             margin-bottom: 20px;
+
         }
 
         .title {
             font-size: 18px;
             font-weight: 700;
+            transition: var(--as-cube-2);
+
+            &:hover  {
+                color: var(--as-clr-pr-3);
+                transform: translateX(3px);
+            }
         }
 
         .disc {
             font-weight: 400;
+        }
+
+        &:hover {
+            .icon {
+                animation: rubberBand 1s;
+            }
         }
     }
 

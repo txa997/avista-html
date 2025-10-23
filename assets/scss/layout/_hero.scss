@@ -789,10 +789,12 @@
         height: 100%;
         z-index: -3;
         text-align: center;
-        clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+        clip-path: polygon(0 0, 40% 0, 40% 100%, 0% 100%);
+
         img {
-            width: 75%;
+            will-change: transform;
         }
+
     }
     &-img-2 {
         position: absolute;
@@ -802,9 +804,10 @@
         height: 100%;
         z-index: -3;
         text-align: center;
-        clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        clip-path: polygon(40% 0, 100% 0, 100% 100%, 40% 100%);
+
         img {
-            width: 59%;
+            will-change: transform;
         }
     }
 
@@ -818,23 +821,48 @@
         .overly-1 {
             width: 50%;
             height: 290px;
-            background: var(--as-clr-pr-3);
+            // background: var(--as-clr-pr-3);
+            background-image: var(--as-clr-gd-3);
+            background-size: 300% 100%;
             display: block;
             filter: blur(31px);
             transform: rotate(17deg) translate(-100px, 200px);
+            animation: rotateGradient 3s linear infinite;
         }
         .overly-2 {
             width: 50%;
             height: 290px;
-            background: var(--as-clr-pr-3);
+            // background: var(--as-clr-pr-3);
+            background-image: var(--as-clr-gd-3);
+            background-size: 300% 100%;
             display: block;
             filter: blur(31px);
             transform: rotate(-7deg) translate(20px, 250px);
+            animation: rotateGradient 3s linear infinite;
+            animation-delay: 2s;
         }
     }
 }
 
 
+
+@keyframes rotateGradient {
+    0% {
+        background-position-x: 0%;
+        opacity: 1;
+        filter: blur(25px);
+    }
+    50% {
+        background-position-x: 100%;
+        opacity: .9;
+        filter: blur(31px);
+    }
+    100% {
+        background-position-x: 0%;
+        opacity: 1;
+        filter: blur(25px);
+    }
+}
 
 
 /* 

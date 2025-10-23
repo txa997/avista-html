@@ -403,6 +403,12 @@
             color: #fff;
             font-weight: 600;
             font-size: 30px;
+            transition: var(--as-cube-2);
+
+            &:hover {
+                color: var(--as-clr-pr-3);
+                transform: translateX(3px);
+            }
         }
     }
 
@@ -410,6 +416,7 @@
         border: 1px solid rgb(255 255 255 / 20%);
         border-radius: 10px;
         padding: 7px;
+        padding-bottom: 0;
 
         .item-img {
             height: 205px;
@@ -426,7 +433,14 @@
             color: #fff;
             font-size: 22px;
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+            transition: var(--as-cube-2);
+            line-height: 1.363;
+
+            &:hover {
+                color: var(--as-clr-pr-3);
+                transform: translateX(3px);
+            }
         }
 
         .disc {

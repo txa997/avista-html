@@ -81,6 +81,18 @@
     }
 }
 
+.as-home-3 {
+    background-color: #F5F5F5;
+
+
+    @media #{$over,$xxxl,$xxl} {
+        &::-webkit-scrollbar-thumb {
+            background: #000;
+        }
+    }
+
+}
+
 
 /* 
     home-css-end

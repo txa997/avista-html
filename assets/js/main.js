@@ -189,7 +189,7 @@ window.addEventListener('load', function(){
 })
 
 
-
+CustomEase.create("ease3", ".44,0,.56,1");
 /* 
 	after-preloader-start
 */
@@ -589,12 +589,55 @@ function afterPreloader() {
 	}
 
 
+	/* 
+		hero-3-animation
+	*/
+	// if (window.matchMedia("(min-width: 320px)").matches) {
+
+		
+	// 	var hero3ani = gsap.timeline({});
+
+	// 	hero3ani.from(".as-hero-3-img-1 img", {
+	// 		xPercent: -100,
+	// 		duration:2.5,
+	// 		ease: CustomEase.create("custom", "M0,0 C0.272,0 0.282,0.517 0.35,0.678 0.409,0.821 0.744,1 1,1 "),
+	// 	});
+	// 	hero3ani.from(".as-hero-3-img-2 img", {
+	// 		xPercent: -100,
+	// 		duration:2.5,
+	// 		ease: CustomEase.create("custom", "M0,0 C0.272,0 0.282,0.517 0.35,0.678 0.409,0.821 0.744,1 1,1 "),
+	// 	},"<2%");	
+
+
+		
+	// 	var hero3ani2 = gsap.timeline({
+	// 		scrollTrigger: {
+	// 			trigger: ".as-hero-3-area",
+	// 			start: "top 0%",
+	// 			end: "top bottom",
+	// 			toggleActions: "play none none reverse",
+	// 			scrub: true,
+	// 			markers: true,
+	// 		},
+	// 	});
+
+	// 	hero3ani2.to(".as-hero-3-img-1", {
+	// 		clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+	// 	});
+		
+	// }
 
 
 /* 
 	after-preloader-end
 */
 }
+
+
+
+  
+
+
 
 
 /* 
@@ -1407,6 +1450,7 @@ if ($(".as-services-2-item").length) {
 
 
 
+
 /* 
 	faqs-3-top-animation
 */
@@ -1638,6 +1682,35 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
 	
 	
 }
+
+
+/* 
+	project-3-title-img-animation
+*/
+if (window.matchMedia("(min-width: 768px)").matches) {
+
+	
+	var project3titleImg = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as-projects-3-sec-title",
+			start: "top 80%",
+			end: "top 15%",
+			toggleActions: "play none none reverse",
+			scrub: true,
+			markers: false,
+		},
+	});
+
+	project3titleImg.from(".as-projects-3-sec-title .title-img-elm", {
+		width: "0px",
+		height: "0px",
+	});
+
+	
+	
+}
+
+
 
 
 

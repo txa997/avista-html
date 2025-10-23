@@ -78,6 +78,7 @@
                     height: 105px; 
                     border-radius: 10px;
                     flex: 0 0 auto;
+                    will-change: width, height;
 
                     img {
                         vertical-align: top;
@@ -215,9 +216,15 @@
             font-size: 24px;
             color: #fff;
             font-weight: 600;
+            transition: var(--as-cube-2);
 
             @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
                 font-size: 20px;
+            }
+
+            &:hover {
+                color: var(--as-clr-pr-3);
+                transform: translateX(3px);
             }
         }
 
