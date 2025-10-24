@@ -491,6 +491,16 @@
         will-change: transform, width, height;
     }
 }
+
+.as-testimonial-3-slider-preview {
+    &:is(.is_class_fade) {
+        .main-img {
+            animation: fadeInRight 1s;
+        }
+    }
+}
+
+
 /* 
     testimonial-3-end
 */

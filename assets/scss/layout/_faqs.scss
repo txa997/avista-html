@@ -479,7 +479,7 @@
                 position: absolute;
             }
 
-            .ball {
+            .boll {
                 transform: translateY(-100px);
             }
 
@@ -647,6 +647,11 @@
     }
 }
 
+
+.shuffle-word {
+  display: inline-block;
+  opacity: 0;
+}
 /* 
     faqs-3-end
 */

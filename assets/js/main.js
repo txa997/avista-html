@@ -1461,7 +1461,7 @@ if (window.matchMedia("(min-width: 1600px)").matches) {
 		scrollTrigger: {
 			trigger: ".as-faqs-3-top",
 			start: "top 20%",
-			end: "bottom bottom",
+		  	end: "+=700",
 			toggleActions: "play none none reverse",
 			scrub: true,
 			markers: false,
@@ -1501,31 +1501,19 @@ if (window.matchMedia("(min-width: 1600px)").matches) {
 		opacity: 0,
 		scale: .5,
 	},"<10%");	
-	faqs3topAnimation.from(".as-faqs-3-top-bg-circle .ball", {
+	faqs3topAnimation.from(".as-faqs-3-top-bg-circle .boll", {
 		opacity: 0,
 		scale: .5,
 	},"<");
 
-
-
-		
-	var faqs3topAnimation2 = gsap.timeline({
-		scrollTrigger: {
-			trigger: ".as-faqs-3-bottom",
-			start: "top 100%",
-			end: "bottom bottom",
-			toggleActions: "play none none reverse",
-			scrub: true,
-			markers: false,
-		},
-	});
-
-	faqs3topAnimation2.to(".as-faqs-3-top-img-1", {
+	faqs3topAnimation.to(".as-faqs-3-top-img-1", {
 		y: 1600,
 		x: 355,
 		width: "670px",
 		height: "735px",
 	});
+
+
 	
 	
 }
@@ -1789,29 +1777,301 @@ if ($('.as_t3_main_slider').length) {
 	// });
 
 
-	
-	const as_t3_main_slider = new Swiper('.as_t3_main_slider', {
-		loop: true,
-		speed: 500,
-		slidesPerView: "auto",
-		spaceBetween: 30,
-		centeredSlides: true,
-		// // slidesPerView: 5,
 
-		// thumbs: {
-		// 	swiper: as_t3_preview_slider,
-		// },
+// initialize testimonial main slider
+const as_t3_main_slider = new Swiper('.as_t3_main_slider', {
+    loop: true,
+    speed: 700,
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    centeredSlides: true,
+    navigation: {
+        nextEl: ".as_t3_next",
+        prevEl: ".as_t3_prev",
+    },
+    on: {
+        init: function () {
+            syncPreview(this);
+        },
+        slideChange: function () {
+            syncPreview(this);
+        },
+    },
+});
 
-		navigation: {
-			nextEl: ".as_t3_next",
-			prevEl: ".as_t3_prev",
-		},
-	});
+function syncPreview(swiper) {
+    const slides = swiper.slides;
+    const previewItems = document.querySelectorAll('.as-testimonial-3-slider-preview-item');
+
+    previewItems.forEach((preview, index) => {
+        const img = preview.querySelector('.main-img');
+        const circle = preview.querySelector('.circle-text');
+        const realIndex = (swiper.realIndex + index) % slides.length;
+        const targetSlide = slides[realIndex];
+        const slideImg = targetSlide.querySelector('.item-author-img img');
+        if (slideImg) {
+            img.src = slideImg.src;
+        }
+    });
+
+}
+
+
+function previewFadeEffect(swiperInstance) {
+	const previewContainer = document.querySelector('.as-testimonial-3-slider-preview');
+
+	function triggerFade() {
+		previewContainer.classList.remove('is_class_fade');
+		void previewContainer.offsetWidth; // reflow trick
+		previewContainer.classList.add('is_class_fade');
+	}
+
+	// trigger fade when slide changes
+	swiperInstance.on('slideChangeTransitionStart', triggerFade);
+}
+
+
+// === Initialize preview fade effect ===
+previewFadeEffect(as_t3_main_slider);
+
+
+
   
 }
   
 
-	
+document.addEventListener("DOMContentLoaded", function() {
+
+// // Shuffle logic
+// const WsShuffleFunctions = {
+//     startShuffle: function(span, options) {
+//         const text = span.getAttribute('data-text') || span.textContent; // store original
+//         span.setAttribute('data-text', text); // future use
+//         const chars = text.split("");
+//         const randomChars = "AbCdE";
+//         let iteration = 0;
+
+//         // Start with blank (no original text visible)
+//         span.textContent = "";
+
+//         const interval = setInterval(() => {
+//             span.textContent = chars
+//                 .map((char, i) => {
+//                     if (i < iteration) return text[i];
+//                     return randomChars[Math.floor(Math.random() * randomChars.length)];
+//                 })
+//                 .join("");
+
+//             if (iteration >= chars.length) {
+//                 clearInterval(interval);
+//                 span.textContent = text; // restore final
+//             }
+
+//             iteration += 1;
+//         }, options.velocity || 60);
+//     }
+// };
+
+// // Target all shuffle elements
+// const shuffleEls = gsap.utils.toArray('.wa_text_shuffle');
+// const customDelay = 0.5;
+
+// shuffleEls.forEach((el) => {
+//     const spans = el.querySelectorAll('span');
+
+//     // Initial hidden state (opacity 0)
+//     gsap.set(spans, { opacity: 0 });
+
+//     ScrollTrigger.create({
+//         trigger: el,
+//         start: "top 80%",
+//         once: true, // একবারই animate হবে
+//         onEnter: () => {
+//             gsap.to(spans, {
+//                 opacity: 1,
+//                 duration: 0.4,
+//                 stagger: 0.1,
+//                 delay: customDelay,
+//                 onStart: function() {
+//                     if (!el.classList.contains('animated')) {
+//                         spans.forEach((span, spanIndex) => {
+//                             const spanDelay = spanIndex * 100;
+//                             setTimeout(() => {
+//                                 WsShuffleFunctions.startShuffle(span, {
+//                                     velocity: 40,
+//                                     shuffleIterations: 8
+//                                 });
+//                             }, spanDelay);
+//                         });
+//                         el.classList.add('animated');
+//                     }
+//                 }
+//             });
+//         }
+//     });
+// });
+
+
+
+
+//   // Shuffle Logic
+//   const shuffleFunctions = {
+//     startShuffle: function(span, options) {
+//       const text = span.getAttribute('data-text') || span.textContent;
+//       span.setAttribute('data-text', text);
+//       const chars = text.split("");
+//       const randomChars = " ";
+//       let iteration = 0;
+
+//       span.textContent = ""; // hide original at start
+
+//       const interval = setInterval(() => {
+//         span.textContent = chars
+//           .map((char, i) => {
+//             if (i < iteration) return text[i];
+//             return randomChars[Math.floor(Math.random() * randomChars.length)];
+//           })
+//           .join("");
+
+//         if (iteration >= chars.length) {
+//           clearInterval(interval);
+//           span.textContent = text;
+//           span.classList.add("shuffled");
+//         }
+
+//         iteration += 1;
+//       }, options.velocity || 50);
+//     }
+//   };
+
+//   // Animation per element
+//   const hasShuffleOnScroll = gsap.utils.toArray('.has-shuffle-onscroll');
+
+//   hasShuffleOnScroll.forEach(function(shuffleTitle) {
+
+//     // Split words into spans
+//     const words = shuffleTitle.innerText.trim().split(' ');
+//     shuffleTitle.innerHTML = '';
+
+//     words.forEach(function(word, i) {
+//       const span = document.createElement('span');
+//       span.classList.add('shuffle-word');
+//       span.setAttribute('data-text', word);
+//       span.textContent = word;
+//       shuffleTitle.appendChild(span);
+//       if (i < words.length - 1) shuffleTitle.appendChild(document.createTextNode(' '));
+//     });
+
+//     const spans = shuffleTitle.querySelectorAll('.shuffle-word');
+
+//     // ScrollTrigger Animation
+//     gsap.to(shuffleTitle, {
+//       scrollTrigger: {
+//         trigger: shuffleTitle,
+//         start: "top 85%",
+//         end: "bottom 40%",
+// 		toggleActions: "play none none reverse",
+//         onUpdate: (self) => {
+//           const progress = self.progress;
+
+//           spans.forEach((span, index) => {
+//             const delay = index * 0.08;
+//             const appearRangeStart = delay;
+//             const appearRangeEnd = appearRangeStart + 0.15;
+
+//             const opacity = gsap.utils.clamp(
+//               1,
+//               1,
+//               gsap.utils.mapRange(appearRangeStart, appearRangeEnd, 0, 1, progress)
+//             );
+//             gsap.set(span, { opacity: opacity });
+
+//             // trigger shuffle once
+//             if (progress >= appearRangeStart && !span.classList.contains("shuffled")) {
+//               shuffleFunctions.startShuffle(span, {
+//                 velocity: 40,
+//                 shuffleIterations: 4
+//               });
+//             }
+//           });
+//         }
+//       }
+//     });
+
+//   });
+
+
+
+
+
+
+});
+
+
+
+
+
+
+
+
+const random_char = () => {
+  const possible = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~" +
+        "0123456789" +
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+        "abcdefghijklmnopqrstuvwxyz";
+  return possible.charAt(Math.floor(Math.random() * possible.length));
+};
+
+const mask = (chars, progress) => {
+  const masked = [];
+
+  for (let i = 0; i < chars.length; i++) {
+    const position = (i + 1) / chars.length;
+    if (position > progress) {
+      masked.push(random_char());
+    } else {
+      masked.push(chars[i]);
+    }
+  }
+
+  return masked.join('');
+};
+
+const shuffle = el => {
+  const chars = el.textContent.split('');
+
+  const params = {
+    progress: 0
+  };
+
+  const a = anime({
+    targets: params,
+    progress: 1,
+    delay: 1000,
+    duration: 1000,
+    easing: 'easeInQuad',
+    update: () => {
+      el.textContent = mask(chars, params.progress);
+    },
+    complete: () => {
+      el.classList.add('completed');
+    }
+  });
+  
+  el.onclick = () => {
+    el.classList.remove('completed');
+    a.restart();
+  };
+};
+
+for (const el of document.querySelectorAll('.shuffle')) {
+  shuffle(el);
+}
+
+
+
+
+
 /* 
     marquee-right
 */

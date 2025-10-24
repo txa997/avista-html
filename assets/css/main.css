@@ -7896,6 +7896,10 @@ input:focus::placeholder, textarea:focus::placeholder {
   will-change: transform, width, height;
 }
 
+.as-testimonial-3-slider-preview:is(.is_class_fade) .main-img {
+  animation: fadeInRight 1s;
+}
+
 /* 
     testimonial-3-end
 */
@@ -9196,7 +9200,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .as-faqs-3-top-bg-circle img {
   position: absolute;
 }
-.as-faqs-3-top-bg-circle .ball {
+.as-faqs-3-top-bg-circle .boll {
   transform: translateY(-100px);
 }
 .as-faqs-3-top-bg-circle .circle-1 {
@@ -9346,6 +9350,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   color: #b3b3b3;
   font-size: 20px;
   font-weight: 400;
+}
+
+.shuffle-word {
+  display: inline-block;
+  opacity: 0;
 }
 
 /* 
