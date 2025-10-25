@@ -416,6 +416,45 @@ function afterPreloader() {
 		}
 
 
+		/* 
+			footer-title-animation
+		*/
+		if($(".wa-split-up").length) {
+			var waSplitup = $(".wa-split-up");
+			if(waSplitup.length == 0) return; gsap.registerPlugin(SplitText); waSplitup.each(function(index, el) {
+
+				el.split = new SplitText(el, { 
+					type: "lines,words,chars",
+					linesClass: "split-line",
+				});
+
+				let delayValue = $(el).attr("data-split-delay") || "0s";
+				delayValue = parseFloat(delayValue) || 0; 
+
+				if( $(el).hasClass('wa-split-up') ){
+					gsap.set(el.split.chars, {
+						rotate: 90 , 
+						opacity: 0,
+					});
+				}
+
+				el.anim = gsap.to(el.split.chars, {
+					scrollTrigger: {
+						trigger: el,
+						start: "top 86%",
+						toggleActions: 'play none none reverse',
+					},
+					opacity: 1,
+					rotate: 0,
+					duration: .8,
+					ease: "back.out(3)",
+					stagger: 0.08,
+					delay: delayValue, 
+				});
+
+			});
+		}
+
 	}	
 
 
@@ -592,40 +631,78 @@ function afterPreloader() {
 	/* 
 		hero-3-animation
 	*/
-	// if (window.matchMedia("(min-width: 320px)").matches) {
 
+	var hero3ani = gsap.timeline({});
+
+	hero3ani.from(".as-hero-3-img-1 img", {
+		xPercent: -100,
+		duration:2.5,
+		ease: CustomEase.create("custom", "M0,0 C0.272,0 0.282,0.517 0.35,0.678 0.409,0.821 0.744,1 1,1 "),
+	});
+	hero3ani.from(".as-hero-3-img-2 img", {
+		xPercent: -100,
+		duration:2.5,
+		ease: CustomEase.create("custom", "M0,0 C0.272,0 0.282,0.517 0.35,0.678 0.409,0.821 0.744,1 1,1 "),
+	},"<2%");	
+
+	var hero3ani2 = gsap.timeline({});
+
+	hero3ani2.from(".as-hero-3-content .title img", {
+		rotation: 360,
+		duration: 1,
+		ease: CustomEase.create("custom", "M0,0 C0.272,0 0.282,0.517 0.35,0.678 0.409,0.821 0.744,1 1,1 "),
+		delay: 1,
+	});
+	hero3ani2.from(".as-hero-3-content .title", {
+		yPercent: 100,
+		opacity: 0,
+		duration: 1,
+		ease: CustomEase.create("custom", "M0,0 C0.272,0 0.282,0.517 0.35,0.678 0.409,0.821 0.744,1 1,1 "),
+	},"<");
+	hero3ani2.from(".as-hero-3-content .disc", {
+		yPercent: 100,
+		opacity: 0,
+		duration: 1,
+		ease: CustomEase.create("custom", "M0,0 C0.272,0 0.282,0.517 0.35,0.678 0.409,0.821 0.744,1 1,1 "),
+	},"<50%");
+	hero3ani2.from(".as-hero-3-big-title", {
+		yPercent: 100,
+		opacity: 0,
+		duration: 1,
+		ease: CustomEase.create("custom", "M0,0 C0.272,0 0.282,0.517 0.35,0.678 0.409,0.821 0.744,1 1,1 "),
+	},"<50%");	
+
+
+	if (window.matchMedia("(min-width: 1200px)").matches) {
+
+		gsap.to(".as-hero-3-pin", {
+			scrollTrigger: {
+				trigger: ".as-hero-3-height",
+				start: "top 0%", 
+				end: "1100px",
+				pin: ".as-hero-3-pin", 
+				pinSpacing: false,
+				markers: false,
+			}
+		});
 		
-	// 	var hero3ani = gsap.timeline({});
-
-	// 	hero3ani.from(".as-hero-3-img-1 img", {
-	// 		xPercent: -100,
-	// 		duration:2.5,
-	// 		ease: CustomEase.create("custom", "M0,0 C0.272,0 0.282,0.517 0.35,0.678 0.409,0.821 0.744,1 1,1 "),
-	// 	});
-	// 	hero3ani.from(".as-hero-3-img-2 img", {
-	// 		xPercent: -100,
-	// 		duration:2.5,
-	// 		ease: CustomEase.create("custom", "M0,0 C0.272,0 0.282,0.517 0.35,0.678 0.409,0.821 0.744,1 1,1 "),
-	// 	},"<2%");	
-
-
 		
-	// 	var hero3ani2 = gsap.timeline({
-	// 		scrollTrigger: {
-	// 			trigger: ".as-hero-3-area",
-	// 			start: "top 0%",
-	// 			end: "top bottom",
-	// 			toggleActions: "play none none reverse",
-	// 			scrub: true,
-	// 			markers: true,
-	// 		},
-	// 	});
+		var hero3ani3 = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".as-hero-3-height",
+				start: "top 0%",
+				end: "1100px",
+				toggleActions: "play none none reverse",
+				scrub: true,
+				markers: false,
+			},
+		});
 
-	// 	hero3ani2.to(".as-hero-3-img-1", {
-	// 		clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-	// 	});
+		hero3ani3.to(".as-hero-3-img-1", {
+			clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+		});
 		
-	// }
+	}
 
 
 /* 
@@ -1277,7 +1354,7 @@ if (window.matchMedia("(min-width: 1400px)").matches) {
 /* 
 	firefly-animation
 */
-const paths = document.querySelectorAll('.as-blog-1-left-svg path');
+const paths = document.querySelectorAll('.as-faqs-3-top-bg-dot path');
 
 	paths.forEach((path) => {
 		function animatePath() {
@@ -2014,59 +2091,59 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-const random_char = () => {
-  const possible = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~" +
-        "0123456789" +
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
-        "abcdefghijklmnopqrstuvwxyz";
-  return possible.charAt(Math.floor(Math.random() * possible.length));
-};
+// const random_char = () => {
+//   const possible = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~" +
+//         "0123456789" +
+//         "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+//         "abcdefghijklmnopqrstuvwxyz";
+//   return possible.charAt(Math.floor(Math.random() * possible.length));
+// };
 
-const mask = (chars, progress) => {
-  const masked = [];
+// const mask = (chars, progress) => {
+//   const masked = [];
 
-  for (let i = 0; i < chars.length; i++) {
-    const position = (i + 1) / chars.length;
-    if (position > progress) {
-      masked.push(random_char());
-    } else {
-      masked.push(chars[i]);
-    }
-  }
+//   for (let i = 0; i < chars.length; i++) {
+//     const position = (i + 1) / chars.length;
+//     if (position > progress) {
+//       masked.push(random_char());
+//     } else {
+//       masked.push(chars[i]);
+//     }
+//   }
 
-  return masked.join('');
-};
+//   return masked.join('');
+// };
 
-const shuffle = el => {
-  const chars = el.textContent.split('');
+// const shuffle = el => {
+//   const chars = el.textContent.split('');
 
-  const params = {
-    progress: 0
-  };
+//   const params = {
+//     progress: 0
+//   };
 
-  const a = anime({
-    targets: params,
-    progress: 1,
-    delay: 1000,
-    duration: 1000,
-    easing: 'easeInQuad',
-    update: () => {
-      el.textContent = mask(chars, params.progress);
-    },
-    complete: () => {
-      el.classList.add('completed');
-    }
-  });
+//   const a = anime({
+//     targets: params,
+//     progress: 1,
+//     delay: 1000,
+//     duration: 1000,
+//     easing: 'easeInQuad',
+//     update: () => {
+//       el.textContent = mask(chars, params.progress);
+//     },
+//     complete: () => {
+//       el.classList.add('completed');
+//     }
+//   });
   
-  el.onclick = () => {
-    el.classList.remove('completed');
-    a.restart();
-  };
-};
+//   el.onclick = () => {
+//     el.classList.remove('completed');
+//     a.restart();
+//   };
+// };
 
-for (const el of document.querySelectorAll('.shuffle')) {
-  shuffle(el);
-}
+// for (const el of document.querySelectorAll('.shuffle')) {
+//   shuffle(el);
+// }
 
 
 

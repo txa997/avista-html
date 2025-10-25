@@ -196,3 +196,11 @@
 .wa_parallax_bg {
     will-change: background-position;
 }
+
+.wa-split-up {
+    .split-line {
+        div {
+            transform-origin: 86% 76%;
+        }
+    }
+}

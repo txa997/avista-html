@@ -603,11 +603,29 @@
             color: #f1f1f1;
             opacity: .84;
             font-weight: 400;
+            transition: var(--as-cube-2);
+
+            &:hover {
+                color: var(--as-clr-pr-3);
+                transform: translateX(3px);
+            }
         }
 
         .link-el-2 {
             font-size: 55px;
             color: #fff;
+            transition: var(--as-cube-2);
+            display: inline-block;
+            background: linear-gradient(90deg, var(--as-clr-pr-3) 50%, #fff 50%);
+            background-size: 200%;
+            background-position-x: 100%;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            &:hover {
+                background-position-x: 0%;
+                transform: translateX(3px);
+            }
 
             @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
                 font-size: 35px;

@@ -294,6 +294,9 @@
     font-size: 18px;
     color: #fff;
     transition: var(--as-cube-2);
+    background: transparent;
+    border: none;
+    padding: 0;
     &:hover {
         color: var(--as-clr-pr-3);
     }
