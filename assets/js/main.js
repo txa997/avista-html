@@ -704,6 +704,30 @@ function afterPreloader() {
 		
 	}
 
+	// hero-4-animation
+	// if (window.matchMedia("(min-width: 1200px)").matches) {
+
+		
+	// 	var hero4ani3 = gsap.timeline({
+	// 		scrollTrigger: {
+	// 			trigger: ".as-hero-4-area",
+	// 			start: "top -600px",
+	// 			end: "1000px",
+	// 			toggleActions: "play none none reverse",
+	// 			scrub: true,
+	// 			markers: true,
+	// 		},
+	// 	});
+
+	// 	hero4ani3.to(".as-home-4-logo-fixed", {
+	// 		top: "30px",
+	// 	});
+	// 	hero4ani3.to(".as-home-4-logo-fixed .logo-text", {
+	// 		fontSize: "50px",
+	// 	},"<");
+		
+	// }
+
 
 /* 
 	after-preloader-end

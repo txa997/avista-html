@@ -499,17 +499,116 @@
 }
 
 
-// @keyframes ash3kf {
-//     0% {
-//         top: unset;
-//     }    
-//     100% {
-//         top: unset;
-//         bottom: 30px;
-//     }
-// }
 /* 
     header-3-end
+*/
+
+/* 
+    header-4-start
+*/
+.as-header-4 {
+    &-area {
+        position: fixed;
+        right: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+
+        @media #{$lg,$md,$xs} {
+            display: none;
+        }
+    }
+}
+
+.as-main-navigation {
+    &:is(.as-header-4-menu) {
+        background: rgb(255 255 255 / 15%);
+        backdrop-filter: blur(5px);
+        border-radius: 100px;
+        padding: 11px 10px;
+
+        .navbar-nav {
+            flex-direction: column;
+            gap: 16px;
+
+            li {
+                flex: 0 0 auto;
+                position: relative;
+                a {
+                    flex: 0 0 auto;
+                    color: #fff;
+                    padding: 0;
+                    font-size: 20px;
+                    width: 45px;
+                    height: 45px;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+
+                    &::before {
+                        display: none;
+                    }
+                }
+
+                &:hover {
+                    > a {
+                        background: rgb(255 255 255 / 20%);
+                    }
+                    
+                }
+
+
+                .dropdown-menu {
+                    left: unset;
+                    top: 10px;
+                    right: calc(100% + 20px);
+                    background: rgb(255 255 255 / 20%);
+                    border-radius: 100px 0 0 100px;
+                    text-align: right;
+                    padding: 0;
+                    min-width: auto;
+                    width: max-content;
+                    transform-origin: right;
+                    transition: .2s;
+
+                    li {
+                        width: 100%;
+                        a {
+                            width: 100%;
+                            font-size: 16px;
+                            background: transparent;
+                            height: auto;
+                            padding: 4px 15px;
+                            padding-left: 23px;
+                        }
+
+
+
+                        &:hover {
+                            > a {
+                                transform: unset;
+                                color: var(--as-clr-pr-3);
+                            }
+                        }
+
+
+
+                    }
+                }
+
+
+                &:nth-child(1) {
+                    .dropdown-menu {
+                        border-radius: 10px 0 0 10px;
+                        padding: 5px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+/* 
+    header-4-end
 */
 
 

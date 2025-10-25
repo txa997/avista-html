@@ -74,5 +74,55 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 .flaticon-dot-arrow-1:before {
     content: "\f112";
 }
-
+.flaticon-hut:before {
+    content: "\f113";
+}
+.flaticon-luggage:before {
+    content: "\f114";
+}
+.flaticon-document:before {
+    content: "\f115";
+}
+.flaticon-speech-bubble:before {
+    content: "\f116";
+}
+.flaticon-price-tag:before {
+    content: "\f117";
+}
+.flaticon-end-call:before {
+    content: "\f118";
+}
+.flaticon-phone-call:before {
+    content: "\f119";
+}
+.flaticon-person:before {
+    content: "\f11a";
+}
+.flaticon-trophy:before {
+    content: "\f11b";
+}
+.flaticon-question:before {
+    content: "\f11c";
+}
+.flaticon-sparkle:before {
+    content: "\f11d";
+}
+.flaticon-star-1:before {
+    content: "\f11e";
+}
+.flaticon-asterisk:before {
+    content: "\f11f";
+}
+.flaticon-twitter:before {
+    content: "\f120";
+}
+.flaticon-premium-badge:before {
+    content: "\f121";
+}
+.flaticon-medal:before {
+    content: "\f122";
+}
+.flaticon-quote:before {
+    content: "\f123";
+}
 

@@ -517,3 +517,73 @@
 /* 
     portfolio-2-end
 */
+/* 
+    portfolio-4-start
+*/
+.as-portfolio-4 {
+    &-area {
+        z-index: 2;
+    }
+    &-wrap {
+        margin-left: -60px;
+        margin-right: -60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+
+        @media #{$xxl,$xl,$lg} {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        @media #{$md} {
+            margin-left: 0px;
+            margin-right: 0px;
+            grid-template-columns: 1fr 1fr ;
+        }
+        @media #{$xs} {
+            margin-left: 0px;
+            margin-right: 0px;
+            grid-template-columns: 1fr  ;
+        }
+        @media #{$sm} {
+            margin-left: 0px;
+            margin-right: 0px;
+            grid-template-columns: 1fr 1fr ;
+        }
+    }
+    &-item {
+        height: 490px;
+        border-radius: 8px;
+        position: relative;
+        z-index: 1;
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            height: 400px;
+        }
+
+        .item-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 78px;
+            height: 78px;
+            background: #fff;
+            color: #000;
+            position: absolute;
+            bottom: 35px;
+            right: 35px;
+            border-radius: 50%;
+            font-size: 32px;
+
+            
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+/* 
+    portfolio-4-end
+*/

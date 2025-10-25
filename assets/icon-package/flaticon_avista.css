@@ -11,11 +11,11 @@
 
 @font-face {
     font-family: "flaticon_avista";
-    src: url("./flaticon_avista.woff2?1721be9524324eecea1c0bb94cf51b6d") format("woff2"),
-url("./flaticon_avista.woff?1721be9524324eecea1c0bb94cf51b6d") format("woff"),
-url("./flaticon_avista.eot?1721be9524324eecea1c0bb94cf51b6d#iefix") format("embedded-opentype"),
-url("./flaticon_avista.ttf?1721be9524324eecea1c0bb94cf51b6d") format("truetype"),
-url("./flaticon_avista.svg?1721be9524324eecea1c0bb94cf51b6d#flaticon_avista") format("svg")
+    src: url("./flaticon_avista.woff2?00e79849b4049b393ae98728351bb542") format("woff2"),
+url("./flaticon_avista.woff?00e79849b4049b393ae98728351bb542") format("woff"),
+url("./flaticon_avista.eot?00e79849b4049b393ae98728351bb542#iefix") format("embedded-opentype"),
+url("./flaticon_avista.ttf?00e79849b4049b393ae98728351bb542") format("truetype"),
+url("./flaticon_avista.svg?00e79849b4049b393ae98728351bb542#flaticon_avista") format("svg")
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -82,5 +82,56 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 }
 .flaticon-dot-arrow-1:before {
     content: "\f112";
+}
+.flaticon-hut:before {
+    content: "\f113";
+}
+.flaticon-luggage:before {
+    content: "\f114";
+}
+.flaticon-document:before {
+    content: "\f115";
+}
+.flaticon-speech-bubble:before {
+    content: "\f116";
+}
+.flaticon-price-tag:before {
+    content: "\f117";
+}
+.flaticon-end-call:before {
+    content: "\f118";
+}
+.flaticon-phone-call:before {
+    content: "\f119";
+}
+.flaticon-person:before {
+    content: "\f11a";
+}
+.flaticon-trophy:before {
+    content: "\f11b";
+}
+.flaticon-question:before {
+    content: "\f11c";
+}
+.flaticon-sparkle:before {
+    content: "\f11d";
+}
+.flaticon-star-1:before {
+    content: "\f11e";
+}
+.flaticon-asterisk:before {
+    content: "\f11f";
+}
+.flaticon-twitter:before {
+    content: "\f120";
+}
+.flaticon-premium-badge:before {
+    content: "\f121";
+}
+.flaticon-medal:before {
+    content: "\f122";
+}
+.flaticon-quote:before {
+    content: "\f123";
 }
 

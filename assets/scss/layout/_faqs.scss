@@ -120,6 +120,10 @@
         display: grid;
         gap: 30px;
         grid-template-columns: 1fr 1.28fr;
+
+        @media #{$md,$xs} {
+            grid-template-columns: 1fr;
+        }
     }
 
     &-left {

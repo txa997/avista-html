@@ -5,7 +5,8 @@
     &-area {
         background-color: var(--as-clr-h-1);
         padding-bottom: 0px;
-
+        border-bottom: 1px solid rgb(255 255 255 / 10%);
+        
         @media #{$md,$xs} {
             padding-bottom: 150px;
         }

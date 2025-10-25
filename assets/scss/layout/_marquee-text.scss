@@ -151,3 +151,86 @@
 /* 
     marquee-text-3-end
 */
+/* 
+    marquee-text-4-start
+*/
+.as-marquee-text-4 {
+    &-area {
+        margin-top: -180px;
+
+        @media #{$xl} {
+            margin-top: -90px;
+        }
+        @media #{$lg} {
+            margin-top: -60px;
+        }
+
+        @media #{$md} {
+            margin-top: -50px;
+        }
+        @media #{$xs} {
+            margin-top: 0px;
+        }
+
+        .wa_marquee_left_nopause {
+            margin-top: -110px;
+        }
+
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 200px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            background: linear-gradient(180deg, rgb(0 0 0 / 0%), #000000);
+        }
+    }
+
+    &-text {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-right: 40px;
+
+        .text-elm {
+            flex: 0 0 auto;
+            color: #fff;
+            font-size: 100px;
+
+            @media #{$xxxl} {
+                font-size: 90px;
+            }
+            @media #{$xxl} {
+                font-size: 80px;
+            }
+            @media #{$xl} {
+                font-size: 70px;
+            }
+            @media #{$lg} {
+                font-size: 60px;
+            }
+            @media #{$md} {
+                font-size: 70px;
+            }
+            @media #{$xs} {
+                font-size: 50px;
+            }
+            @media #{$sm} {
+                font-size: 60px;
+            }
+        }
+
+        i {
+            color: var(--as-clr-pr-3);
+            font-size: 50px;
+            flex: 0 0 auto;
+        }
+    }
+}
+
+/* 
+    marquee-text-4-end
+*/
