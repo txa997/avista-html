@@ -352,6 +352,10 @@
         z-index: 1;
         transition: var(--as-cube-2);
 
+        @media #{$xl} {
+            gap: 30px;
+        }
+
         &::after {
             content: "";
             width: 100%;
@@ -431,6 +435,13 @@
                         transition: var(--as-cube-2);
                         opacity: 0;
                         transform: translateX(5px);
+                    }
+
+                    &:is(.active) {
+                        &::after {
+                            opacity: 1;
+                            transform: translateX(0px);
+                        }
                     }
                 }
 

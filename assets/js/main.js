@@ -163,6 +163,70 @@ $(".as-header-1-menu-toggle-btn").on("click", function () {
 
 
 /* 
+	home-3-menu-spy
+*/
+$(document).ready(function () {
+    const $navLinks = $('.as-main-navigation a');
+    const headerOffset = 0; 
+
+    $navLinks.on('click', function (e) {
+        e.preventDefault();
+
+        const target = this.hash;
+
+        if (!target || target === '#') return;
+
+        const $target = $(target);
+        if (!$target.length) return;
+
+        $(document).off("scroll");
+
+        $navLinks.removeClass('active');
+        $(this).addClass('active');
+
+        $('html, body').stop().animate({
+            scrollTop: $target.offset().top - headerOffset
+        }, 700, 'easeInOutCubic', function () {
+            // update hash without jump
+            history.pushState(null, null, target);
+            $(document).on("scroll", onScroll); 
+        });
+    });
+
+    // ScrollSpy function
+    $(document).on("scroll", onScroll);
+
+    function onScroll() {
+        const scrollPos = $(document).scrollTop() + headerOffset;
+
+        $navLinks.each(function () {
+            const currLink = $(this);
+            const href = currLink.attr("href");
+
+            if (!href || href === '#' || href.charAt(0) !== '#') return;
+
+            const $section = $(href);
+            if (!$section.length) return;
+
+            const sectionTop = $section.offset().top;
+            const sectionBottom = sectionTop + $section.outerHeight();
+
+            if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                $navLinks.removeClass("active");
+                currLink.addClass("active");
+            }
+        });
+    }
+
+    jQuery.easing['easeInOutCubic'] = function (x, t, b, c, d) {
+        if ((t /= d / 2) < 1) return c / 2 * t * t * t + b;
+        return c / 2 * ((t -= 2) * t * t + 2) + b;
+    };
+
+    onScroll();
+});
+
+/* 
 	windows-load-function
 */
 
@@ -861,72 +925,72 @@ function afterPageLoad() {
 	hero-1-cursor-effect
 */
 if($("#wa_cursor_noise").length) {
-const waCanvas = document.getElementById("wa_cursor_noise");
-const waCtx = waCanvas.getContext("2d");
+	const waCanvas = document.getElementById("wa_cursor_noise");
+	const waCtx = waCanvas.getContext("2d");
 
-let waParticles = [];
-const waNoiseColor = "rgba(0,0,0,0.5)"; 
-const waRadius = 250; 
-const waDotSize = 2;  
+	let waParticles = [];
+	const waNoiseColor = "rgba(0,0,0,0.5)"; 
+	const waRadius = 250; 
+	const waDotSize = 2;  
 
-function waResizeCanvas() {
-  waCanvas.width = window.innerWidth;
-  waCanvas.height = window.innerHeight;
-}
-waResizeCanvas();
-window.addEventListener("resize", waResizeCanvas);
+	function waResizeCanvas() {
+		waCanvas.width = window.innerWidth;
+		waCanvas.height = window.innerHeight;
+	}
+	waResizeCanvas();
+	window.addEventListener("resize", waResizeCanvas);
 
-class waParticle {
-  constructor(x, y) {
-    const angle = Math.random() * Math.PI * 2;
-    const dist = Math.random() * waRadius;
+	class waParticle {
+		constructor(x, y) {
+			const angle = Math.random() * Math.PI * 2;
+			const dist = Math.random() * waRadius;
 
-    this.x = x + Math.cos(angle) * dist;
-    this.y = y + Math.sin(angle) * dist;
+			this.x = x + Math.cos(angle) * dist;
+			this.y = y + Math.sin(angle) * dist;
 
-    this.size = waDotSize;
-    this.alpha = 1;
-    this.life = 0;
-    this.maxLife = 60;
+			this.size = waDotSize;
+			this.alpha = 1;
+			this.life = 0;
+			this.maxLife = 60;
 
-    this.vx = Math.cos(angle) * 1; 
-    this.vy = Math.sin(angle) * 1;
-  }
+			this.vx = Math.cos(angle) * 1; 
+			this.vy = Math.sin(angle) * 1;
+		}
 
-  update() {
-    this.life++;
-    this.x += this.vx; 
-    this.y += this.vy;
-    this.alpha -= 0.02; 
-    if (this.alpha < 0) this.alpha = 0;
-  }
+		update() {
+			this.life++;
+			this.x += this.vx; 
+			this.y += this.vy;
+			this.alpha -= 0.02; 
+			if (this.alpha < 0) this.alpha = 0;
+		}
 
-  draw() {
-    waCtx.fillStyle = waNoiseColor;
-    waCtx.globalAlpha = this.alpha;
-    waCtx.fillRect(this.x, this.y, this.size, this.size);
-    waCtx.globalAlpha = 1;
-  }
-}
+		draw() {
+			waCtx.fillStyle = waNoiseColor;
+			waCtx.globalAlpha = this.alpha;
+			waCtx.fillRect(this.x, this.y, this.size, this.size);
+			waCtx.globalAlpha = 1;
+		}
+	}
 
-window.addEventListener("mousemove", (e) => {
-  for (let i = 0; i < 60; i++) { 
-    waParticles.push(new waParticle(e.clientX, e.clientY));
-  }
-});
+	window.addEventListener("mousemove", (e) => {
+		for (let i = 0; i < 60; i++) { 
+			waParticles.push(new waParticle(e.clientX, e.clientY));
+		}
+	});
 
-function waAnimate() {
-  waCtx.clearRect(0, 0, waCanvas.width, waCanvas.height);
-  waParticles.forEach((p, i) => {
-    p.update();
-    p.draw();
-    if (p.life > p.maxLife) {
-      waParticles.splice(i, 1);
-    }
-  });
-  requestAnimationFrame(waAnimate);
-}
-waAnimate();
+	function waAnimate() {
+	waCtx.clearRect(0, 0, waCanvas.width, waCanvas.height);
+		waParticles.forEach((p, i) => {
+			p.update();
+			p.draw();
+			if (p.life > p.maxLife) {
+			waParticles.splice(i, 1);
+			}
+		});
+		requestAnimationFrame(waAnimate);
+	}
+	waAnimate();
 }
 
 /* 
@@ -1380,15 +1444,15 @@ if (window.matchMedia("(min-width: 1400px)").matches) {
 */
 const paths = document.querySelectorAll('.as-faqs-3-top-bg-dot path');
 
-	paths.forEach((path) => {
-		function animatePath() {
-				gsap.to(path, {
-				opacity: Math.random() > 0.5 ? 1 : 0,
-				duration: Math.random() * 0.2 + 0.2, 
-				delay: Math.random() * 0.1, 
-				onComplete: animatePath, 
-				ease: "power1.inOut"
-			});
+paths.forEach((path) => {
+	function animatePath() {
+		gsap.to(path, {
+			opacity: Math.random() > 0.5 ? 1 : 0,
+			duration: Math.random() * 0.2 + 0.2, 
+			delay: Math.random() * 0.1, 
+			onComplete: animatePath, 
+			ease: "power1.inOut"
+		});
 	}
   	animatePath(); 
 });
@@ -1517,36 +1581,34 @@ if (window.matchMedia("(min-width: 1400px)").matches) {
 
 // services-2-img
 if (window.matchMedia("(min-width: 1200px)").matches) { 
-if ($(".as-services-2-item").length) {
-	const featureItems = document.querySelectorAll(".as-services-2-item");
-  
-	featureItems.forEach((featureItem) => {
-	  const flair = featureItem.querySelector(".cursor-follow");
-  
-	  // Initial state
-	  gsap.set(flair, { scale: 0, opacity: 0, xPercent: -50, yPercent: -50 });
-  
-	  // Prepare smooth cursor motion
-	  const xTo = gsap.quickTo(flair, "x", { duration: 0.2, ease: "power1.out", });
-	  const yTo = gsap.quickTo(flair, "y", { duration: 0.2, ease: "power1.out", });
-  
-	  featureItem.addEventListener("mouseenter", () => {
-		gsap.to(flair, { scale: 1, opacity: 1, duration: 0.2, ease: "power1.out", });
-	  });
-  
-	  featureItem.addEventListener("mousemove", (e) => {
-		const rect = featureItem.getBoundingClientRect();
-		const x = e.clientX - rect.left;
-		const y = e.clientY - rect.top;
-		xTo(x);
-		yTo(y);
-	  });
-  
-	  featureItem.addEventListener("mouseleave", () => {
-		gsap.to(flair, { scale: 0, opacity: 0, duration: 0.2, ease: "power1.out", });
-	  });
-	});
-  } 
+	if ($(".as-services-2-item").length) {
+		const featureItems = document.querySelectorAll(".as-services-2-item");
+	
+		featureItems.forEach((featureItem) => {
+		const flair = featureItem.querySelector(".cursor-follow");
+	
+		gsap.set(flair, { scale: 0, opacity: 0, xPercent: -50, yPercent: -50 });
+	
+		const xTo = gsap.quickTo(flair, "x", { duration: 0.2, ease: "power1.out", });
+		const yTo = gsap.quickTo(flair, "y", { duration: 0.2, ease: "power1.out", });
+	
+		featureItem.addEventListener("mouseenter", () => {
+			gsap.to(flair, { scale: 1, opacity: 1, duration: 0.2, ease: "power1.out", });
+		});
+	
+		featureItem.addEventListener("mousemove", (e) => {
+			const rect = featureItem.getBoundingClientRect();
+			const x = e.clientX - rect.left;
+			const y = e.clientY - rect.top;
+			xTo(x);
+			yTo(y);
+		});
+	
+		featureItem.addEventListener("mouseleave", () => {
+			gsap.to(flair, { scale: 0, opacity: 0, duration: 0.2, ease: "power1.out", });
+		});
+		});
+	} 
 }
 
 
@@ -1702,10 +1764,6 @@ if (window.matchMedia("(min-width: 1600px)").matches) {
 	},"<");
 
 
-
-		
-
-	
 	
 }
 
@@ -1782,24 +1840,29 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 	var project3titleImg = gsap.timeline({
 		scrollTrigger: {
 			trigger: ".as-projects-3-sec-title",
-			start: "top 80%",
-			end: "top 15%",
+			start: "top 50%",
+			end: "top 10%",
 			toggleActions: "play none none reverse",
-			scrub: true,
+			scrub: 1.5,
 			markers: false,
 		},
 	});
 
-	project3titleImg.from(".as-projects-3-sec-title .title-img-elm", {
+	project3titleImg.to(".as-projects-3-sec-title .title-img-elm", {
 		width: "0px",
-		height: "0px",
 	});
+
+	project3titleImg.to(".as-projects-3-sec-title .title-2", {
+		gap: "0px",
+	},"<");
+
+	project3titleImg.to(".as-projects-3-sec-title .title-img", {
+		gap: "0px",
+	},"<");
 
 	
 	
 }
-
-
 
 
 
@@ -1858,320 +1921,60 @@ if ($('.b2_slider_active').length) {
 */
 if ($('.as_t3_main_slider').length) {
 
-  
-	// const as_t3_preview_slider = new Swiper('.as_t3_preview_slider', {
-	// 	loop: true,
-	// 	speed: 500,
-	// 	slidesPerView: "auto",
-	// 	centeredSlides: true,
- 	// 	slidesPerView: 1,
-	// 	// effect: "fade",
-	// 	// fadeEffect: { 
-	// 	// 	crossFade: true 
-	// 	// },
+	const as_t3_main_slider = new Swiper('.as_t3_main_slider', {
+		loop: true,
+		speed: 700,
+		slidesPerView: "auto",
+		spaceBetween: 30,
+		centeredSlides: true,
+		navigation: {
+			nextEl: ".as_t3_next",
+			prevEl: ".as_t3_prev",
+		},
+		on: {
+			init: function () {
+				syncPreview(this);
+			},
+			slideChange: function () {
+				syncPreview(this);
+			},
+		},
+	});
 
-	// 	navigation: {
-	// 		nextEl: ".kk_t1_next",
-	// 		prevEl: ".kk_t1_prev",
-	// 	},
+	function syncPreview(swiper) {
+		const slides = swiper.slides;
+		const previewItems = document.querySelectorAll('.as-testimonial-3-slider-preview-item');
 
-	// });
+		previewItems.forEach((preview, index) => {
+			const img = preview.querySelector('.main-img');
+			const circle = preview.querySelector('.circle-text');
+			const realIndex = (swiper.realIndex + index) % slides.length;
+			const targetSlide = slides[realIndex];
+			const slideImg = targetSlide.querySelector('.item-author-img img');
+			if (slideImg) {
+				img.src = slideImg.src;
+			}
+		});
 
-
-
-// initialize testimonial main slider
-const as_t3_main_slider = new Swiper('.as_t3_main_slider', {
-    loop: true,
-    speed: 700,
-    slidesPerView: "auto",
-    spaceBetween: 30,
-    centeredSlides: true,
-    navigation: {
-        nextEl: ".as_t3_next",
-        prevEl: ".as_t3_prev",
-    },
-    on: {
-        init: function () {
-            syncPreview(this);
-        },
-        slideChange: function () {
-            syncPreview(this);
-        },
-    },
-});
-
-function syncPreview(swiper) {
-    const slides = swiper.slides;
-    const previewItems = document.querySelectorAll('.as-testimonial-3-slider-preview-item');
-
-    previewItems.forEach((preview, index) => {
-        const img = preview.querySelector('.main-img');
-        const circle = preview.querySelector('.circle-text');
-        const realIndex = (swiper.realIndex + index) % slides.length;
-        const targetSlide = slides[realIndex];
-        const slideImg = targetSlide.querySelector('.item-author-img img');
-        if (slideImg) {
-            img.src = slideImg.src;
-        }
-    });
-
-}
-
-
-function previewFadeEffect(swiperInstance) {
-	const previewContainer = document.querySelector('.as-testimonial-3-slider-preview');
-
-	function triggerFade() {
-		previewContainer.classList.remove('is_class_fade');
-		void previewContainer.offsetWidth; // reflow trick
-		previewContainer.classList.add('is_class_fade');
 	}
 
-	// trigger fade when slide changes
-	swiperInstance.on('slideChangeTransitionStart', triggerFade);
-}
+	function previewFadeEffect(swiperInstance) {
+		const previewContainer = document.querySelector('.as-testimonial-3-slider-preview');
+
+		function triggerFade() {
+			previewContainer.classList.remove('is_class_fade');
+			void previewContainer.offsetWidth; 
+			previewContainer.classList.add('is_class_fade');
+		}
+		swiperInstance.on('slideChangeTransitionStart', triggerFade);
+	}
 
 
-// === Initialize preview fade effect ===
-previewFadeEffect(as_t3_main_slider);
-
-
+	previewFadeEffect(as_t3_main_slider);
 
   
 }
   
-
-document.addEventListener("DOMContentLoaded", function() {
-
-// // Shuffle logic
-// const WsShuffleFunctions = {
-//     startShuffle: function(span, options) {
-//         const text = span.getAttribute('data-text') || span.textContent; // store original
-//         span.setAttribute('data-text', text); // future use
-//         const chars = text.split("");
-//         const randomChars = "AbCdE";
-//         let iteration = 0;
-
-//         // Start with blank (no original text visible)
-//         span.textContent = "";
-
-//         const interval = setInterval(() => {
-//             span.textContent = chars
-//                 .map((char, i) => {
-//                     if (i < iteration) return text[i];
-//                     return randomChars[Math.floor(Math.random() * randomChars.length)];
-//                 })
-//                 .join("");
-
-//             if (iteration >= chars.length) {
-//                 clearInterval(interval);
-//                 span.textContent = text; // restore final
-//             }
-
-//             iteration += 1;
-//         }, options.velocity || 60);
-//     }
-// };
-
-// // Target all shuffle elements
-// const shuffleEls = gsap.utils.toArray('.wa_text_shuffle');
-// const customDelay = 0.5;
-
-// shuffleEls.forEach((el) => {
-//     const spans = el.querySelectorAll('span');
-
-//     // Initial hidden state (opacity 0)
-//     gsap.set(spans, { opacity: 0 });
-
-//     ScrollTrigger.create({
-//         trigger: el,
-//         start: "top 80%",
-//         once: true, // একবারই animate হবে
-//         onEnter: () => {
-//             gsap.to(spans, {
-//                 opacity: 1,
-//                 duration: 0.4,
-//                 stagger: 0.1,
-//                 delay: customDelay,
-//                 onStart: function() {
-//                     if (!el.classList.contains('animated')) {
-//                         spans.forEach((span, spanIndex) => {
-//                             const spanDelay = spanIndex * 100;
-//                             setTimeout(() => {
-//                                 WsShuffleFunctions.startShuffle(span, {
-//                                     velocity: 40,
-//                                     shuffleIterations: 8
-//                                 });
-//                             }, spanDelay);
-//                         });
-//                         el.classList.add('animated');
-//                     }
-//                 }
-//             });
-//         }
-//     });
-// });
-
-
-
-
-//   // Shuffle Logic
-//   const shuffleFunctions = {
-//     startShuffle: function(span, options) {
-//       const text = span.getAttribute('data-text') || span.textContent;
-//       span.setAttribute('data-text', text);
-//       const chars = text.split("");
-//       const randomChars = " ";
-//       let iteration = 0;
-
-//       span.textContent = ""; // hide original at start
-
-//       const interval = setInterval(() => {
-//         span.textContent = chars
-//           .map((char, i) => {
-//             if (i < iteration) return text[i];
-//             return randomChars[Math.floor(Math.random() * randomChars.length)];
-//           })
-//           .join("");
-
-//         if (iteration >= chars.length) {
-//           clearInterval(interval);
-//           span.textContent = text;
-//           span.classList.add("shuffled");
-//         }
-
-//         iteration += 1;
-//       }, options.velocity || 50);
-//     }
-//   };
-
-//   // Animation per element
-//   const hasShuffleOnScroll = gsap.utils.toArray('.has-shuffle-onscroll');
-
-//   hasShuffleOnScroll.forEach(function(shuffleTitle) {
-
-//     // Split words into spans
-//     const words = shuffleTitle.innerText.trim().split(' ');
-//     shuffleTitle.innerHTML = '';
-
-//     words.forEach(function(word, i) {
-//       const span = document.createElement('span');
-//       span.classList.add('shuffle-word');
-//       span.setAttribute('data-text', word);
-//       span.textContent = word;
-//       shuffleTitle.appendChild(span);
-//       if (i < words.length - 1) shuffleTitle.appendChild(document.createTextNode(' '));
-//     });
-
-//     const spans = shuffleTitle.querySelectorAll('.shuffle-word');
-
-//     // ScrollTrigger Animation
-//     gsap.to(shuffleTitle, {
-//       scrollTrigger: {
-//         trigger: shuffleTitle,
-//         start: "top 85%",
-//         end: "bottom 40%",
-// 		toggleActions: "play none none reverse",
-//         onUpdate: (self) => {
-//           const progress = self.progress;
-
-//           spans.forEach((span, index) => {
-//             const delay = index * 0.08;
-//             const appearRangeStart = delay;
-//             const appearRangeEnd = appearRangeStart + 0.15;
-
-//             const opacity = gsap.utils.clamp(
-//               1,
-//               1,
-//               gsap.utils.mapRange(appearRangeStart, appearRangeEnd, 0, 1, progress)
-//             );
-//             gsap.set(span, { opacity: opacity });
-
-//             // trigger shuffle once
-//             if (progress >= appearRangeStart && !span.classList.contains("shuffled")) {
-//               shuffleFunctions.startShuffle(span, {
-//                 velocity: 40,
-//                 shuffleIterations: 4
-//               });
-//             }
-//           });
-//         }
-//       }
-//     });
-
-//   });
-
-
-
-
-
-
-});
-
-
-
-
-
-
-
-
-// const random_char = () => {
-//   const possible = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~" +
-//         "0123456789" +
-//         "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
-//         "abcdefghijklmnopqrstuvwxyz";
-//   return possible.charAt(Math.floor(Math.random() * possible.length));
-// };
-
-// const mask = (chars, progress) => {
-//   const masked = [];
-
-//   for (let i = 0; i < chars.length; i++) {
-//     const position = (i + 1) / chars.length;
-//     if (position > progress) {
-//       masked.push(random_char());
-//     } else {
-//       masked.push(chars[i]);
-//     }
-//   }
-
-//   return masked.join('');
-// };
-
-// const shuffle = el => {
-//   const chars = el.textContent.split('');
-
-//   const params = {
-//     progress: 0
-//   };
-
-//   const a = anime({
-//     targets: params,
-//     progress: 1,
-//     delay: 1000,
-//     duration: 1000,
-//     easing: 'easeInQuad',
-//     update: () => {
-//       el.textContent = mask(chars, params.progress);
-//     },
-//     complete: () => {
-//       el.classList.add('completed');
-//     }
-//   });
-  
-//   el.onclick = () => {
-//     el.classList.remove('completed');
-//     a.restart();
-//   };
-// };
-
-// for (const el of document.querySelectorAll('.shuffle')) {
-//   shuffle(el);
-// }
-
-
-
-
 
 /* 
     marquee-right

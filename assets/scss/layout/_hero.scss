@@ -818,51 +818,68 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+        perspective: 2000px;
+        transform-style: preserve-3d;
+        animation: rotateGradient 15s linear infinite;
+
         .overly-1 {
             width: 50%;
             height: 290px;
-            // background: var(--as-clr-pr-3);
             background-image: var(--as-clr-gd-3);
             background-size: 300% 100%;
             display: block;
-            filter: blur(31px);
+            filter: blur(41px);
             transform: rotate(17deg) translate(-100px, 200px);
-            animation: rotateGradient 3s linear infinite;
+
         }
         .overly-2 {
             width: 50%;
             height: 290px;
-            // background: var(--as-clr-pr-3);
             background-image: var(--as-clr-gd-3);
             background-size: 300% 100%;
             display: block;
-            filter: blur(31px);
-            transform: rotate(-7deg) translate(20px, 250px);
-            animation: rotateGradient 3s linear infinite;
-            animation-delay: 2s;
+            filter: blur(41px);
+            transform: rotate(-7deg) translate(20px, 220px);
         }
     }
 }
 
-
-
 @keyframes rotateGradient {
-    0% {
-        background-position-x: 0%;
-        opacity: 1;
-        filter: blur(25px);
-    }
-    50% {
-        background-position-x: 100%;
-        opacity: .9;
-        filter: blur(31px);
-    }
-    100% {
-        background-position-x: 0%;
-        opacity: 1;
-        filter: blur(25px);
-    }
+  0% {
+    transform: rotateZ(0deg) scale3d(1, 1, 1) skewX(0deg);
+  }
+  10% {
+    transform: rotateZ(2deg) scale3d(1.03, 0.97, 1) skewX(-2deg);
+  }
+  20% {
+    transform: rotateZ(4deg) scale3d(1.05, 0.94, 1) skewX(-4deg);
+  }
+  30% {
+    transform: rotateZ(3deg) scale3d(1.04, 0.96, 1) skewX(-3deg);
+  }
+  40% {
+    transform: rotateZ(1deg) scale3d(1.02, 0.98, 1) skewX(-1deg);
+  }
+  50% {
+    transform: rotateZ(0deg) scale3d(1, 1, 1) skewX(0deg);
+  }
+  60% {
+    transform: rotateZ(-2deg) scale3d(1.06, 0.95, 1) skewX(3deg);
+  }
+  70% {
+    transform: rotateZ(-3deg) scale3d(1.08, 0.92, 1) skewX(4deg);
+  }
+  80% {
+    transform: rotateZ(-1deg) scale3d(1.04, 0.97, 1) skewX(2deg);
+  }
+  90% {
+    transform: rotateZ(0deg) scale3d(1.02, 0.99, 1) skewX(1deg);
+  }
+  100% {
+    transform: rotateZ(0deg) scale3d(1, 1, 1) skewX(0deg);
+  }
 }
+
 
 
 
