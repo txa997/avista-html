@@ -165,66 +165,68 @@ $(".as-header-1-menu-toggle-btn").on("click", function () {
 /* 
 	home-3-menu-spy
 */
-$(document).ready(function () {
-    const $navLinks = $('.as-main-navigation a');
-    const headerOffset = 0; 
 
-    $navLinks.on('click', function (e) {
-        e.preventDefault();
+if($(".as-header-3-menu").length) {
+	const $navLinks = $('.as-main-navigation a');
+	const headerOffset = 0; 
 
-        const target = this.hash;
+	$navLinks.on('click', function (e) {
+		e.preventDefault();
 
-        if (!target || target === '#') return;
+		const target = this.hash;
 
-        const $target = $(target);
-        if (!$target.length) return;
+		if (!target || target === '#') return;
 
-        $(document).off("scroll");
+		const $target = $(target);
+		if (!$target.length) return;
 
-        $navLinks.removeClass('active');
-        $(this).addClass('active');
+		$(document).off("scroll");
 
-        $('html, body').stop().animate({
-            scrollTop: $target.offset().top - headerOffset
-        }, 700, 'easeInOutCubic', function () {
-            // update hash without jump
-            history.pushState(null, null, target);
-            $(document).on("scroll", onScroll); 
-        });
-    });
+		$navLinks.removeClass('active');
+		$(this).addClass('active');
 
-    // ScrollSpy function
-    $(document).on("scroll", onScroll);
+		$('html, body').stop().animate({
+			scrollTop: $target.offset().top - headerOffset
+		}, 700, 'easeInOutCubic', function () {
+			// update hash without jump
+			history.pushState(null, null, target);
+			$(document).on("scroll", onScroll); 
+		});
+	});
 
-    function onScroll() {
-        const scrollPos = $(document).scrollTop() + headerOffset;
+	// ScrollSpy function
+	$(document).on("scroll", onScroll);
 
-        $navLinks.each(function () {
-            const currLink = $(this);
-            const href = currLink.attr("href");
+	function onScroll() {
+		const scrollPos = $(document).scrollTop() + headerOffset;
 
-            if (!href || href === '#' || href.charAt(0) !== '#') return;
+		$navLinks.each(function () {
+			const currLink = $(this);
+			const href = currLink.attr("href");
 
-            const $section = $(href);
-            if (!$section.length) return;
+			if (!href || href === '#' || href.charAt(0) !== '#') return;
 
-            const sectionTop = $section.offset().top;
-            const sectionBottom = sectionTop + $section.outerHeight();
+			const $section = $(href);
+			if (!$section.length) return;
 
-            if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-                $navLinks.removeClass("active");
-                currLink.addClass("active");
-            }
-        });
-    }
+			const sectionTop = $section.offset().top;
+			const sectionBottom = sectionTop + $section.outerHeight();
 
-    jQuery.easing['easeInOutCubic'] = function (x, t, b, c, d) {
-        if ((t /= d / 2) < 1) return c / 2 * t * t * t + b;
-        return c / 2 * ((t -= 2) * t * t + 2) + b;
-    };
+			if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+				$navLinks.removeClass("active");
+				currLink.addClass("active");
+			}
+		});
+	}
 
-    onScroll();
-});
+	jQuery.easing['easeInOutCubic'] = function (x, t, b, c, d) {
+		if ((t /= d / 2) < 1) return c / 2 * t * t * t + b;
+		return c / 2 * ((t -= 2) * t * t + 2) + b;
+	};
+
+	onScroll();
+}
+
 
 /* 
 	windows-load-function
