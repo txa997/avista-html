@@ -573,21 +573,76 @@
         margin-left: 20px;
         margin-right: 20px;
         border-radius: 20px;
-        border: 1px solid red;
+        background-color: #101212;
+        overflow: hidden;
     }
+
+    &-bg-noise {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        z-index: -2;
+        opacity: .1;
+    }
+
+    &-bg-text {
+        font-weight: 700;
+        color: #333333;
+        writing-mode: sideways-lr;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: -50px;
+        transform: translateY(-50%);
+        font-size: 234px;
+        opacity: 23%;
+    }
+
+    &-bg-line {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        opacity: 5%;
+
+        .line {
+            width: 1px;
+            height: 100%;
+            background: #fff;
+        }
+    }
+
     &-wrap {
         margin-right: -35px;
         display: flex;
         justify-content: space-between;
         gap: 50px;
+
+        @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+            margin-right: 0;
+        }
     }
 
 
     &-right {
         height: 900px;
-        background: #222222;
+        background: #000;
         overflow: hidden;
         padding: 0 30px;
+
+        @media #{$lg,$md,$xs} {
+            height: auto;
+            background: transparent;
+            overflow: hidden;
+            padding: 0;
+        }
     }
 
     &-item {
@@ -598,9 +653,45 @@
             padding: 20px 0;
 
             &-single {
-                width: 830px;
+                max-width: 830px;
                 height: 622px;
                 border-radius: 15px;
+                position: relative;
+                z-index: 1;
+
+                @media #{$xl} {
+                    max-width: 550px;
+                }                
+                @media #{$lg} {
+                    max-width: 100%;
+                }
+                @media #{$md,$xs} {
+                    max-width: 100%;
+                    height: 400px;
+                }
+
+                .item-title {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    text-align: center;
+                    width: 100%;
+                    background: #000;
+                    font-size: 24px;
+                    color: #fff;
+                    padding: 18px 10px;
+                    transition: var(--as-cube-2);
+
+
+                    &:hover {
+                        color: var(--as-clr-pr-3);
+                    }
+
+
+                    @media #{$over,$xxxl,$xxl,$xl} {
+                        display: none;
+                    }
+                }
             }
         }
     }
@@ -613,6 +704,14 @@
         flex-direction: column;
         gap: 30px;
         padding: 100px 0;
+
+        @media #{$xxxl,$xxl,$xl} {
+            width: auto;
+            max-width: auto;
+        }
+        @media #{$lg,$md,$xs} {
+            display: none;
+        }
     }
 
 
@@ -699,3 +798,4 @@
 /* 
     services-4-end
 */
+

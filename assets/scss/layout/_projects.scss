@@ -284,3 +284,45 @@
 /* 
     projects-3-end
 */
+/* 
+    projects-4-start
+*/
+.as-projects-4-area {
+    .as-portfolio-1-sec-title {
+        .as-subtitle-4 {
+            margin-bottom: 20px;
+        }
+        .as-sec-title-1 {
+            font-weight: 600;
+            font-size: 90px;
+            max-width: 1100px;
+
+            @media #{$xxxl} {
+                font-size: 80px;
+            }
+
+            @media #{$xxl} {
+                font-size: 70px;
+            }
+
+            @media #{$xl} {
+                font-size: 60px;
+            }
+            @media #{$lg} {
+                font-size: 50px;
+            }
+            @media #{$md} {
+                font-size: 40px;
+            }
+            @media #{$xs} {
+                font-size: 28px;
+            }
+            @media #{$sm} {
+                font-size: 30x;
+            }
+        }
+    }
+}
+/* 
+    projects-4-end
+*/

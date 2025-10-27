@@ -908,6 +908,8 @@
     &-area {
         padding-top: 30px;
         padding-bottom: 538px;
+        background-color: #000;
+
 
         @media #{$lg,$md,$xs} {
             padding-bottom: 100px;
@@ -1009,7 +1011,7 @@
             font-weight: 600;
             margin-bottom: 25px;
 
-            i {color: var(--as-clr-pr-3);}
+            i {color: var(--as-clr-pr-1);}
 
             @media #{$xl,$lg,$md,$xs} {
                 font-size: 28px;

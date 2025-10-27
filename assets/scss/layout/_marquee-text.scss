@@ -157,6 +157,7 @@
 .as-marquee-text-4 {
     &-area {
         margin-top: -180px;
+        background-color: #000;
 
         @media #{$xl} {
             margin-top: -90px;
@@ -224,7 +225,7 @@
         }
 
         i {
-            color: var(--as-clr-pr-3);
+            color: var(--as-clr-pr-1);
             font-size: 50px;
             flex: 0 0 auto;
         }

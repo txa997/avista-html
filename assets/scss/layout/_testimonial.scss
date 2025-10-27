@@ -504,3 +504,172 @@
 /* 
     testimonial-3-end
 */
+/* 
+    testimonial-4-start
+*/
+
+.as-testimonial-4-area {
+    .as-testimonial-3 {
+        &-slider {
+            &-preview-item {
+                border: 5px solid #fff;
+                box-shadow: 0px 0px 33.54px 9.46px rgba(0, 0, 0, 0.1);
+
+                .main-img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                    clip-path: unset;
+                }
+            }
+        }
+    }
+}
+
+
+.as-testimonial-4 {
+    &-area {
+        &::after {
+            content: "";
+            width: 1200px;
+            height: 1200px;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+    }
+
+    &-big-title {
+        font-weight: 700;
+        color: #e7e7e7;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        transform: translateY(-50%);
+        z-index: -1;
+        font-size: 230px;
+        opacity: 30%;
+
+        @media #{$xxxl} {
+            font-size: 190px;
+        }
+        @media #{$xxl} {
+            font-size: 170px;
+        }
+        @media #{$xl} {
+            font-size: 150px;
+        }
+        @media #{$lg} {
+            font-size: 130px;
+        }
+        @media #{$md} {
+            font-size: 110px;
+        }
+        @media #{$xs} {
+            font-size: 50px;
+        }
+        @media #{$sm} {
+            font-size: 90px;
+        }
+    }
+
+    &-slider {
+        &-main {
+            max-width: 970px;
+            margin-left: auto;
+            margin-right: auto;
+
+            &-item {
+                .author-name {
+                    font-size: 24px;
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                }
+
+                .author-dg {
+                    color: #817f7f;
+                    font-size: 17px;
+                    font-weight: 400;
+                    margin-bottom: 15px;
+                }
+                
+                .icon-elm {
+                    font-size: 60px;
+                    color: var(--as-clr-pr-1);
+                    margin-bottom: 15px;
+                }
+                
+                .comment {
+                    line-height: 1.145;
+                    font-size: 48px;
+
+                    span {
+                        opacity: .4;
+                        display: inline;
+                    }
+
+                    @media #{$xl} {
+                        font-size: 38px;
+                    }
+                    @media #{$lg} {
+                        font-size: 35px;
+                    }
+                    @media #{$md,$xs} {
+                        font-size: 25px;
+                    }
+                }
+                
+            }
+        }
+
+
+        &-pagi {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+
+            &::after {
+                content: "";
+                max-width: 420px;
+                width: 100%;
+                height: 1px;
+                background: radial-gradient(#000000, transparent);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+            }
+
+            span {
+                margin: 0 !important;
+                width: 15px;
+                height: 15px;
+                background: var(--as-clr-h-1);
+                opacity: 1;
+
+                &:is(.swiper-pagination-bullet-active) {
+                    outline: 2px solid #fff;
+                    background: var(--as-clr-pr-1);
+                }
+            }
+        }
+    }
+    
+}
+
+/* 
+    testimonial-4-end
+*/

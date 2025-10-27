@@ -372,8 +372,53 @@
         width: 100%;
     }
 }
+
+
 /* 
     partner-3-end
+*/
+
+/* 
+    partner-4-start
+*/
+.as-partner-4-area {
+    &::after {
+        content: "";
+        width: 260px;
+        background: linear-gradient(90deg, #161616, transparent);
+        height: 100%;
+        position: absolute;
+        top: -5px;
+        left: 0;
+        z-index: 1;
+
+        @media #{$md} {
+            width: 100px;
+        }
+        @media #{$xs} {
+            width: 50px;
+        }
+    }
+    &::before {
+        content: "";
+        width: 260px;
+        background: linear-gradient(-90deg, #161616, transparent);
+        height: 100%;
+        position: absolute;
+        top: -5px;
+        right: 0;
+        z-index: 1;
+
+        @media #{$md} {
+            width: 100px;
+        }
+        @media #{$xs} {
+            width: 50px;
+        }
+    }
+}
+/* 
+    partner-4-end
 */
 
 

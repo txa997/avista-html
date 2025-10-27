@@ -687,9 +687,7 @@
     about-4-start
 */
 .as-about-4 {
-    &-area {
-        background-color: #f2f2f2;
-    }
+
 
     &-sec-title {
         display: flex;
@@ -818,7 +816,7 @@
 
         .author-rating {
             .icon {
-                color: var(--as-clr-pr-3);
+                color: var(--as-clr-pr-1);
                 display: flex;
                 font-size: 28px;
                 gap: 3px;
