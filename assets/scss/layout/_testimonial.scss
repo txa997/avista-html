@@ -529,21 +529,28 @@
 
 .as-testimonial-4 {
     &-area {
-        &::after {
-            content: "";
-            width: 1200px;
-            height: 1200px;
-            background: #fff;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -2;
 
-            @media #{$md,$xs} {
-                display: none;
+
+        .as-testimonial-3-slider-preview-item {
+            img {
+                border-radius: 50%;
             }
+        }
+    }
+
+    &-bg-circle {
+        width: 1200px;
+        height: 1200px;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -2;
+
+        @media #{$md,$xs} {
+            display: none;
         }
     }
 
@@ -630,6 +637,42 @@
                 }
                 
             }
+
+
+            .swiper-wrapper {
+                .swiper-slide {
+                    .as-testimonial-4-slider-main-item {
+                        .author-name, .author-dg, .icon-elm, .comment {
+                            transform: translateY(30px);
+                            opacity: 0;
+                            transition: var(--as-cube-2);
+                        }
+                    }
+    
+                    &:is(.swiper-slide-active) {
+                        .as-testimonial-4-slider-main-item {
+                            .author-name, .author-dg, .icon-elm, .comment {
+                                transform: translateY(0px);
+                                opacity: 1;
+                            }
+                            .author-name {
+                                transition-delay: .3s;
+                            }
+                            .author-dg {
+                                transition-delay: .4s;
+                            }
+                            .icon-elm {
+                                transition-delay: .5s;
+                            }
+                            .comment {
+                                transition-delay: .6s;
+                            }
+    
+                        }
+                    }
+                }
+            }
+
         }
 
 
@@ -666,6 +709,9 @@
                 }
             }
         }
+
+
+
     }
     
 }

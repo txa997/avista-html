@@ -632,7 +632,7 @@
 
 
     &-right {
-        height: 900px;
+        height: 800px;
         background: #000;
         overflow: hidden;
         padding: 0 30px;
@@ -729,6 +729,8 @@
                 font-size: 135px;
                 font-weight: 700;
                 line-height: 1;
+
+
             }
         }
 
@@ -743,11 +745,21 @@
                 display: flex;
                 align-items: center;
                 gap: 10px;
+                transition: var(--as-cube-2);
 
                 .line {
                     width: 8px;
                     height: 2px;
                     background: #5c5c5c;
+                    transition: var(--as-cube-2);
+                }
+
+                &:is(.active) {
+                    color: #fff;
+                    .line {
+                        background: var(--as-clr-pr-1);
+                        width: 15px;
+                    }
                 }
             }
         }
@@ -791,6 +803,14 @@
     }
 
     
+}
+
+.as-services-4 {
+    &-height {
+        @media #{$over,$xxxl,$xxl,$xl} {
+            height: 3000px;
+        }
+    }
 }
 
 

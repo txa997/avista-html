@@ -810,6 +810,19 @@
     color: var(--as-clr-pr-1);
     font-size: 220px;
     margin-top: -70px;
+
+    i {
+        transform: translateY(-100%) rotate(360deg);
+        transition: 1s var(--as-cube-1);
+        transform-origin: center;
+    }
+
+    &:is(.active) {
+        i {
+            transform: translateY(0%) rotate(0deg);
+            transition-delay: .3s;
+        }
+    }
 }
 
 /* 

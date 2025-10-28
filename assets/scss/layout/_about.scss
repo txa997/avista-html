@@ -920,9 +920,14 @@
             top: 0;
             height: 100%;
             z-index: -1;
-
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            transition: 2s var(--as-cube-1);
             img {
                 height: 100%;
+            }
+
+            &:is(.active) {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
             }
         }
 

@@ -576,6 +576,18 @@
             border-radius: 50%;
             font-size: 32px;
 
+            i {
+                transition: var(--as-cube-2);
+            }
+
+            &:hover {
+                background: var(--as-clr-pr-1);
+                i {
+                    transform: rotate(-45deg);
+                    color: #fff;
+                }
+            }
+
             
             @media #{$xxl,$xl,$lg,$md,$xs} {
                 width: 50px;

@@ -417,6 +417,18 @@
         }
     }
 }
+
+.as-partner-4-area {
+    .as-partner-3-logo {
+        .single-logo {
+            &:hover {
+                img {
+                    animation: jello2 1s;
+                }
+            }
+        }
+    }
+}
 /* 
     partner-4-end
 */

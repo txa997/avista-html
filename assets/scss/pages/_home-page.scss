@@ -95,6 +95,32 @@
 
 .as-home-4 {
     background-color: #f2f2f2;
+
+    &::after {
+        content: "";
+        height: 140px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        z-index: 3;
+        opacity: 1;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0);
+        -webkit-mask-image: linear-gradient(to top, #000 10%, rgba(0, 0, 0, 0) 100%);
+        mask-image: linear-gradient(to top, #000 10%, rgba(0, 0, 0, 0) 100%);
+        pointer-events: none;
+        
+        @media #{$lg} {
+            height: 120px;
+        }
+        @media #{$md} {
+            height: 100px;
+        }
+        @media #{$xs} {
+            height: 60px;
+        }
+    }
 }
 
 
