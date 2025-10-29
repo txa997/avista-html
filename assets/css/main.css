@@ -4133,7 +4133,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   justify-content: space-between;
   perspective: 2000px;
   transform-style: preserve-3d;
-  animation: rotateGradient 15s linear infinite;
+  animation: rotateGradient 10s linear infinite;
 }
 .as-hero-3-overly .overly-1 {
   width: 50%;

@@ -167,64 +167,22 @@ $(".as-header-1-menu-toggle-btn").on("click", function () {
 */
 
 if($(".as-header-3-menu").length) {
-	const $navLinks = $('.as-main-navigation a');
-	const headerOffset = 0; 
+	$(window).on('scroll', function() {
+		var scrollPos = $(window).scrollTop();
+		var windowHeight = $(window).height();
 
-	$navLinks.on('click', function (e) {
-		e.preventDefault();
+		$('section[id]').each(function() {
+			var sectionTop = $(this).offset().top;
+			var sectionHeight = $(this).outerHeight();
 
-		const target = this.hash;
+			if (scrollPos + windowHeight * 0.8 >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+				var id = $(this).attr('id');
 
-		if (!target || target === '#') return;
-
-		const $target = $(target);
-		if (!$target.length) return;
-
-		$(document).off("scroll");
-
-		$navLinks.removeClass('active');
-		$(this).addClass('active');
-
-		$('html, body').stop().animate({
-			scrollTop: $target.offset().top - headerOffset
-		}, 700, 'easeInOutCubic', function () {
-			// update hash without jump
-			history.pushState(null, null, target);
-			$(document).on("scroll", onScroll); 
-		});
-	});
-
-	// ScrollSpy function
-	$(document).on("scroll", onScroll);
-
-	function onScroll() {
-		const scrollPos = $(document).scrollTop() + headerOffset;
-
-		$navLinks.each(function () {
-			const currLink = $(this);
-			const href = currLink.attr("href");
-
-			if (!href || href === '#' || href.charAt(0) !== '#') return;
-
-			const $section = $(href);
-			if (!$section.length) return;
-
-			const sectionTop = $section.offset().top;
-			const sectionBottom = sectionTop + $section.outerHeight();
-
-			if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-				$navLinks.removeClass("active");
-				currLink.addClass("active");
+				$('.as-header-3-menu a').removeClass('active');
+				$('.as-header-3-menu a[href="#' + id + '"]').addClass('active');
 			}
 		});
-	}
-
-	jQuery.easing['easeInOutCubic'] = function (x, t, b, c, d) {
-		if ((t /= d / 2) < 1) return c / 2 * t * t * t + b;
-		return c / 2 * ((t -= 2) * t * t + 2) + b;
-	};
-
-	onScroll();
+	});
 }
 
 
