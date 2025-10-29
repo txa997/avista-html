@@ -127,30 +127,66 @@
     }
 }
 
+
+.as-subtitle-4 {
+    &-wrap {
+        flex: 0 0 auto;
+        max-width: 235px;
+        background: #fff;
+        border-radius: 100px;
+        padding: 13px 0;
+        overflow: hidden;
+        display: inline-block;
+
+        &::after {
+            content: "";
+            width: 50px;
+            height: 100%;
+            background: linear-gradient(90deg, #ffffff 20%, transparent);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            border-radius: 100px 0 0 100px;
+        }
+        &::before {
+            content: "";
+            width: 50px;
+            height: 100%;
+            background: linear-gradient(-90deg, #ffffff 20%, transparent);
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            border-radius: 0 100px 100px 0 ;
+        }
+
+
+        .wa_marquee_left_nopause {
+            margin-bottom: -8px;
+        }
+    }
+
+    &-text {
+        display: flex;
+        gap: 22px;
+        margin-right: 22px;
+    }
+}
+
 .as-subtitle-4 {
     font-family: var(--as-font-1);
     color: var(--as-clr-h-1);
     font-weight: 500;
     font-size: 24px;
     letter-spacing: -0.025em;
-    background: #fff;
     display: inline-block;
-    padding: 13px 53px;
-    border-radius: 100px;
     position: relative;
     z-index: 1;
     flex: 0 0 auto;
+    margin-bottom: 0;
+    padding-right: 27px;
 
-    &::after {
-        content: "";
-        width: 10px;
-        height: 10px;
-        background: var(--as-clr-pr-1);
-        border-radius: 50%;
-        position: absolute;
-        top: 22px;
-        left: 24px;
-    }
     &::before {
         content: "";
         width: 10px;
@@ -158,23 +194,14 @@
         background: var(--as-clr-pr-1);
         border-radius: 50%;
         position: absolute;
-        top: 22px;
-        right: 24px;
+        top: 9px;
+        right: 0px;
     }
 
-    @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+    @media #{$lg,$md,$xs} {
         font-size: 20px;
-        padding: 9px 45px;
-
-        &::after {
-            top: 16px;
-            left: 19px;
-        }
-        &::before {
-            top: 16px;
-            right: 19px;
-        }
     }
+
 }
 
 .as-sec-title-1 {

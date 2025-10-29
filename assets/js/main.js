@@ -1717,8 +1717,63 @@ if (window.matchMedia("(min-width: 1600px)").matches) {
 	});
 
 
-	
-	
+	gsap.to(".as-faqs-3-accordion-pin", {
+		scrollTrigger: {
+			trigger: ".as-faqs-3-bottom-height",
+			start: "top 10%", 
+			end: "600px",
+			pin: ".as-faqs-3-accordion-pin", 
+			pinSpacing: false,
+			markers: false,
+		}
+	});
+
+
+	var faqs3ctopAnimation = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as-faqs-3-bottom-height",
+			start: "top 10%", 
+			end: "900px",
+			toggleActions: "play none none reverse",
+			scrub: true,
+			markers: false,
+		},
+	});
+	faqs3ctopAnimation.to(".as-faqs-3-top-img-1", {
+		y: 2350,
+	});
+
+	var faqs3ctopAnimationv = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as-faqs-3-bottom-height",
+			start: "top 10%", 
+			end: "500px",
+			toggleActions: "play none none reverse",
+			scrub: true,
+			markers: false,
+		},
+	});
+	faqs3ctopAnimationv.from(".as-faqs-3-top-img-1 .inner-video", {
+		height: "0px",
+	});
+
+	var faqs3ctopAnimationC = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as-faqs-3-bottom-height",
+			start: "top 10%", 
+			end: "300px",
+			toggleActions: "play none none reverse",
+			scrub: true,
+			markers: false,
+		},
+	});
+	faqs3ctopAnimationC.to(".as-faqs-3-accordion", {
+		opacity: 0,
+	});
+
+
+
+
 }
 /* 
 	team-3-animation
@@ -1730,7 +1785,7 @@ if (window.matchMedia("(min-width: 1600px)").matches) {
 		scrollTrigger: {
 			trigger: ".as-team-3-wrap",
 			start: "top 80%",
-			end: "top 15%",
+			end: "top 40%",
 			toggleActions: "play none none reverse",
 			scrub: 1.5,
 			markers: false,
@@ -1881,9 +1936,9 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 		scrollTrigger: {
 			trigger: ".as-projects-3-sec-title",
 			start: "top 50%",
-			end: "top 10%",
+			end: "top 20%",
 			toggleActions: "play none none reverse",
-			scrub: 1.5,
+			scrub: .3,
 			markers: false,
 		},
 	});
@@ -2087,6 +2142,52 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
 
 	
 }
+
+
+/* 
+	faqs-4-animation
+*/
+
+var faqs4star = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".as-faqs-1-wrap",
+		start: "top 50%",
+		end: "bottom top",
+		toggleActions: "play none none reverse",
+		scrub: true,
+		markers: false,
+	},
+});
+
+faqs4star.from(".as-faqs-4-left-icon i", {
+	rotation: 360,
+});
+
+
+
+/* 
+	marquee-text-3-animation
+*/
+
+var marqueeText3 = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".as-marquee-text-3-area",
+		start: "top bottom",
+		end: "bottom top",
+		toggleActions: "play none none reverse",
+		scrub: true,
+		markers: false,
+	},
+});
+
+marqueeText3.to(".as_mt3_ani_left", {
+	xPercent: -50,
+});
+
+marqueeText3.from(".as_mt3_ani_right", {
+	xPercent: -50,
+},"<");
+
 
 
 /* 

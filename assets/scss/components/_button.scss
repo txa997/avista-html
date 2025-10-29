@@ -131,6 +131,36 @@
     
 }
 
+.as-pr-btn-1-v2 {
+    font-family: var(--as-font-1);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--as-clr-h-1);
+    border-radius: 8px;
+    padding: 3px;
+    padding-left: 20px;
+    color: #fff;
+    transition: all .5s var(--as-cube-1);
+
+    .icon {
+        svg {
+            width: 32px;
+            height: 32px;
+
+            circle {
+                fill: red
+            }
+        }
+    }
+
+
+    
+}
+
 
 .as-pr-btn-2 {
     font-family: var(--as-font-3);

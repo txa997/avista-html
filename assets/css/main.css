@@ -1236,29 +1236,58 @@ input:focus::placeholder, textarea:focus::placeholder {
   animation: flash 3s linear infinite;
 }
 
+.as-subtitle-4-wrap {
+  flex: 0 0 auto;
+  max-width: 235px;
+  background: #fff;
+  border-radius: 100px;
+  padding: 13px 0;
+  overflow: hidden;
+  display: inline-block;
+}
+.as-subtitle-4-wrap::after {
+  content: "";
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(90deg, #ffffff 20%, transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 100px 0 0 100px;
+}
+.as-subtitle-4-wrap::before {
+  content: "";
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(-90deg, #ffffff 20%, transparent);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  border-radius: 0 100px 100px 0;
+}
+.as-subtitle-4-wrap .wa_marquee_left_nopause {
+  margin-bottom: -8px;
+}
+.as-subtitle-4-text {
+  display: flex;
+  gap: 22px;
+  margin-right: 22px;
+}
+
 .as-subtitle-4 {
   font-family: var(--as-font-1);
   color: var(--as-clr-h-1);
   font-weight: 500;
   font-size: 24px;
   letter-spacing: -0.025em;
-  background: #fff;
   display: inline-block;
-  padding: 13px 53px;
-  border-radius: 100px;
   position: relative;
   z-index: 1;
   flex: 0 0 auto;
-}
-.as-subtitle-4::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background: var(--as-clr-pr-1);
-  border-radius: 50%;
-  position: absolute;
-  top: 22px;
-  left: 24px;
+  margin-bottom: 0;
+  padding-right: 27px;
 }
 .as-subtitle-4::before {
   content: "";
@@ -1267,21 +1296,12 @@ input:focus::placeholder, textarea:focus::placeholder {
   background: var(--as-clr-pr-1);
   border-radius: 50%;
   position: absolute;
-  top: 22px;
-  right: 24px;
+  top: 9px;
+  right: 0px;
 }
-@media only screen and (min-width: 1600px) and (max-width: 1799px), only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .as-subtitle-4 {
     font-size: 20px;
-    padding: 9px 45px;
-  }
-  .as-subtitle-4::after {
-    top: 16px;
-    left: 19px;
-  }
-  .as-subtitle-4::before {
-    top: 16px;
-    right: 19px;
   }
 }
 
@@ -1662,6 +1682,29 @@ input:focus::placeholder, textarea:focus::placeholder {
 .as-pr-btn-1:hover .icon i:nth-child(2) {
   position: absolute;
   transform: translateX(0px);
+}
+
+.as-pr-btn-1-v2 {
+  font-family: var(--as-font-1);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--as-clr-h-1);
+  border-radius: 8px;
+  padding: 3px;
+  padding-left: 20px;
+  color: #fff;
+  transition: all 0.5s var(--as-cube-1);
+}
+.as-pr-btn-1-v2 .icon svg {
+  width: 32px;
+  height: 32px;
+}
+.as-pr-btn-1-v2 .icon svg circle {
+  fill: red;
 }
 
 .as-pr-btn-2 {
@@ -3103,7 +3146,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   z-index: -1;
   border-radius: 100px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(12px);
   transition: var(--as-cube-2);
 }
 .as-header-3-logo {
@@ -4235,6 +4278,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   position: absolute;
   top: -88px;
   left: -92px;
+  max-width: 186px;
 }
 @media only screen and (min-width: 1600px) and (max-width: 1799px), only screen and (min-width: 1400px) and (max-width: 1599px) {
   .as-hero-4-circle-text {
@@ -4256,6 +4300,9 @@ input:focus::placeholder, textarea:focus::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.as-hero-4-circle-text .icon img {
+  max-width: 80px;
 }
 .as-hero-4-img {
   max-width: 445px;
@@ -7186,7 +7233,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   height: 100%;
   border-radius: 20px;
   z-index: -2;
-  opacity: 0.1;
+  opacity: 0.08;
 }
 .as-services-4-bg-text {
   font-weight: 700;
@@ -8634,6 +8681,11 @@ input:focus::placeholder, textarea:focus::placeholder {
     height: 415px;
   }
 }
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .as-contact-3-content {
+    padding: 30px 0;
+  }
+}
 .as-contact-3-content .as-cta-2-form-wrap {
   background-color: #f5f5f5;
   border-radius: 30px;
@@ -8702,7 +8754,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .as-contact-4-sec-title {
   display: flex;
   gap: 40px 60px;
-  max-width: 1210px;
+  max-width: 1250px;
   align-items: start;
   margin-left: auto;
   z-index: 2;
@@ -10540,9 +10592,6 @@ input:focus::placeholder, textarea:focus::placeholder {
 /* 
     projects-4-start
 */
-.as-projects-4-area .as-portfolio-1-sec-title .as-subtitle-4 {
-  margin-bottom: 20px;
-}
 .as-projects-4-area .as-portfolio-1-sec-title .as-sec-title-1 {
   font-weight: 600;
   font-size: 90px;
@@ -11182,6 +11231,14 @@ input:focus::placeholder, textarea:focus::placeholder {
     display: none;
   }
 }
+.as-faqs-3-top-img-1 .inner-video {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: height;
+}
 .as-faqs-3-top-img-2 {
   position: absolute;
   border-radius: 30px;
@@ -11261,16 +11318,20 @@ input:focus::placeholder, textarea:focus::placeholder {
   }
 }
 .as-faqs-3-bottom {
-  max-width: 1575px;
+  max-width: 844px;
   margin-left: auto;
-  margin-right: auto;
-  gap: 55px;
-  display: grid;
-  grid-template-columns: 1fr 1.25fr;
+  margin-right: 90px;
+}
+@media only screen and (min-width: 1600px) and (max-width: 1799px) {
+  .as-faqs-3-bottom {
+    max-width: 724px;
+    margin-right: 0;
+  }
 }
 @media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .as-faqs-3-bottom {
-    grid-template-columns: 1fr;
+    max-width: 724px;
+    margin-right: auto;
   }
 }
 .as-faqs-3-accordion {
@@ -11309,6 +11370,12 @@ input:focus::placeholder, textarea:focus::placeholder {
   font-weight: 400;
 }
 
+@media (min-width: 1800px), only screen and (min-width: 1600px) and (max-width: 1799px) {
+  .as-faqs-3-bottom-height {
+    height: 1600px;
+  }
+}
+
 /* 
     faqs-3-end
 */
@@ -11324,7 +11391,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.1;
+  opacity: 0.08;
   z-index: -2;
 }
 .faqs-x-partner-bg-line {
@@ -11347,6 +11414,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .as-faqs-4-area .as-faqs-1-wrap {
   gap: 75px;
   grid-template-columns: 1fr 1.4fr;
+  align-items: start;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .as-faqs-4-area .as-faqs-1-wrap {
@@ -11354,10 +11422,22 @@ input:focus::placeholder, textarea:focus::placeholder {
     gap: 50px;
   }
 }
+.as-faqs-4-area .as-faqs-1-left {
+  position: sticky;
+  top: 0;
+}
 .as-faqs-4-area .as-faqs-1-right-sec-title .as-subtitle-4 {
-  background-color: #333333;
   color: #fff;
+}
+.as-faqs-4-area .as-faqs-1-right-sec-title .as-subtitle-4-wrap {
+  background-color: #333333;
   margin-bottom: 25px;
+}
+.as-faqs-4-area .as-faqs-1-right-sec-title .as-subtitle-4-wrap::before {
+  background: linear-gradient(-90deg, #171717 20%, transparent);
+}
+.as-faqs-4-area .as-faqs-1-right-sec-title .as-subtitle-4-wrap::after {
+  background: linear-gradient(90deg, #171717 20%, transparent);
 }
 .as-faqs-4-area .as-faqs-1-right-sec-title .as-sec-title-1 {
   font-weight: 600;
@@ -11446,13 +11526,8 @@ input:focus::placeholder, textarea:focus::placeholder {
   margin-top: -70px;
 }
 .as-faqs-4-left-icon i {
-  transform: translateY(-100%) rotate(360deg);
-  transition: 1s var(--as-cube-1);
   transform-origin: center;
-}
-.as-faqs-4-left-icon:is(.active) i {
-  transform: translateY(0%) rotate(0deg);
-  transition-delay: 0.3s;
+  will-change: transform;
 }
 
 /* 

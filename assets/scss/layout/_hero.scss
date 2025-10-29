@@ -977,6 +977,8 @@
         position: absolute;
         top: -88px;
         left: -92px;
+        max-width: 186px;
+
         @media #{$xxxl,$xxl} {
             top: -48px;
         }
@@ -995,6 +997,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            img {
+                max-width: 80px;
+            }
         }
     }
     

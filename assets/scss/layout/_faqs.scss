@@ -517,6 +517,16 @@
             @media #{$xxl,$xl,$lg,$md,$xs} {
                 display: none;
             }
+
+
+            .inner-video {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                will-change: height;
+            }
         }
         &-img-2 {
             position: absolute;
@@ -595,15 +605,17 @@
 
 
     &-bottom {
-        max-width: 1575px;
+        max-width: 844px;
         margin-left: auto;
-        margin-right: auto;
-        gap: 55px;
-        display: grid;
-        grid-template-columns: 1fr 1.25fr;
+        margin-right: 90px;
 
+        @media #{$xxxl} {
+            max-width: 724px;
+            margin-right: 0;
+        }
         @media #{$xxl,$xl,$lg,$md,$xs} {
-            grid-template-columns: 1fr;
+            max-width: 724px;
+            margin-right: auto;
         }
     }
 
@@ -660,6 +672,12 @@
 }
 
 
+.as-faqs-3-bottom-height {
+    @media #{$over,$xxxl} {
+        height: 1600px; 
+    }
+}
+
 /* 
     faqs-3-end
 */
@@ -675,7 +693,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        opacity: .1;
+        opacity: 0.08;
         z-index: -2;
     }
 
@@ -705,18 +723,34 @@
         &-wrap {
             gap: 75px;
             grid-template-columns: 1fr 1.4fr;
+            align-items: start;
             @media #{$md,$xs} {
                 grid-template-columns: 1fr ;
                 gap: 50px;
             }
         }
 
+        &-left {
+            position: sticky;
+            top: 0;
+        }
+
         &-right {
             &-sec-title {
                 .as-subtitle-4 {
-                    background-color: #333333;
                     color: #fff;
-                    margin-bottom: 25px;
+                    &-wrap {
+                        background-color: #333333;
+                        margin-bottom: 25px;
+
+
+                        &::before {
+                            background: linear-gradient(-90deg, #171717 20%, transparent);
+                        }
+                        &::after {
+                            background: linear-gradient(90deg, #171717 20%, transparent);
+                        }
+                    }
                 }
 
                 .as-sec-title-1 {
@@ -812,17 +846,11 @@
     margin-top: -70px;
 
     i {
-        transform: translateY(-100%) rotate(360deg);
-        transition: 1s var(--as-cube-1);
         transform-origin: center;
+        will-change: transform;
     }
 
-    &:is(.active) {
-        i {
-            transform: translateY(0%) rotate(0deg);
-            transition-delay: .3s;
-        }
-    }
+
 }
 
 /* 
