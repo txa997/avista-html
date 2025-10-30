@@ -1,23 +1,74 @@
 /* 
     home-1-dark-start
 */
-.as-home-1 {
-    &:is(.has-dark) {
-        background-color: #050505;
 
 
+.has-dark {
 
 
+    /* 
+        dark-header-1-start
+    */
+    &:is(.as-header-1-area) {
+        .as-header-1 {
+            &-wrap {
+                background: #000;
+            }
 
-        .as-hero-1-area {
-            border-color: #050505;
+
+            &-menu-toggle-btn span {
+                background-color: #fff;
+            }
         }
-
-
-
-
     }
+    /* 
+        dark-header-1-end
+    */
+
+    
+    /* 
+        dark-hero-1-start
+    */
+    &:is(.as-hero-1-area) {
+        background-color: #050505;
+        border-color: #050505;
+
+        .as-hero-1 {
+            &-favicon {
+                .bg-shape {
+                    filter: brightness(0) saturate(100%) invert(5%) sepia(4%) saturate(119%) hue-rotate(314deg) brightness(100%) contrast(93%);
+                }
+            }
+
+            &-content {
+                &-box {
+                    background: #000;
+
+                    .box-title {
+                        color: #fff;
+                    }
+
+                    .as-pr-btn-1-v2 {
+                        background: #434343;
+                    }
+
+                    .box-address a {
+                        color: #fff;
+
+                        &:hover {
+                            color: var(--as-clr-pr-1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* 
+        dark-hero-1-end
+    */
 }
+
+
 /* 
     home-1-dark-end
 */

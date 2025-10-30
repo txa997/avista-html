@@ -12906,11 +12906,47 @@ input:focus::placeholder, textarea:focus::placeholder {
 /* 
     home-1-dark-start
 */
-.as-home-1:is(.has-dark) {
-  background-color: #050505;
+.has-dark {
+  /* 
+      dark-header-1-start
+  */
+  /* 
+      dark-header-1-end
+  */
+  /* 
+      dark-hero-1-start
+  */
+  /* 
+      dark-hero-1-end
+  */
 }
-.as-home-1:is(.has-dark) .as-hero-1-area {
+.has-dark:is(.as-header-1-area) .as-header-1-wrap {
+  background: #000;
+}
+.has-dark:is(.as-header-1-area) .as-header-1-menu-toggle-btn span {
+  background-color: #fff;
+}
+.has-dark:is(.as-hero-1-area) {
+  background-color: #050505;
   border-color: #050505;
+}
+.has-dark:is(.as-hero-1-area) .as-hero-1-favicon .bg-shape {
+  filter: brightness(0) saturate(100%) invert(5%) sepia(4%) saturate(119%) hue-rotate(314deg) brightness(100%) contrast(93%);
+}
+.has-dark:is(.as-hero-1-area) .as-hero-1-content-box {
+  background: #000;
+}
+.has-dark:is(.as-hero-1-area) .as-hero-1-content-box .box-title {
+  color: #fff;
+}
+.has-dark:is(.as-hero-1-area) .as-hero-1-content-box .as-pr-btn-1-v2 {
+  background: #434343;
+}
+.has-dark:is(.as-hero-1-area) .as-hero-1-content-box .box-address a {
+  color: #fff;
+}
+.has-dark:is(.as-hero-1-area) .as-hero-1-content-box .box-address a:hover {
+  color: var(--as-clr-pr-1);
 }
 
 /* 
