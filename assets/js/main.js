@@ -193,8 +193,8 @@ if($(".as-header-3-menu").length) {
 window.addEventListener('load', function(){
 
 
-	if (document.querySelectorAll(".pg-preloader").length) {
-		const loader = document.querySelector(".pg-preloader");
+	if (document.querySelectorAll(".as-preloader").length) {
+		const loader = document.querySelector(".as-preloader");
 		
 		setTimeout(() => {
 			loader.classList.add("loaded");
@@ -517,6 +517,55 @@ function afterPreloader() {
 			});
 		}
 
+
+		/* 
+			split-scroll-animation
+		*/
+		if($(".as-partner-3-big-title").length) {
+			var waSplitup2hero2 = $(".as-partner-3-big-title");
+			if(waSplitup2hero2.length == 0) return; gsap.registerPlugin(SplitText); waSplitup2hero2.each(function(index, el) {
+
+				el.split = new SplitText(el, { 
+					type: "lines,words,chars",
+					linesClass: "split-line",
+				});
+
+				if( $(el).hasClass('as-partner-3-big-title') ){
+					gsap.set(el.split.chars, {
+						yPercent: -60, 
+					});
+				}
+
+				el.anim = gsap.to(el.split.chars, {
+					scrollTrigger: {
+						trigger: el,
+						end: "top 10%",
+						toggleActions: 'play none none reverse',
+						scrub: true,    
+					},
+					opacity: 1,
+					yPercent: 0, 
+					duration: .2,
+					ease: "ease1",
+					stagger: 0.2,
+				});
+
+			});
+		}
+		var asP3bigTitle = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".as-partner-3-big-title",
+				end: "top 10%",
+				toggleActions: "play none none reverse",
+				scrub: true,
+				markers: false,
+			},
+		});
+	
+		asP3bigTitle.from(".as-partner-3-big-title", {
+			xPercent: 100,
+		});
+
 	}	
 
 
@@ -538,15 +587,6 @@ function afterPreloader() {
 			    delay: 5000,
 			},
 
-			// navigation: {
-			// 	nextEl: ".pg_h2_next",
-			// 	prevEl: ".pg_h2_prev",
-			// },
-
-			// pagination: {
-			// 	el: ".pg_h2_pagination",
-			// 	clickable: true,
-			// },
 
 		});
 
