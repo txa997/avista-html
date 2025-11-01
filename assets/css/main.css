@@ -12919,6 +12919,51 @@ input:focus::placeholder, textarea:focus::placeholder {
   /* 
       dark-hero-1-end
   */
+  /* 
+      dark-about-1-start
+  */
+  /* 
+      dark-about-1-end
+  */
+  /* 
+      dark-team-1-start
+  */
+  /* 
+      dark-team-1-end
+  */
+  /* 
+      dark-marquee-text-1-start
+  */
+  /* 
+      dark-marquee-text-1-end
+  */
+  /* 
+      dark-features-1-start
+  */
+  /* 
+      dark-features-1-end
+  */
+  /* 
+      dark-partner-1-start
+  */
+  /* 
+      dark-partner-1-end
+  */
+  /* 
+      dark-services-1-start
+  */
+  /* 
+      dark-services-1-end
+  */
+}
+.has-dark .as-sec-title-1 {
+  color: #fff;
+}
+.has-dark .as-subtitle-1 {
+  color: #cbcbcb;
+}
+.has-dark .as-p-1 {
+  color: #898989;
 }
 .has-dark:is(.as-header-1-area) .as-header-1-wrap {
   background: #000;
@@ -12926,12 +12971,24 @@ input:focus::placeholder, textarea:focus::placeholder {
 .has-dark:is(.as-header-1-area) .as-header-1-menu-toggle-btn span {
   background-color: #fff;
 }
+.has-dark:is(.as-header-1-area) .as-main-navigation .navbar-nav li a {
+  color: #fff;
+}
+.has-dark:is(.as-header-1-area) .as-main-navigation .navbar-nav li:hover > a {
+  color: var(--as-clr-pr-1);
+}
+.has-dark:is(.as-header-1-area) .as-main-navigation .navbar-nav li .dropdown-menu {
+  background-color: #000;
+}
 .has-dark:is(.as-hero-1-area) {
   background-color: #050505;
   border-color: #050505;
 }
 .has-dark:is(.as-hero-1-area) .as-hero-1-favicon .bg-shape {
   filter: brightness(0) saturate(100%) invert(5%) sepia(4%) saturate(119%) hue-rotate(314deg) brightness(100%) contrast(93%);
+}
+.has-dark:is(.as-hero-1-area) .as-hero-1-content .hero-disc {
+  color: #000;
 }
 .has-dark:is(.as-hero-1-area) .as-hero-1-content-box {
   background: #000;
@@ -12947,6 +13004,79 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .has-dark:is(.as-hero-1-area) .as-hero-1-content-box .box-address a:hover {
   color: var(--as-clr-pr-1);
+}
+.has-dark:is(.as-about-1-area) {
+  background: #050505;
+}
+.has-dark:is(.as-about-1-area) .as-rating-1 .text {
+  color: #fff;
+}
+.has-dark:is(.as-about-1-area) .as-about-1-content .hr-line {
+  background: #202020;
+}
+.has-dark:is(.as-about-1-area) .as-about-1-features {
+  background-color: #1D1D1D;
+}
+.has-dark:is(.as-about-1-area) .as-about-1-features-single {
+  background-color: #070707;
+}
+.has-dark:is(.as-about-1-area) .as-about-1-features-single .item-title {
+  color: #fff;
+}
+.has-dark:is(.as-about-1-area) .as-about-1-features-single .item-title:hover {
+  color: var(--as-clr-pr-1);
+}
+.has-dark:is(.as-team-1-area) {
+  background: #050505;
+}
+.has-dark:is(.as-team-1-area) .as-team-1-member .member-name:hover {
+  color: #000;
+}
+.has-dark:is(.as-team-1-area) .as-team-1-member .member-dg {
+  color: #fff;
+}
+.has-dark:is(.as-team-1-area) .as-team-1-member .member-social .link-elm {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.13);
+}
+.has-dark:is(.as-team-1-area) .as-team-1-member .member-social .link-elm:hover {
+  color: var(--as-clr-pr-1);
+}
+.has-dark:is(.as-marquee-text-1-area) {
+  background: #050505;
+}
+.has-dark:is(.as-marquee-text-1-area) .as-marquee-text-1-wrap-1 {
+  background: #2B2B2B;
+}
+.has-dark:is(.as-features-1-area) {
+  background: #050505;
+}
+.has-dark:is(.as-features-1-area) .as-features-1-wrap {
+  background: #000000;
+}
+.has-dark:is(.as-features-1-area) .as-features-1-quality .disc {
+  color: #fff;
+}
+.has-dark:is(.as-features-1-area) .as-features-1-rating {
+  background: #202020;
+}
+.has-dark:is(.as-features-1-area) .as-features-1-rating .rating-number, .has-dark:is(.as-features-1-area) .as-features-1-rating .rating-disc {
+  color: #fff;
+}
+.has-dark:is(.as-partner-1-area) {
+  background: #050505;
+}
+.has-dark:is(.as-partner-1-area) .as-partner-1-logo-single {
+  border: 1px solid #161616;
+}
+.has-dark:is(.as-partner-1-area) .as-partner-1-logo-single:hover {
+  background-color: #212020;
+}
+.has-dark:is(.as-services-1-area) {
+  background: #050505;
+}
+.has-dark:is(.as-services-1-area) .as-services-1-item {
+  background-color: #000;
 }
 
 /* 

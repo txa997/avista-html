@@ -5,6 +5,17 @@
 
 .has-dark {
 
+    .as-sec-title-1  {
+        color: #fff;
+    }
+
+    .as-subtitle-1 {
+        color: #cbcbcb;
+    }
+
+    .as-p-1 {
+        color: #898989;
+    }
 
     /* 
         dark-header-1-start
@@ -18,6 +29,27 @@
 
             &-menu-toggle-btn span {
                 background-color: #fff;
+            }
+        }
+
+
+        .as-main-navigation  {
+            .navbar-nav {
+                li {
+                    a {
+                        color: #fff;
+                    }
+
+                    &:hover {
+                        > a {
+                            color: var(--as-clr-pr-1);
+                        }
+                    }
+
+                    .dropdown-menu {
+                        background-color: #000;
+                    }
+                }
             }
         }
     }
@@ -41,6 +73,9 @@
             }
 
             &-content {
+                .hero-disc {
+                    color: #000;
+                }
                 &-box {
                     background: #000;
 
@@ -66,6 +101,174 @@
     /* 
         dark-hero-1-end
     */
+
+
+    /* 
+        dark-about-1-start
+    */
+    &:is(.as-about-1-area) {
+        background: #050505;
+
+        .as-rating-1 .text {
+            color: #fff;
+        }
+
+        .as-about-1 {
+            &-content {
+                .hr-line {
+                    background: #202020;
+                }
+            }
+
+
+            &-features {
+                background-color: #1D1D1D;
+                &-single {
+                    background-color: #070707;
+          
+                    .item-title {
+                        color: #fff;
+
+                        &:hover {
+                            color: var(--as-clr-pr-1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* 
+        dark-about-1-end
+    */
+
+    /* 
+        dark-team-1-start
+    */
+    &:is(.as-team-1-area) {
+        background: #050505;
+
+        .as-team-1 {
+            &-member {
+
+                .member-name {
+                    &:hover {
+                        color: #000;
+                    }
+                }
+
+                .member-dg {
+                    color: #fff;
+                }
+
+                .member-social .link-elm {
+                    color: #fff;
+                    background: rgb(255 255 255 / 13%);
+                    &:hover {
+                        color: var(--as-clr-pr-1);
+                    }
+                }
+            }
+        }
+    }
+    /* 
+        dark-team-1-end
+    */
+
+    /* 
+        dark-marquee-text-1-start
+    */
+    &:is(.as-marquee-text-1-area) {
+        background: #050505;
+
+        .as-marquee-text-1-wrap-1 {
+            background: #2B2B2B;
+        }
+    }
+    /* 
+        dark-marquee-text-1-end
+    */
+
+
+    /* 
+        dark-features-1-start
+    */
+    &:is(.as-features-1-area) {
+        background: #050505;
+
+        .as-features-1 {
+            &-wrap {
+                background: #000000;
+            }
+
+            &-quality {
+                .disc {
+                    color: #fff;
+                }
+            }
+
+
+            &-rating {
+                background: #202020;
+
+                .rating-number, .rating-disc {
+                    color: #fff;
+                }
+            }
+
+        }
+        
+    }
+    /* 
+        dark-features-1-end
+    */
+
+
+
+    /* 
+        dark-partner-1-start
+    */
+    &:is(.as-partner-1-area) {
+        background: #050505;
+
+
+        .as-partner-1-logo-single {
+            border: 1px solid #161616;
+
+            &:hover {
+                background-color: #212020;
+            }
+        }
+    }
+    /* 
+        dark-partner-1-end
+    */
+
+
+    /* 
+        dark-services-1-start
+    */
+    &:is(.as-services-1-area) {
+        background: #050505;
+
+        .as-services-1 {
+            &-item {
+                background-color: #000;
+            }
+        }
+    }
+    /* 
+        dark-services-1-end
+    */
+
+
+
+
+
+
+
+
+
+
 }
 
 
