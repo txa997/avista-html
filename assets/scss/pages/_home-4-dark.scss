@@ -283,6 +283,8 @@
                 .number  {
                     &::after{
                         border-color: #353535;
+                        background: #050505;
+                        z-index: -1;
                     }
                 }
             }

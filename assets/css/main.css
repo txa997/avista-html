@@ -13854,6 +13854,8 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .has-dark:is(.as-process-2-area) .as-process-2-item .number::after {
   border-color: #353535;
+  background: #050505;
+  z-index: -1;
 }
 .has-dark:is(.as-trust-2-area) {
   background-color: #050505;
