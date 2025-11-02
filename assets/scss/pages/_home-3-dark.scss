@@ -1,0 +1,220 @@
+/* 
+    home-3-dark-start
+*/
+
+
+.has-dark {  
+
+    .as-subtitle-4-wrap {
+        background: #1D1D1D;
+
+        &::before {
+            background: linear-gradient(-90deg, #1d1d1d 20%, transparent);
+        }
+        &::after {
+            background: linear-gradient(90deg, #1d1d1d 20%, transparent);
+        }
+
+        .as-subtitle-4 {
+            color: #fff;
+        }
+    }
+
+
+    /* 
+        dark-about-4-start
+    */
+    &:is(.as-about-4-area) {
+        background-color: #050505;
+
+        .as-about-4 {
+            &-sec-title {
+                .section-title {
+                    color: #fff;
+                }
+            }
+
+
+            &-disc {
+                background-color: #1D1D1D;
+
+                .disc {
+                    color: #fff;
+                }
+
+
+                .inner-div-line {
+                    background: #fff;
+                }
+
+                .author-rating .title {
+                    color: #fff;
+                }
+            }
+
+            &-marquee {
+                background-color: #1D1D1D;
+
+                .marquee-bg {
+                    background-color: #000;
+                }
+
+                &-content {
+                    .title {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    /* 
+        dark-about-4-end
+    */
+
+    /* 
+        dark-services-4-start
+    */
+    &:is(.as-services-4-height) {
+        background-color: #050505;
+
+    }
+    /* 
+        dark-services-4-end
+    */
+    /* 
+        dark-projects-4-start
+    */
+    &:is(.as-projects-4-area) {
+        background-color: #050505;
+
+        .as-portfolio-1 {
+            &-sec-title {
+                .big-title {
+                    opacity: .4;
+                }
+            }
+            &-item {
+                background-color: #000;
+                border-color: #000;
+
+                .title {
+                    color: #fff;
+
+                    &:hover {
+                        color: var(--as-clr-pr-1);
+                    }   
+                }
+
+
+                .item-tags .link-elm {
+                    background: rgb(0 0 0 / 60%);
+                    color: #fff;
+
+                    &:hover {
+                        color: var(--as-clr-pr-1);
+                    }
+                }
+            }
+
+
+            &-counter {
+                .number {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    /* 
+        dark-projects-4-end
+    */
+
+    /* 
+        dark-testimonial-4-start
+    */
+    &:is(.as-testimonial-4-area) {
+        background-color: #050505;
+
+
+        .as-testimonial-4 {
+            &-bg-circle {
+                background: #1D1D1D;
+            }
+
+            &-big-title {
+                opacity: 5%;
+            }
+        }
+
+        .as-testimonial-3-slider-preview-item {
+            border-color: #000;
+        }
+
+        .as-testimonial-4-slider-main-item {
+            .comment, .author-name {
+                color: #fff;
+            }
+        }
+
+    }
+    /* 
+        dark-testimonial-4-end
+    */
+    /* 
+        dark-contact-4-start
+    */
+    &:is(.as-contact-4-area) {
+        background-color: #000;
+
+        .as-contact-4 {
+            &-sec-title {
+                .section-title {
+                    color: #fff;
+                }
+            }
+
+            &-social {
+                .link-elm {
+                    background: #1D1D1D;
+                    color: #fff;
+                }
+            }
+
+            &-wrap-2 {
+                &::after {
+                    background: #000;
+                }
+            }
+
+
+            &-info-single {
+                .icon {
+                    background: #1D1D1D;
+                    color: #fff;
+                }
+                .title {
+                    color: #fff;
+                }
+
+                .disc {
+                    a {
+                        &:hover {
+                            color: var(--as-clr-pr-3);
+                        }
+                    }
+
+                }
+            }
+        }
+
+
+    }
+    /* 
+        dark-contact-4-end
+    */
+}
+
+
+/* 
+    home-3-dark-end
+*/
+

@@ -1,0 +1,236 @@
+/* 
+    home-2-dark-start
+*/
+
+
+.has-dark { 
+
+    .as-pr-btn-3  {
+        background: #202020;
+    }
+    .as-subtitle-3 {
+        color: #fff;
+    }
+
+    /* 
+        dark-about-3-start
+    */
+    &:is(.as-about-3-area) {
+        background-color: #050505;
+
+        .as-about-3 {
+            &-sec-title {
+                color: #fff;
+            }
+            &-middle-line {
+                opacity: .2;
+            }
+
+            &-disc {
+                b {
+                    color: #fff;
+                }
+            }
+
+            &-author {
+                &-content {
+                    .author-name {
+                        color: #fff;
+
+                        &:hover {
+                            color: var(--as-clr-pr-3);
+                        }
+                    }
+
+                    .author-social {
+                        .link-elm {
+                            color: #fff;
+
+                            &:hover {
+                                color: var(--as-clr-pr-3); 
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-card {
+                background-color: #1A1A1A;
+
+                .title {
+                    color: #fff;
+
+                    &:hover {
+                        color: var(--as-clr-pr-3);
+                    }
+                }
+            }
+
+            &-bg-illus-2 {
+                opacity: .21;
+            }
+        }
+    }
+    /* 
+        dark-about-3-end
+    */
+
+    
+    /* 
+        dark-faqs-3-start
+    */
+    &:is(.as-faqs-3-area) {
+        background-color: #050505;
+
+
+        .as-faqs-3 {
+            &-top {
+                &-content {
+                    .title {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .as-contact-3 {
+            &-content {
+                .as-cta-2-form {
+                    &-wrap {
+                        background-color: #1D1D1D;
+                        border-radius: 30px;
+                        padding: 45px 35px;
+                    }
+
+                    &-content {
+                        .subtitle {
+                            color: #d8d8d8;
+                            i {
+                                color: var(--as-clr-pr-3);
+                            }
+                        }
+
+                        .title  {
+                            color: #fff;
+                        }
+                    }
+
+                    &-input {
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                    }
+
+
+                    .form-checkbox .checkbox-label {
+                        color: #fff;
+                    }
+
+                    button {
+                        background: #000;
+                    }
+
+                    .as-about-3-author-content .author-name {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    /* 
+        dark-faqs-3-end
+    */
+
+    
+    /* 
+        dark-marquee-text-3-start
+    */
+    &:is(.as-marquee-text-3-area) {
+        background-color: #050505;
+
+
+        .as-marquee-text-3-wrap .text-elm {
+            color: #fff;
+        }
+    }
+    /* 
+        dark-marquee-text-3-end
+    */
+    
+    /* 
+        dark-team-3-start
+    */
+    &:is(.as-team-3-area) {
+        background-color: #050505;
+
+        .as-team-3-sec-title {
+            color: #fff;
+        }
+    }
+    /* 
+        dark-team-3-end
+    */    
+
+
+
+    /* 
+        dark-testimonial-3-start
+    */
+    &:is(.as-testimonial-3-area) {
+        background-color: #050505;
+
+
+        .as-testimonial-3 {
+            &-sec-title {
+                .as-subtitle-3 {
+                    &::after {
+                        background: #fff;
+                    }
+                }
+
+                .section-title {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    /* 
+        dark-testimonial-3-end
+    */
+
+
+    /* 
+        dark-search-box-start
+    */
+    &:is(.wa-search-box) {
+        background-color: #1D1D1D;
+
+        .wa-search {
+            &-title {
+                color: #fff;
+            }
+
+            &-tag-title {
+                color: #fff;
+            }
+
+
+            &-tag-item {
+                color: #fff;
+                border: 1px solid #5d5d5d;
+
+                &:hover {
+                    border-color: #000;
+                }
+            }
+
+        }
+
+
+        .wa-search-box-close {
+            color: #fff;
+        }
+    }
+    /* 
+        dark-search-box-end
+    */
+
+}

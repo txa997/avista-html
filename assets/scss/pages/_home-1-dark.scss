@@ -5,6 +5,20 @@
 
 .has-dark {
 
+    &:is(.as-preloader) {
+        background-color: #000;
+
+        .as-preloader-wrap .loader {
+            color: #fff;
+        }
+    }
+
+
+
+    &:is(.as-home-1) {
+        background-color: #050505;
+    }
+
     .as-sec-title-1  {
         color: #fff;
     }
@@ -15,6 +29,21 @@
 
     .as-p-1 {
         color: #898989;
+    }
+
+
+    .as-pr-btn-1-v2 {
+        background: #202020;
+    }
+
+    .sr-offcanvas-btn-1 {
+        color: #fff;
+        border-color: #fff;
+
+        &:hover {
+            color: var(--as-clr-pr-1);
+            border-color: var(--as-clr-pr-1);
+        }
     }
 
     /* 
@@ -253,22 +282,353 @@
         .as-services-1 {
             &-item {
                 background-color: #000;
+
+
+                .right-content {
+                    background-color: #1A1A1A;
+                }
+                .title {
+                    color: #fff;
+                }
+
+
+                .icon-elm {
+                    background-color: #232323;
+                }
+
+                .item-tags {
+                    li {
+                        background: #232323;
+                        color: #fff;
+                    }
+                }
             }
+
+
+
         }
+
+
     }
     /* 
         dark-services-1-end
     */
 
 
+    /* 
+        dark-portfolio-1-start
+    */
+    &:is(.as-portfolio-1-area) {
+        background: #050505;
+
+        .as-portfolio-1 {
+            &-item {
+                background-color: #000;
+                border-color: #000;
+
+                .title {
+                    color: #fff;
+
+                    &:hover {
+                        color: var(--as-clr-pr-1);
+                    }   
+                }
+
+
+                .item-tags .link-elm {
+                    background: rgb(0 0 0 / 60%);
+                    color: #fff;
+
+                    &:hover {
+                        color: var(--as-clr-pr-1);
+                    }
+                }
+            }
+
+
+            &-counter {
+                .number {
+                    color: #fff;
+                }
+            }
+        }
+
+    }
+    /* 
+        dark-portfolio-1-end
+    */
+
+
+    /* 
+        dark-cta-1-start
+    */
+    &:is(.as-cta-1-area) {
+        background: #050505;
+
+        .as-cta-1-experi {
+            background-color: #202020;
+
+            &-title {
+                color: #898989;
+
+                .odometer  {
+                    color: #fff;
+                }
+            }
+
+            &-services {
+                .link-elm {
+                    background: #434343;
+                    color: #fff;
+
+                    &:hover {
+                        color: #fff;
+                        background-color: var(--as-clr-pr-1);
+                    }
+                }
+            }
+    
+        }
+
+        .as-cta-1-social {
+            .link-elm {
+                color: #fff;
+            }
+        }
+
+    }
+    /* 
+        dark-cta-1-end
+    */
 
 
 
+    /* 
+        dark-testimonial-1-start
+    */
+    &:is(.as-testimonial-1-area) {
+        background: #050505;
 
 
+        .as-testimonial-1 {
+            &-item {
+                background: #202020;
+
+                .title {
+                    color: #fff;
+                }
+
+                .item-author-content .name {
+                    color: #fff;
+                }
+            }
 
 
+            &-marquee-wrap {
+                img {
+                    filter: invert(1) sepia(0) saturate(0) brightness(10.13) contrast(1);
+                }
+            }
+        }
+    }
+    /* 
+        dark-testimonial-1-end
+    */
 
+
+    /* 
+        dark-pricing-1-start
+    */
+    &:is(.as-price-1-area) {
+        background: #050505;
+
+        .as-price-1 {
+            &-left {
+                border-color: #202020;
+            }
+
+            &-card {
+                background-color: #000;
+                border-color: #202020;
+                background-image: none !important;
+
+                .plan-name, .plan-price {
+                    color: #fff;
+                }
+
+                .plan-list li {
+                    color: #D6D6D6;
+                }
+
+                .plan-btn {
+                    color: #fff;
+                }
+
+                &:hover {
+                    background: #D72800;
+                }
+            }
+        }
+    }
+    /* 
+        dark-pricing-1-end
+    */
+
+    
+
+    /* 
+        dark-contact-1-start
+    */
+    &:is(.as-cta-2-area) {
+        background: #050505;
+
+        .as-cta-2 {
+            &-left {
+                &-top {
+                    background-color: #191919;
+                }
+            }
+
+
+            &-booking {
+                background: #000;
+                .title {
+                    color: #fff;
+                }
+
+                .mail {
+                    color: #fff;
+                    a {
+                        color: #fff;
+
+                        &:hover {
+                            color: var(--as-clr-pr-1);
+                        }
+                    }
+                }
+            }
+            &-manager {
+                background: #000;
+                .text-elm {
+                    color: #fff;
+                }
+
+                .img-elm {
+                    border: 5px solid #666666;
+                }
+            }
+
+
+            &-form {
+                .as-pr-btn-1 {
+                    background: #434343;
+                    color: #fff;
+                    
+
+                    &:hover {
+                        background: var(--as-clr-pr-1);
+                    }
+                }
+            }
+        }
+    }
+    /* 
+        dark-contact-1-end
+    */
+    
+
+    /* 
+        dark-blog-1-start
+    */
+    &:is(.as-blog-1-area) {
+        background: #050505;
+
+        .as-blog-1 {
+            &-item {
+                background: #000;
+
+                .categories {
+                    color: #fff;
+                }
+
+                .title {
+                    color: #fff;
+
+                    &:hover {
+                        color: var(--as-clr-pr-1);
+                    }
+                }
+            }
+        }
+    }
+    /* 
+        dark-blog-1-end
+    */
+
+
+    /* 
+        dark-offcanvas-start
+    */
+    &:is(.wa-offcanvas-area) {
+        background-color: #1D1D1D;
+
+
+        .wa-offcanvas {
+            &-close {
+                span {
+                    background: #fff;
+                }
+            }
+
+            &-gallery-title {
+                color: #fff;
+            }
+
+            &-social {
+                &-title {
+                    color: #fff;
+                }
+
+                &-link {
+                    border: 1px solid rgb(255 255 255 / 30%);
+                    color: #ffffff;
+
+                    &:hover {
+                        border-color: transparent;
+                        background: var(--as-clr-pr-1);
+                    }
+                }
+            }
+        }
+
+        .mobile-main-navigation {
+            ul {
+                li {
+                    a {
+                        color: #fff;
+                    }
+
+
+                    &:not(:last-child) {
+                        border-bottom: 1px solid rgb(255 255 255 / 15%);
+                    }
+
+                    .dropdown-btn {
+                        color: #fff;
+                    }
+
+                    &:hover {
+                        > a {
+                            color: var(--as-clr-pr-1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* 
+        dark-offcanvas-end
+    */
 }
 
 
