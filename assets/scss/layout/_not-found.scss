@@ -1,0 +1,115 @@
+/* 
+    not-found-start
+*/
+
+.as-not-found {
+    &-area {
+        padding-top: 160px;
+        padding-bottom: 120px;
+    }
+
+
+
+    &-wrap {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    &-img {
+        margin-bottom: 50px;
+
+        img {
+            width: 25%;
+        }
+    }
+
+    &-big-title {
+        font-family: var(--as-font-1);
+        font-size: 400px;
+        line-height: 1;
+        color: #000;
+        font-weight: 900;
+        margin-bottom: 0;
+        position: absolute;
+        top: -21%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        opacity: .05;
+
+        @media #{$xxxl} {
+            font-size: 350px;
+        }
+        @media #{$xxl} {
+            font-size: 300px;
+        }
+        @media #{$xl} {
+            font-size: 250px;
+        }
+        @media #{$lg} {
+            font-size: 200px;
+            top: -18%;
+        }
+        @media #{$md} {
+            font-size: 150px;
+            top: -15%;
+        }
+        @media #{$xs} {
+            font-size: 100px;
+            top: -5%;
+        }
+        @media #{$sm} {
+            font-size: 120px;
+            top: -10%;
+        }
+    }
+
+
+    &-title {
+        font-family: var(--as-font-1);
+        font-size: 50px;
+        line-height: 1.071;
+        color: #000;
+        font-weight: 800;
+        margin-bottom: 45px;
+
+        @media #{$md} {
+            font-size: 45px;
+        }
+    
+        @media #{$xs} {
+            font-size: 35px;
+        }
+    
+        @media #{$sm} {
+            font-size: 40px;
+        }
+
+    }
+
+
+    &-btn {
+        display: inline-block;
+        background: #262626;
+        font-family: var(--as-font-1);
+        font-size: 16px;
+        font-weight: 500;
+        color: #fff;
+        padding: 16px 37px;
+        border-radius: 100px;
+        transition: 300ms;
+
+        &:hover {
+            background-color: var(--as-clr-pr-1);
+            color: #fff;
+            transform: scale(97%);
+        }
+    }
+
+}
+
+
+/* 
+    not-found-end
+*/

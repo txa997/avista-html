@@ -1,0 +1,137 @@
+
+/* 
+    breadcrumb-start
+*/
+.as-header-1-area {
+    &:is(.has-inner-page) {
+        .as-header-1-logo {
+            top: -27px;
+            left: 0;
+            height: 85px;
+            width: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .bg-shape {
+                top: -5px;
+            }
+        }
+    }
+}
+
+.as-breadcrumb {
+    &-area {
+        padding-top: 220px;
+        padding-bottom: 165px;
+    }
+
+
+    &-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        position: relative;
+        z-index: 1;
+        align-items: start;
+
+    }
+
+
+
+    &-title {
+        font-family: var(--as-font-1);
+        font-size: 70px;
+        line-height: 1.066;
+        letter-spacing: -0.02em;
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 0;
+    
+        @media #{$xxl} {
+            font-size: 60px;
+        }
+    
+        @media #{$xl} {
+            font-size: 55px;
+        }
+    
+        @media #{$lg} {
+            font-size: 50px;
+        }
+    
+        @media #{$md} {
+            font-size: 45px;
+        }
+    
+        @media #{$xs} {
+            font-size: 35px;
+        }
+    
+        @media #{$sm} {
+            font-size: 40px;
+        }
+
+    }
+
+    &-list {
+        display: flex;
+        gap: 9px;
+        align-items: center;
+
+        & a,& span {
+            font-weight: 500;
+            font-size: 18px;
+            font-family: var(--as-font-1);
+            line-height: 28px;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        & a {
+            padding-right: 18px;
+            position: relative;
+            transition: 300ms;
+
+            &:hover {
+                color: var(--as-clr-pr-1);
+            }
+
+            &::after {
+                content: "/";
+                position: absolute;
+                right: 0px;
+                top: 14px;
+                transform: translateY(-50%);
+                font-size: 20px;
+            }
+        }
+        & span {
+            color: var(--as-clr-pr-1);
+        }
+
+        &-shape {
+            position: absolute;
+            bottom: 220%;
+            right: 113%;
+            z-index: -1;
+
+            @media #{$lg,$md,$xs} {
+                display: none;
+            }
+        }
+    }
+
+
+        
+
+
+}
+
+
+
+/* 
+    breadcrumb-end
+*/
+

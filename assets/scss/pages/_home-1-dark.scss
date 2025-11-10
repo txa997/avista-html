@@ -59,6 +59,12 @@
             &-menu-toggle-btn span {
                 background-color: #fff;
             }
+
+            &-logo {
+                .bg-shape {
+                    filter: brightness(0) saturate(100%) invert(5%) sepia(4%) saturate(119%) hue-rotate(314deg) brightness(100%) contrast(93%);
+                }
+            }
         }
 
 
@@ -95,11 +101,7 @@
         border-color: #050505;
 
         .as-hero-1 {
-            &-favicon {
-                .bg-shape {
-                    filter: brightness(0) saturate(100%) invert(5%) sepia(4%) saturate(119%) hue-rotate(314deg) brightness(100%) contrast(93%);
-                }
-            }
+
 
             &-content {
                 .hero-disc {
