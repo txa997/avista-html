@@ -39,6 +39,16 @@
 				position: relative;
 				display: inline-block;
 				animation: bounce 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) infinite alternate;
+
+				@media #{$xs} {
+					padding: 0 0.1em;
+					font-size: 1.3em;
+				}
+
+				@media #{$sm} {
+					padding: 0 0.1em;
+					font-size: 1.5em;
+				}
 			}
 
 
