@@ -11512,6 +11512,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   position: sticky;
   top: 0;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .as-faqs-4-area .as-faqs-1-left {
+    position: unset;
+  }
+}
 .as-faqs-4-area .as-faqs-1-right-sec-title .as-subtitle-4 {
   color: #fff;
 }
