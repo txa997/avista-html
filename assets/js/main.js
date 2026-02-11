@@ -1960,7 +1960,7 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 /* 
 	services-4-animation
 */
-if (window.matchMedia("(min-width: 1200px)").matches) {
+if (window.matchMedia("(min-width: 12200px)").matches) {
 
 
 	gsap.to(".as-services-4-pin", {
@@ -2116,6 +2116,92 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
 	});
 	
 }
+
+
+if (window.matchMedia("(min-width: 1200px)").matches) {
+	        const container = ".as-services-4-height";
+	        const pinTarget = ".as-services-4-pin";
+	        const sections = gsap.utils.toArray(
+	            ".as-services-4-item-list .single-item",
+	        );
+	        const total = sections.length;
+
+		const heightWrap = document.querySelector('.as-services-4-height');
+
+		// per item 1000px
+		heightWrap.style.height = (total * 1000) + 'px';
+	
+	        if (!total) return;
+	
+	        const step = 1 / total;
+	
+	        // PIN
+			gsap.to(pinTarget, {
+				scrollTrigger: {
+					trigger: container,
+					start: "top 5%",
+					end: "+=" + total * 800,
+					pin: pinTarget,
+					pinSpacing: false,
+					scrub: true,
+				},
+			});
+	
+			// IMAGE MOVE
+			gsap.to(".as-services-4-item-img", {
+				y: -((total - 1) * 600),
+				ease: "none",
+				scrollTrigger: {
+					trigger: container,
+					start: "top -5%",
+					end: "+=" + total * 800,
+					scrub: true,
+				},
+			});
+	
+			ScrollTrigger.create({
+				trigger: container,
+				start: "top top",
+				end: "+=" + total * 800,
+				scrub: true,
+				onUpdate: (self) => {
+					let progress = self.progress;
+					let activeIndex = Math.min(
+						total - 1,
+						Math.floor(progress / step),
+					);
+	
+					// ACTIVE CLASS
+					sections.forEach((el, i) => {
+						el.classList.toggle("active", i === activeIndex);
+					});
+	
+					// Dynamic translate amount
+					let moveNumber = -(activeIndex * 130);
+					let moveTitle = -(activeIndex * 65);
+					let moveDisc = -(activeIndex * 75);
+	
+					gsap.to(".as-services-4-item-number", {
+						y: moveNumber,
+						duration: 0.4,
+						ease: "power2.out",
+					});
+	
+					gsap.to(".as-services-4-item-title", {
+						y: moveTitle,
+						duration: 0.4,
+						ease: "power2.out",
+					});
+	
+					gsap.to(".as-services-4-item-disc", {
+						y: moveDisc,
+						duration: 0.4,
+						ease: "power2.out",
+					});
+				},
+			});
+		}
+
 
 /* 
 	testimonial-4-bg-shape
